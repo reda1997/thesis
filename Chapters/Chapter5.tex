@@ -1,0 +1,58 @@
+% Chapter 5
+\chapter{Implémentation, simulation et résultats}
+
+\label{Chapter5}
+Au cours de ce chapitre nous allons présenter l'implémentation et le test de notre système dans un réseau SDN qu'on va simuler. On commence par voir l'environnement de travail, les outils de simluations utilisés, pour passer ainsi à la phase des tests qui est divisé sur deux: premièremet nous allons tester notre programme sur un jeu de données qu'on verra varier pour calculer les différentes métriques cités dans la section \ref{evaluation} ensuite testera notre système dans un réseau SDN simulé sur plusieurs scénarios, d'attaques et de flux normaux, pour étudier son comportement dans un réseau en production.
+
+\section{Environnement de travail}
+Cette partie décrit l'environnement SDN dans lequel on a développer notre solution en présentant le contrôleur SDN choisi et l'outil de simulation du réseau utilisé.
+
+\subsection{Contrôleur SDN}
+Parmis les différents contrôleur SDN qui existent, nous avons opté pour travailler avec \textbf{Ryu}[\cite{4}] vue la simplicté d'utilisation qui offre, en plus il est basé sur \textit{Python} et supporte la majorité des versions d’OpenFlow. \\\\
+Ryu est un contrôleur de réseau défini par logiciel (SDN) conçu pour augmenter l’agilité du réseau en le rendant facile à gérer et adapte la façon dont le trafic est traité. Il fournit des composants logiciels, avec des interfaces de programme d’application (API) bien définies, qui rendent facile pour les développeurs de créer de nouvelles applications de gestion et de contrôle du réseau. Cette approche par composants aide les organisations à personnaliser leurs déploiements pour répondre à leurs besoins spécifiques; les développeurs peuvent rapidement et facilement modifier les composants existants ou mettre en œuvre leurs propres pour s’assurer que le réseau sous-jacent peut répondre aux demandes changeantes de leurs applications.\\
+
+\noindent Pour télécharger et installer Ryu sur une machine UBUNTU:
+\begin{verbatim}
+% git clone git://github.com/faucetsdn/ryu.git
+% cd ryu
+% pip install .
+\end{verbatim}
+
+
+\subsection{Simulation du réseau SDN}
+Afin de pouvoir déployer notre système dans un environnement SDN pour le tester, on est obligé de simuler un réseau SDN réel avec tous ces équipements, contrôleurs SDN, commutateurs, hôtes, lien physiques. Ceci est possible à l'aide d'un émulateur réseau. Il en existe beaucoup d'émulateurs réseau, celui qui nous convient dans notre travail est \textit{Mininet}[\cite{19}].
+
+\subsubsection{Mininet}
+Mininet est un émulateur de réseau qui crée un réseau d’hôtes virtuels, de commutateurs, de contrôleurs et de liens. Les hôtes Mininet exécutent le système \textit{Linux} standard, ce qui donne la possiblilité d'exécuter des programmes au niveau de ces hôtes. Les commutateurs prennent en charge Openflow pour un routage personnalisé hautement flexible.
+
+\noindent Mininet est vaguement recommendé car:\\
+\begin{itemize}
+\item[-] Est rapide, démarrer un réseau simple ne prend que quelques secondes.\\
+\item[-] Vous pouvez créer des topologies personnalisées : un commutateur unique, de plus grandes topologies de type Internet, un centre de données, ou toute autre chose.\\
+\item[-] Vous pouvez personnaliser le transfert de paquets : les commutateurs de Mininet sont programmables à l’aide du protocole Openflow.\\
+\item[-] Comprend une interface de lines de commande \textbf{CLI} pour le débogage ou l’exécution de tests sur réseau.\\
+\end{itemize}
+
+\noindent Pour installer mininet sur une machine UBUNTU:
+\begin{verbatim}
+% sudo apt install mininet
+\end{verbatim}
+Ou bien: 
+\begin{verbatim}
+% git clone git://github.com/mininet/mininet
+% mininet/util/install.sh
+\end{verbatim}
+
+
+\section{Langage et Librairies utilisées}
+
+\subsection{Python}
+Python est un langage de programmation très puissant et adaptable a tout type d’utilisation grâce à ces bibliothèques spécialisées, utilisé particulièrement comme un langage de script. Il Trop utilisé dans la programmation réseau et spécialement dans les réseau SDN.
+
+\subsection{Scikit-learn}
+Scikit-learn est une bibliothèque libre Python destinée à l'apprentissage automatique. Elle est développée par de nombreux contributeurs2 notamment dans le monde académique par des instituts français d'enseignement supérieur et de recherche comme Inria3. Elle comprend notamment des fonctions pour estimer des forêts aléatoires, des régressions logistiques, des algorithmes de classification, et les machines à vecteurs de support. Elle est conçue pour s'harmoniser avec d'autres bibliothèques libres Python, notamment NumPy et SciPy.[\cite{20}] 
+
+\subsection{Pandas}
+Pandas est une bibliothèque écrite pour le langage de programmation Python permettant la manipulation et l'analyse des données. Elle propose en particulier des structures de données et des opérations de manipulation de tableaux numériques et de séries temporelles.\\
+
+\noindent Les principales structures de données sont les séries (pour stocker des données selon une dimension - grandeur en fonction d'un index), les DataFrames (pour stocker des données selon 2 dimensions - lignes et colonnes), les Panels (pour représenter des données selon 3 dimensions, les Panels4D ou les DataFrames avec des index hiérarchiques aussi nommés MultiIndex (pour représenter des données selon plus de 3 dimensions). [\cite{21}] 

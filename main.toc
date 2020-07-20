@@ -1,0 +1,80 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {french}{}
+\contentsline {chapter}{Liste des abréviations}{v}{chapter*.4}%
+\contentsline {chapter}{Introduction générale}{vi}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Software Defined Networking}{1}{chapter.6}%
+\contentsline {section}{\numberline {1.1}Limites des réseaux traditionnelles}{1}{section.7}%
+\contentsline {section}{\numberline {1.2}Une approche réseau moderne}{2}{section.8}%
+\contentsline {section}{\numberline {1.3}Définition}{2}{section.9}%
+\contentsline {section}{\numberline {1.4}Architecture SDN}{2}{section.10}%
+\contentsline {subsection}{\numberline {1.4.1}Plan de Données}{4}{subsection.13}%
+\contentsline {subsection}{\numberline {1.4.2}Plan de Contrôle}{4}{subsection.14}%
+\contentsline {subsection}{\numberline {1.4.3}Plan d'Applications}{5}{subsection.15}%
+\contentsline {section}{\numberline {1.5}Caractéristiques des SDN}{5}{section.16}%
+\contentsline {section}{\numberline {1.6}OpenFlow et SDN}{5}{section.17}%
+\contentsline {subsection}{\numberline {1.6.1}Table de Flux}{6}{subsection.18}%
+\contentsline {section}{\numberline {1.7}Contrôleur SDN}{7}{section.21}%
+\contentsline {section}{\numberline {1.8}Avantages et inconvénients des SDN}{7}{section.22}%
+\contentsline {subsection}{\numberline {1.8.1}Avantages}{7}{subsection.23}%
+\contentsline {subsection}{\numberline {1.8.2}Inconvénients}{7}{subsection.24}%
+\contentsline {section}{\numberline {1.9}Conclusion}{8}{section.25}%
+\contentsline {chapter}{\numberline {2}Sécurité des réseaux}{9}{chapter.26}%
+\contentsline {section}{\numberline {2.1}Sécurité dans un réseau Informatique}{9}{section.27}%
+\contentsline {subsection}{\numberline {2.1.1}Généralités}{9}{subsection.28}%
+\contentsline {subsection}{\numberline {2.1.2}Les menaces d’un réseau informatique}{10}{subsection.29}%
+\contentsline {subsection}{\numberline {2.1.3}Les mécanismes de sécurité}{10}{subsection.30}%
+\contentsline {section}{\numberline {2.2}La sécurité dans les réseaux SDN}{10}{section.31}%
+\contentsline {subsection}{\numberline {2.2.1}Les failles de sécurité des réseaux SDN}{11}{subsection.33}%
+\contentsline {subsection}{\numberline {2.2.2}Attaques ciblées sur les couches SDN}{12}{subsection.34}%
+\contentsline {paragraph}{La couche des applications:}{12}{section*.35}%
+\contentsline {paragraph}{La couche des données:\\}{12}{section*.36}%
+\contentsline {paragraph}{La couche de contrôle:}{12}{section*.37}%
+\contentsline {section}{\numberline {2.3}Les attaques DoS}{13}{section.38}%
+\contentsline {subsection}{\numberline {2.3.1}Définition}{13}{subsection.39}%
+\contentsline {subsection}{\numberline {2.3.2}Fonctionnement}{13}{subsection.40}%
+\contentsline {subsection}{\numberline {2.3.3}Classification d'une attaque DoS}{13}{subsection.41}%
+\contentsline {paragraph}{A) Attaque par complexité d’algorithme:}{14}{section*.42}%
+\contentsline {paragraph}{B) Attaque par inondation (Flooding):}{14}{section*.43}%
+\contentsline {subsection}{\numberline {2.3.4}Impacts des attaques DoS sur un réseau SDN}{14}{subsection.44}%
+\contentsline {subsubsection}{Impact sur le plan de contrôle}{14}{section*.45}%
+\contentsline {subsubsection}{Impact sur le plan de données}{15}{section*.46}%
+\contentsline {subsubsection}{Impact sur la liaison contrôleur-commutateur}{15}{section*.47}%
+\contentsline {section}{\numberline {2.4}Système de Détection d’Intrusions (IDS)}{15}{section.48}%
+\contentsline {subsection}{\numberline {2.4.1}Définition}{15}{subsection.49}%
+\contentsline {subsection}{\numberline {2.4.2}Les approches}{16}{subsection.51}%
+\contentsline {subsection}{\numberline {2.4.3}Les méthodes de détection d’intrusion}{16}{subsection.52}%
+\contentsline {subsection}{\numberline {2.4.4}Les méthodes de collection d'informations sur les flux}{16}{subsection.53}%
+\contentsline {paragraph}{A) Utilisation des statistiques OpenFlow :}{16}{section*.54}%
+\contentsline {paragraph}{B) Utilisation de l’apprentissage automatique :}{17}{section*.55}%
+\contentsline {subsection}{\numberline {2.4.5}Évaluation des performances d'un NIDS}{17}{subsection.56}%
+\contentsline {section}{\numberline {2.5}Travaux existants}{18}{section.58}%
+\contentsline {subsection}{\numberline {2.5.1}Flow based Intrusion Detection System [\cite {8}]:}{18}{subsection.59}%
+\contentsline {paragraph}{A) Extraction et agrégation des caractéristiques:\\}{19}{section*.61}%
+\contentsline {paragraph}{B) Entraînement do modèle et la classification:\\}{19}{section*.62}%
+\contentsline {subsection}{\numberline {2.5.2}Machine based Intrusion Detection System [\cite {10}]:}{19}{subsection.63}%
+\contentsline {subsection}{\numberline {2.5.3}Comparaison entre ces deux IDS}{20}{subsection.64}%
+\contentsline {section}{\numberline {2.6}Conclusion}{21}{section.66}%
+\contentsline {chapter}{\numberline {3}Data Mining}{22}{chapter.67}%
+\contentsline {section}{\numberline {3.1}Data Minig}{22}{section.68}%
+\contentsline {subsection}{\numberline {3.1.1}Définition}{22}{subsection.69}%
+\contentsline {subsection}{\numberline {3.1.2}Ètapes du processus KDD}{22}{subsection.70}%
+\contentsline {subsection}{\numberline {3.1.3}Dataset}{23}{subsection.71}%
+\contentsline {section}{\numberline {3.2}Apprentissage automatique}{24}{section.73}%
+\contentsline {subsection}{\numberline {3.2.1}Apprentissage supervisé}{24}{subsection.74}%
+\contentsline {subsection}{\numberline {3.2.2}Apprentissage non supervisé}{25}{subsection.75}%
+\contentsline {paragraph}{{\large 3.2.2.1 Clustering}\\\\}{26}{section*.76}%
+\contentsline {paragraph}{{\large 3.2.2.2 Méthodes de clustering}\\\\}{26}{section*.77}%
+\contentsline {paragraph}{{\large 3.2.2.3 K-Means}\\\\}{26}{section*.78}%
+\contentsline {subsection}{\numberline {3.2.3}Conclusion}{27}{subsection.80}%
+\contentsline {chapter}{\numberline {4}Solution}{28}{chapter.81}%
+\contentsline {section}{\numberline {4.1}Hypothèses}{28}{section.82}%
+\contentsline {section}{\numberline {4.2}Architecture générale}{28}{section.83}%
+\contentsline {chapter}{\numberline {5}Implémentation, simulation et résultats}{29}{chapter.84}%
+\contentsline {section}{\numberline {5.1}Environnement de travail}{29}{section.85}%
+\contentsline {subsection}{\numberline {5.1.1}Contrôleur SDN}{29}{subsection.86}%
+\contentsline {subsection}{\numberline {5.1.2}Simulation du réseau SDN}{30}{subsection.87}%
+\contentsline {subsubsection}{Mininet}{30}{section*.88}%
+\contentsline {section}{\numberline {5.2}Langage et Librairies utilisées}{30}{section.89}%
+\contentsline {subsection}{\numberline {5.2.1}Python}{30}{subsection.90}%
+\contentsline {subsection}{\numberline {5.2.2}Scikit-learn}{31}{subsection.91}%
+\contentsline {subsection}{\numberline {5.2.3}Pandas}{31}{subsection.92}%
