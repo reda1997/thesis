@@ -43,6 +43,43 @@ Ou bien:
 % mininet/util/install.sh
 \end{verbatim}
 
+\subsubsection{Simulation d'un simple réseau SDN}
+Ci-dessous un exemple sur comment lancer la simulation d'un simple réseau SDN avec un contrôleur, un switch OpenFlow et deux hôtes.\\
+
+\noindent 1- Lancer le contôleur Ryu:
+\begin{verbatim}
+% ryu-manager ryu_controller.py 
+\end{verbatim}
+2- Créer la topologie avec mininet:
+\begin{verbatim}
+% sudo mn --controller remote --topo single,2 --switch ovs --mac
+\end{verbatim}
+
+\begin{tabular}{m {13cm}}
+\hline
+\textbf{\textit{Terminal}}\\
+\hline
+\begin{verbatim}
+*** Creating network
+*** Adding controller
+Connecting to remote controller at 127.0.0.1:6653
+*** Adding hosts:
+h1 h2 
+*** Adding switches:
+s1 
+*** Adding links:
+(h1, s1) (h2, s1) 
+*** Configuring hosts
+h1 h2 
+*** Starting controller
+c0 
+*** Starting 1 switches
+s1 ...
+*** Starting CLI:
+mininet> 
+\end{verbatim}\\
+\hline
+\end{tabular}
 
 \section{Langage et Librairies utilisées}
 
@@ -54,5 +91,10 @@ Scikit-learn est une bibliothèque libre Python destinée à l'apprentissage aut
 
 \subsection{Pandas}
 Pandas est une bibliothèque écrite pour le langage de programmation Python permettant la manipulation et l'analyse des données. Elle propose en particulier des structures de données et des opérations de manipulation de tableaux numériques et de séries temporelles.\\
+\noindent Les principales structures de données sont les séries (pour stocker des données selon une dimension - grandeur en fonction d'un index), les DataFrames (pour stocker des données selon 2 dimensions - lignes et colonnes), les Panels (pour représenter des données selon 3 dimensions, les Panels4D ou les DataFrames avec des index hiérarchiques aussi nommés MultiIndex (pour représenter des données selon plus de 3 dimensions). [\cite{21}]
 
-\noindent Les principales structures de données sont les séries (pour stocker des données selon une dimension - grandeur en fonction d'un index), les DataFrames (pour stocker des données selon 2 dimensions - lignes et colonnes), les Panels (pour représenter des données selon 3 dimensions, les Panels4D ou les DataFrames avec des index hiérarchiques aussi nommés MultiIndex (pour représenter des données selon plus de 3 dimensions). [\cite{21}] 
+\subsection{Argus}
+Argus[\cite{22}] est le premier système de flux réseau, développé par Carter Bullard au début des années 1980 à Georgia Tech. La technologie de flux réseau est devenue un élément essentiel de la cybersécurité moderne et Argus est utilisé dans certains des réseaux les plus importants du monde. Le système Argus tente de résoudre un grand nombre de problèmes liés aux données de flux réseau : échelle, performance, applicabilité, confidentialité et utilité.\\
+On a utilisé Argus pour calculer les propriétés des flux qui cerculent dans notre réseau SDN, parmis ces propriétés: durée de flux, nombre de paquet par seconde, nombre total de paquets, taille du paquet, ...etc.
+
+\section{Contruction du modèle de Clustering}

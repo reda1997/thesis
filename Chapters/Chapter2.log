@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  20 JUL 2020 16:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  20 JUL 2020 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -12677,7 +12677,7 @@ Overfull \hbox (4.44444pt too wide) in paragraph at lines 119--120
 
 
 Overfull \hbox (4.44444pt too wide) in paragraph at lines 119--120
-\/cmr/m/n/10 ^e 
+\/cmr/m/n/10 ^e
  []
 
 Missing character: There is no : in font nullfont!
