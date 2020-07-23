@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  23 JUL 2020 09:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  23 JUL 2020 09:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1556,24 +1556,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-[14] [15]
-<Figures/IDS.jpg, id=492, 503.8825pt x 211.79124pt>
+[14]
+<Figures/IDS.jpg, id=483, 503.8825pt x 211.79124pt>
 File: Figures/IDS.jpg Graphic file (type jpg)
 <use Figures/IDS.jpg>
-Package pdftex.def Info: Figures/IDS.jpg  used on input line 149.
+Package pdftex.def Info: Figures/IDS.jpg  used on input line 148.
 (pdftex.def)             Requested size: 324.6446pt x 136.45403pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
@@ -1583,12 +1592,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--168
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 [16 <./Figures/IDS.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
 
  []
 
@@ -1597,7 +1606,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
-[17]
+
 Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
@@ -1608,79 +1617,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 209--210
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 241--243
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--253
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
 [18]
 
-LaTeX Warning: Citation '8' on page 19 undefined on input line 263.
+LaTeX Warning: Citation '8' on page 19 undefined on input line 262.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cite' on input line 263.
+(hyperref)                removing `\cite' on input line 262.
 
-<Figures/NIDS1.jpg, id=512, 490.83376pt x 385.44pt>
+<Figures/NIDS1.jpg, id=511, 490.83376pt x 385.44pt>
 File: Figures/NIDS1.jpg Graphic file (type jpg)
 <use Figures/NIDS1.jpg>
-Package pdftex.def Info: Figures/NIDS1.jpg  used on input line 267.
+Package pdftex.def Info: Figures/NIDS1.jpg  used on input line 266.
 (pdftex.def)             Requested size: 278.27084pt x 218.52681pt.
 
-LaTeX Warning: Citation '8' on page 19 undefined on input line 269.
+LaTeX Warning: Citation '8' on page 19 undefined on input line 268.
 
 
-LaTeX Warning: Citation '8' on page 19 undefined on input line 269.
+LaTeX Warning: Citation '8' on page 19 undefined on input line 268.
 
 
-LaTeX Warning: Citation '9' on page 19 undefined on input line 277.
+LaTeX Warning: Citation '9' on page 19 undefined on input line 276.
 
 [19 <./Figures/NIDS1.jpg>]
 
-LaTeX Warning: Citation '10' on page 20 undefined on input line 279.
+LaTeX Warning: Citation '10' on page 20 undefined on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cite' on input line 279.
+(hyperref)                removing `\cite' on input line 278.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 
-LaTeX Warning: Citation '10' on page 20 undefined on input line 286.
+LaTeX Warning: Citation '10' on page 20 undefined on input line 285.
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 286--286
+Underfull \hbox (badness 2573) in paragraph at lines 285--285
 []|\T1/ppl/m/n/12 Machine ba-sed In-tru-sion
  []
 
 
-LaTeX Warning: Citation '8' on page 20 undefined on input line 286.
+LaTeX Warning: Citation '8' on page 20 undefined on input line 285.
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 288--288
+Underfull \hbox (badness 1077) in paragraph at lines 287--287
 []|\T1/ppl/m/n/12 Technique d'ap-pren-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+[]\T1/ppl/m/n/12 Nombre d'oc-tets
  []
 
 
@@ -1689,13 +1698,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 293--294
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
-[]\T1/ppl/m/n/12 Nombre d'oc-tets
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
+[]\T1/ppl/m/n/12 Variation dans la
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 301--302
-[]\T1/ppl/m/n/12 Variation dans la
+[]\T1/ppl/m/n/12 Variation dans le
  []
 
 
@@ -1704,33 +1713,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 302--303
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
-[]\T1/ppl/m/n/12 Variation dans le
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--306
+Underfull \hbox (badness 10000) in paragraph at lines 305--305
 []|\T1/ppl/m/n/12 NSL-KDD (stan-dar-disé)
  []
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 306--307
+Underfull \hbox (badness 1831) in paragraph at lines 305--306
 []|\T1/ppl/m/n/12 Généré avec une ému-la-
  []
 
 
-Underfull \hbox (badness 6364) in paragraph at lines 306--307
+Underfull \hbox (badness 6364) in paragraph at lines 305--306
 \T1/ppl/m/n/12 tion de l'en-vi-ron-ne-ment
  []
 
 
-LaTeX Warning: Citation '8' on page 20 undefined on input line 337.
+LaTeX Warning: Citation '8' on page 20 undefined on input line 336.
 
 
-LaTeX Warning: Citation '8' on page 20 undefined on input line 337.
+LaTeX Warning: Citation '8' on page 20 undefined on input line 336.
 
 
-LaTeX Warning: Citation '10' on page 20 undefined on input line 337.
+LaTeX Warning: Citation '10' on page 20 undefined on input line 336.
 
 [20]) [21]
 \openout2 = `Chapters/Chapter3.aux'.
@@ -1894,7 +1898,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-<Figures/K-means.jpg, id=553, 1017.8025pt x 322.20375pt>
+<Figures/K-means.jpg, id=552, 1017.8025pt x 322.20375pt>
 File: Figures/K-means.jpg Graphic file (type jpg)
 <use Figures/K-means.jpg>
 Package pdftex.def Info: Figures/K-means.jpg  used on input line 105.
@@ -1931,7 +1935,7 @@ LaTeX Warning: Citation '20' on page 28 undefined on input line 14.
 
 
 ]
-<Figures/rDoS.png, id=564, 522.95375pt x 328.22626pt>
+<Figures/rDoS.png, id=563, 522.95375pt x 328.22626pt>
 File: Figures/rDoS.png Graphic file (type png)
 <use Figures/rDoS.png>
 Package pdftex.def Info: Figures/rDoS.png  used on input line 18.
@@ -2132,10 +2136,10 @@ rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (46 pages, 573956 bytes).
+Output written on main.pdf (46 pages, 573667 bytes).
 PDF statistics:
- 702 PDF objects out of 1000 (max. 8388607)
- 629 compressed objects within 7 object streams
+ 701 PDF objects out of 1000 (max. 8388607)
+ 628 compressed objects within 7 object streams
  174 named destinations out of 1000 (max. 500000)
  559 words of extra memory for PDF output out of 10000 (max. 10000000)
 

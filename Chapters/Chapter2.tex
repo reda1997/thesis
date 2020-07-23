@@ -122,9 +122,8 @@ Le principe est de saturé la bande passante d’un réseau, ce qui empêchent d
 \item[\textbf{SYN Flood}]: cette technique d’attaque s’applique dans le cadre d’un protocole TCP et vise principalement à submerger le serveur cible d’une grande quantité de requêtes SYN (Synchronized).\\
 \item[\textbf{UDP Flood}]: cette méthode exploite le mode non connecté du protocole UDP. Elle consiste à générer une grande quantité de paquets UDP soit à destination d’une machine soit entre deux machines.\\
 \item[\textbf{ICMP Flood}]: les attaques par inondation ICMP également appelées « smurf attacks ». Ils inondent une victime avec un grand nombre de paquets ICMP utilisant des adresses IP sources usurpées. Le serveur victime répondra au propriétaire sans méfiance de l'adresse IP usurpée avec les réponses de l'ICMP.\\
-\item[\textbf{Reflective DoS}]: dans ce type d’attaques, l’identité de l’attaquant reste caché en utilisant un composant tiers légitime. Un grand nombre de requêtes sont envoyées aux serveurs réflecteurs par des attaquants dont l’adresse IP source est définie pour cibler l’adresse IP de la victime (un des hôtes ligitime) afin de surcharger la victime de paquets de réponse. Dans notre travail, nous nous intéréssons à cet attaques pour plusieurs raison qu'on citera dans le chapitre \ref{Chapter4}.
 \end{itemize}
-\newpage
+
 \subsection{Impacts des attaques DoS sur un réseau SDN}
 Due à la centralisation du contrôle dans l’architecture SDN, les attaques de DoS peuvent avoir des graves répercussions sur les performances du réseau conduisant à des cas où tout le réseau devient incapable à répondre aux besoins des utilisateurs. Ces attaques affectent la performance des trois éléments principaux dans le réseau SDN : le contrôleur SDN, la liaison entre le contrôleur et les commutateurs et le plan de transmission (les commutateurs et les liens du réseau).
 
@@ -259,7 +258,7 @@ Afin d'évaluer le NIDS, les métriques suivantes sont calculées :\\
 \section{Travaux existants}
 Récemment, diverses solutions ont été proposées pour régler les problèmes de sécurité au sein des réseaux SDN. Les techniques d’apprentissage automatique sont largement appliquées pour améliorer l’efficacité de détection, y compris les réseaux neurone, les arbres de décision, les SVM (Support Vector Machine) et les réseaux bayésiens. L'intégration d'un système de détection d'intrusions dans l'architecture SDN reste la meilleure solution pour sécuriser l'environnement SDN. Comme mentionné dans la section \ref{approchesIDS}, deux approche existent pour concevoir un IDS, une est basée machine (HIDS) et l'autre est basée réseau (NIDS), autrement appelé basé flux. Dans notre travail nous nous focaliserons sur les systèmes de détection basé flux, donc nous allons présenter en ce qui suit quelques IDS déjà existants afin de pouvoir faire une étude comparative; technique d'apprentissage adoptée, les caractéristiques utilisées, le Dataset, résultat de prédiction.\\
 
-
+\newpage
 \subsection{Flow based Intrusion Detection System [\cite{8}]:}
 Les auteurs de ce travail ont proposé un système de détection basé flux pour détecter le trafic anormal circulant dans les réseaux SDN. Leur IDS est basé sur l’extraction d’un ensemble de caractéristiques prédéfinies de manière régulière chaque une seconde. Cette étape est suivie par l’agrégation des caractéristiques extraites pour pouvoir traîner le modèle. La figure \ref{fig:NIDS1} illustre l'architecture de cette IDS.
 \begin{figure}[h]
