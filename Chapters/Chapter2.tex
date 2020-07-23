@@ -44,7 +44,7 @@ Selon Kreutz et al[\cite{7}], les vecteurs d'attaques identifiés dans les SDN s
 \begin{center}
 \begin{tabular}{  m{0.5cm} m{11cm} }
 \hline
-N. & Vecteur d'attaque\\
+\textbf{N}. & \textbf{Vecteur d'attaque}\\
 \hline
 1 & Flux de trafic falsifié ou truqué\\
 2 & Attaques contre les vulnérabilités des commutateurs\\
@@ -75,15 +75,17 @@ Du point de vue de la sécurité, les différences majeures du modèle SDN avec 
 \subsection{Attaques ciblées sur les couches SDN}
 \label{cibles}
 Dans le contexte de SDN, les attaques sont classées en fonction de la couche cible. Une attaque peut cibler une ou plusieurs couches à la fois.
-\paragraph{La couche des applications:} 
+\subsubsection{Couche d'applications:} 
 La plupart des fonctions réseau peuvent être programmées dans des applications SDN, les parties malveillantes peuvent prendre le contrôle du réseau en injectant des applications SDN au niveau de la couche de contrôle. De plus il n’existe pas de normes qui régularisent l’utilisation des API SDN par les applications pour le contrôle du réseau. Par conséquent les applications développées par différents fournisseurs sous différents environnements peuvent causer des problèmes d’interopérabilité, de collision entre les applications et de violation des politiques de sécurité.  
 
-\paragraph{La couche des données:\\}
+\subsubsection{Couche de données:}
 - Avec la séparation des plans de données et de contrôle, les pirates essayent de mettre en erreur le switch en lui envoyant des faux messages de contrôle dans le but de détourner le trafic. Les versions récentes de l’OpenFlow implémentent le protocole TLS qui établit une connexion sécurisée entre le switch et le contrôleur mais son utilisation est optionnelle et ignorée par beaucoup d’usagers.\\
+
 - Les switches OpenFlow sont dotés de tables de flux avec des tailles limitées. Dans le cas où les flux sont mis en correspondance d’une manière très granulaire les tables des switches risquent d’être saturées.\\
+
 - Certaines attaques peuvent exploiter la limite des buffers au niveau des switches utilisés pour enregistrer les flux en attendant la réponse du contrôleur par rapport aux règles à appliquer sur le flux  en envoyant plusieurs nouveaux flux dans un très petit intervalle de temps dans le but de les saturer.
 
-\paragraph{La couche de contrôle:} 
+\subsubsection{Couche de contrôle:} 
 Le contrôleur est le point le plus sensible dans un réseau SDN. Pour cette raison il est vu comme une cible privilégiée des attaques. Les menaces liées à cette couche:\\
 \begin{itemize}
 \item[•]Les applications situées au-dessus du plan de contrôle peuvent causer des dangers au contrôleur. Ce dernier peut servir plusieurs applications simultanément ce qui rend leur authentification et leur attribution d’autorisations une fonction compliquée. Par conséquences certaines applications malveillantes pourraient accéder aux services du contrôleur et contrôler le réseau.\\
@@ -112,27 +114,27 @@ Pour rendre le réseau hors service, il existe 3 stratégies :\\
 \item[•]Cibler une faille logicielle particulière.
 \end{itemize} 
 
-\paragraph{A) Attaque par complexité d’algorithme:}
+\subsubsection{A) Attaque par complexité d’algorithme:}
 Une forme d’attaque qui exploite les cas connus dans lesquels un algorithme utilisé dans un logiciel présentera un comportement de complexité correspondante au pire de ses cas. Ce type d’attaque peut être utilisé pour ralentir des serveurs ou des processus ou même les faire planter. 
-\paragraph{B) Attaque par inondation (Flooding):}
+\subsubsection{B) Attaque par inondation (Flooding):}
 Le principe est de saturé la bande passante d’un réseau, ce qui empêchent d’autre client d’accédé à une ressource ou à un serveur, parmi les attaques de type inondation les plus utilisés actuellement par les pirates, nous citons les attaques SYN Flood, UDP Flood et ICMP Flood.\\
 \begin{itemize}
-\item[\textbf{SYN Flood}]: Cette technique d’attaque s’applique dans le cadre d’un protocole TCP et vise principalement à submerger le serveur cible d’une grande quantité de requêtes SYN (Synchronized).\\
-\item[\textbf{UDP Flood}]: Cette méthode exploite le mode non connecté du protocole UDP. Elle consiste à générer une grande quantité de paquets UDP soit à destination d’une machine soit entre deux machines.\\
+\item[\textbf{SYN Flood}]: cette technique d’attaque s’applique dans le cadre d’un protocole TCP et vise principalement à submerger le serveur cible d’une grande quantité de requêtes SYN (Synchronized).\\
+\item[\textbf{UDP Flood}]: cette méthode exploite le mode non connecté du protocole UDP. Elle consiste à générer une grande quantité de paquets UDP soit à destination d’une machine soit entre deux machines.\\
 \item[\textbf{ICMP Flood}]: les attaques par inondation ICMP également appelées « smurf attacks ». Ils inondent une victime avec un grand nombre de paquets ICMP utilisant des adresses IP sources usurpées. Le serveur victime répondra au propriétaire sans méfiance de l'adresse IP usurpée avec les réponses de l'ICMP.\\
-\item[\textbf{Reflective DoS}]: Dans ce type d’attaques, l’identité de l’attaquant reste caché en utilisant un composant tiers légitime. Un grand nombre de requêtes sont envoyées aux serveurs réflecteurs par des attaquants dont l’adresse IP source est définie pour cibler l’adresse IP de la victime (un des hôtes ligitime) afin de surcharger la victime de paquets de réponse. Dans notre travail, nous nous intéréssons à cet attaques pour plusieurs raison qu'on citera dans le chapitre \ref{Chapter4}.
+\item[\textbf{Reflective DoS}]: dans ce type d’attaques, l’identité de l’attaquant reste caché en utilisant un composant tiers légitime. Un grand nombre de requêtes sont envoyées aux serveurs réflecteurs par des attaquants dont l’adresse IP source est définie pour cibler l’adresse IP de la victime (un des hôtes ligitime) afin de surcharger la victime de paquets de réponse. Dans notre travail, nous nous intéréssons à cet attaques pour plusieurs raison qu'on citera dans le chapitre \ref{Chapter4}.
 \end{itemize}
-
+\newpage
 \subsection{Impacts des attaques DoS sur un réseau SDN}
 Due à la centralisation du contrôle dans l’architecture SDN, les attaques de DoS peuvent avoir des graves répercussions sur les performances du réseau conduisant à des cas où tout le réseau devient incapable à répondre aux besoins des utilisateurs. Ces attaques affectent la performance des trois éléments principaux dans le réseau SDN : le contrôleur SDN, la liaison entre le contrôleur et les commutateurs et le plan de transmission (les commutateurs et les liens du réseau).
 
-\subsubsection{Impact sur le plan de contrôle}
+\subsubsection{Impact sur le plan de contrôle:}
 En cas d’une attaque de DoS, l’attaquant va envoyer une grande quantité de flux à travers le réseau SDN. Lorsque les commutateurs dans la couche infrastructure reçoivent ces nouveaux flux entrants, ils envoient des demandes au contrôleur pour obtenir des règles de commutation afin de les envoyer à la destination demandée. Par conséquent, le contrôleur SDN sera surchargé à cause de la quantité énorme de demandes provenant du plan de donnée du réseau, menant à des cas où le contrôleur devient totalement paralysé et ne puisse pas prendre aucune décision du routage.
 
-\subsubsection{Impact sur le plan de données}
+\subsubsection{Impact sur le plan de données:}
 Généralement, les commutateurs doivent enregistrer les règles de commutation dans leurs tables de commutation et les utiliser jusqu’à l’expiration des temporisateurs, le idle timeout et le hard timeout. Dans une situation d’attaque de DoS, où l’attaquant inonde le commutateur avec une quantité du flux importante, tout le trafic de données reçu par les commutateurs, se traduit en règles de commutation fournit par le contrôleur, afin de les acheminer vers la destination. En effet, la mémoire TCAM du commutateur sera remplie par ces règles envoyées de contrôleur jusqu’à sa saturation. Lorsque cela se produit, les commutateurs sont forcés d’ajouter et de supprimer continuellement les règles de flux et d’envoyer plus des demandes vers le contrôleur; cela engendre la congestion du plan de transmission ainsi qu’un retard dans le temps de transmission de données.
 
-\subsubsection{Impact sur la liaison contrôleur-commutateur}
+\subsubsection{Impact sur la liaison contrôleur-commutateur:}
 Due à la communication agressive entre le contrôleur SDN et les commutateurs demandant des décisions de routage, la liaison entre le contrôleur et le commutateur (appelé aussi la bande passante du plan de contrôle) sera exténuée et congestionnée; cela cause la perte de plusieurs messages «paquet-in» ainsi que le retard dans le temps de réponse des messages échangés entre le contrôleur et les commutateurs.
 
 \section{Système de Détection d’Intrusions (IDS)}
@@ -170,14 +172,14 @@ Il existe trois méthodes principales de détection d’intrusions:\\
 \subsection{Les méthodes de collection d'informations sur les flux}
 Les IDS collectent les informations sur les flux en utilisant une de ces deux méthodes:\\
 \begin{itemize}
-	\item[] \textbf{Première méthode:} Collecter les statistiques sur les flux calculées par les switches OpenFlow.
-	\item[] \textbf{Deuxième méthode:} Capturer les paquets avec leur renfilage et extraire les informations contenues dans ces paquets. 
+\item[-] \textbf{Première méthode:} Collecter les statistiques sur les flux calculées par les switches OpenFlow.
+\item[-] \textbf{Deuxième méthode:} Capturer les paquets avec leur renfilage et extraire les informations contenues dans ces paquets. 
 \end{itemize}
 
-\paragraph{A) Utilisation des statistiques OpenFlow :}
+\subsubsection{A) Utilisation des statistiques OpenFlow:}
 La plupart des solutions de détection d’intrusions dans les SDN utilisent les statistiques calculées par les switches OpenFlow. Dans ce type de solution l’IDS est implémenté sous forme d’application SDN qui demande périodiquement les statistiques concernant les flux en utilisant le protocole OpenFlow. Les statistiques sont par la suite analysées au niveau de cette application SDN pour détecter l’intrusion. Les méthodes d’analyse sont basées sur des méthodes statistiques ou d’apprentissage automatique.
 
-\paragraph{B) Utilisation de l’apprentissage automatique :}
+\subsubsection{B) Utilisation de l’apprentissage automatique:}
 Le principe de ce type de solutions est d’utiliser un dataset (un ensemble de données) présentant des caractéristiques extraites de différents flux de paquets pour entrainer un système intelligent capable de prendre en entrée un vecteur de caractéristiques décrivant un flux de paquets et le classifier comme flux d’attaques ou flux bénins. 
 L’efficacité de ce type de solutions est directement liée au choix du dataset, aux caractéristiques utilisées,  et au modèle d’apprentissage automatique.
 
@@ -257,7 +259,7 @@ Afin d'évaluer le NIDS, les métriques suivantes sont calculées :\\
 \section{Travaux existants}
 Récemment, diverses solutions ont été proposées pour régler les problèmes de sécurité au sein des réseaux SDN. Les techniques d’apprentissage automatique sont largement appliquées pour améliorer l’efficacité de détection, y compris les réseaux neurone, les arbres de décision, les SVM (Support Vector Machine) et les réseaux bayésiens. L'intégration d'un système de détection d'intrusions dans l'architecture SDN reste la meilleure solution pour sécuriser l'environnement SDN. Comme mentionné dans la section \ref{approchesIDS}, deux approche existent pour concevoir un IDS, une est basée machine (HIDS) et l'autre est basée réseau (NIDS), autrement appelé basé flux. Dans notre travail nous nous focaliserons sur les systèmes de détection basé flux, donc nous allons présenter en ce qui suit quelques IDS déjà existants afin de pouvoir faire une étude comparative; technique d'apprentissage adoptée, les caractéristiques utilisées, le Dataset, résultat de prédiction.\\
 
-\newpage
+
 \subsection{Flow based Intrusion Detection System [\cite{8}]:}
 Les auteurs de ce travail ont proposé un système de détection basé flux pour détecter le trafic anormal circulant dans les réseaux SDN. Leur IDS est basé sur l’extraction d’un ensemble de caractéristiques prédéfinies de manière régulière chaque une seconde. Cette étape est suivie par l’agrégation des caractéristiques extraites pour pouvoir traîner le modèle. La figure \ref{fig:NIDS1} illustre l'architecture de cette IDS.
 \begin{figure}[h]
@@ -268,14 +270,14 @@ Les auteurs de ce travail ont proposé un système de détection basé flux pour
 \label{fig:NIDS1}
 \end{figure}
 
-\paragraph{A) Extraction et agrégation des caractéristiques:\\}
+\subsubsection{A) Extraction et agrégation des caractéristiques:}
 Les commutateurs OF envoient souvent des messages \textit{Packet-In} au contrôleur quand aucune correspondance n’est trouvée dans la table de flux du commutateur. Chaque message contient les informations du premier paquet de chaque flux et quand il est reçu au niveau du contrôleur ces informations sont extraites et sauvegarder. En plus, ce qui est bien avec les SDN, ces commutateurs peuvent envoyer des statistiques pour chaque entrée de flux, ce qui permettra la collecte d'informations de flux chaque seconde. 
 
-\paragraph{B) Entraînement do modèle et la classification:\\}
+\subsubsection{B) Entraînement do modèle et la classification:}
 Les échantillons extraits de la phase d’agrégation sont utilisés dans un modèle de classification supervisé. Par conséquent, le classificateur formé attribuera des classes à chaque échantillon chaque seconde. Puisque chaque flux peut avoir plus d’une instance au cours de sa durée de vie, son comportement sera classé plusieurs fois. Le classifier Bagged Trees [\cite{9}] a été utilisé pour construire le modèle.
 \newpage
 \subsection{Machine based Intrusion Detection System [\cite{10}]:}
-Dans ce travail un modèle de réseaux de neurones a été intégré dans le système pour détecter les anomalies dans le trafic. Le système fonctionne comme suit; les commutateurs OF envoient périodiquement les statistiques de flux au contrôleur, ces statistiques vont être récupérées et traitées par le module responsable pour détecter le comportement d’anomalie dans le flux. Pattern recognition (la reconnaissance de motifs) est implémentée dans ce modèle pour classer les entrées dans un ensemble de catégories cibles. L’architecture de cet IDS se compose de trois couches : une couche d’entrée (Input Layer), une couche cachée (Hidden Layer) et une couche de sortie (Output Layer). L’algorithme "\textbf{Backpropagation}" est utilisé pour traîner le modèle.
+Dans ce travail un modèle de réseaux de neurones a été intégré dans le système pour détecter les anomalies dans le trafic. Le système fonctionne comme suit; les commutateurs OF envoient périodiquement les statistiques de flux au contrôleur, ces statistiques vont être récupérées et traitées par le module responsable pour détecter le comportement d’anomalie dans le flux. Pattern recognition (la reconnaissance de motifs) est implémentée dans ce modèle pour classer les entrées dans un ensemble de catégories cibles. L’architecture de cet IDS se compose de trois couches : une couche d’entrée (Input Layer), une couche cachée (Hidden Layer) et une couche de sortie (Output Layer). L’algorithme "\textbf{Backpropagation}" est utilisé pour traîner le modèle.\\
 
 \begin{table}[h]
 \begin{center}
