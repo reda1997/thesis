@@ -72,15 +72,18 @@
 \contentsline {section}{\numberline {4.3}Présentation de la Solution}{30}{section.85}%
 \contentsline {subsection}{\numberline {4.3.1}Module MEI}{31}{subsection.87}%
 \contentsline {subsection}{\numberline {4.3.2}Module F-Clustering}{31}{subsection.88}%
-\contentsline {chapter}{\numberline {5}Implémentation, simulation et résultats}{32}{chapter.89}%
-\contentsline {section}{\numberline {5.1}Environnement de travail}{32}{section.90}%
-\contentsline {subsection}{\numberline {5.1.1}Contrôleur SDN}{32}{subsection.91}%
-\contentsline {subsection}{\numberline {5.1.2}Simulation du réseau SDN}{33}{subsection.92}%
-\contentsline {subsubsection}{Mininet}{33}{section*.93}%
-\contentsline {subsubsection}{Simulation d'un simple réseau SDN}{33}{section*.94}%
-\contentsline {section}{\numberline {5.2}Langage et Librairies utilisées}{34}{section.95}%
-\contentsline {subsection}{\numberline {5.2.1}Python}{34}{subsection.96}%
-\contentsline {subsection}{\numberline {5.2.2}Scikit-learn}{34}{subsection.97}%
-\contentsline {subsection}{\numberline {5.2.3}Pandas}{34}{subsection.98}%
-\contentsline {subsection}{\numberline {5.2.4}Argus}{35}{subsection.99}%
-\contentsline {section}{\numberline {5.3}Contruction du modèle de Clustering}{35}{section.100}%
+\contentsline {section}{\numberline {4.4}Construction du module F-Clustering}{32}{section.89}%
+\contentsline {subsection}{\numberline {4.4.1}Préparation des données}{32}{subsection.90}%
+\contentsline {subsubsection}{DataSet : }{32}{section*.91}%
+\contentsline {chapter}{\numberline {5}Implémentation, simulation et résultats}{33}{chapter.92}%
+\contentsline {section}{\numberline {5.1}Environnement de travail}{33}{section.93}%
+\contentsline {subsection}{\numberline {5.1.1}Contrôleur SDN}{33}{subsection.94}%
+\contentsline {subsection}{\numberline {5.1.2}Simulation du réseau SDN}{34}{subsection.95}%
+\contentsline {subsubsection}{Mininet}{34}{section*.96}%
+\contentsline {subsubsection}{Simulation d'un simple réseau SDN}{34}{section*.97}%
+\contentsline {section}{\numberline {5.2}Langage et Librairies utilisées}{35}{section.98}%
+\contentsline {subsection}{\numberline {5.2.1}Python}{35}{subsection.99}%
+\contentsline {subsection}{\numberline {5.2.2}Scikit-learn}{35}{subsection.100}%
+\contentsline {subsection}{\numberline {5.2.3}Pandas}{35}{subsection.101}%
+\contentsline {subsection}{\numberline {5.2.4}Argus}{36}{subsection.102}%
+\contentsline {section}{\numberline {5.3}Contruction du modèle de Clustering}{36}{section.103}%

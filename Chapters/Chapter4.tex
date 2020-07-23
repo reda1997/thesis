@@ -67,6 +67,17 @@ Le role principale de ce module est l'extractions d'information de flux de donn�
 L'object de notre travail est de proposer une approche ce Clustering pour la détéction des attaques DoS. On s'est penché vers le K-Means, nous l'avons amélioré et adapté à notre utilisation pour construire notre modèle intelligent qui est le ceur de ce module. Ce module prend en entrée le vecteur de caractéristiques construit par le module MEI, et d'aprés ses préconaissance, et attribut le flux reçu a un des clusters préexistants. Si le flux est groupé dans le cluter des flux malin on dit qu'une attaque DoS (RDoS ou UDP-Flooding), on peut aisni lancer une alerte et c'est au administrateur réseau de prendre action.
 
 \section{Construction du module F-Clustering}
+Pour contruire ce module nous avons suivis les étapes du processus KDD décrites dans la section \ref{KDD}:
+\begin{itemize}
+\item[-] Préparation des données: première étapes du processus, où on parlera de notre source données et les différents opération effectuées sur ces données pour les preparer à la deuxième phase du processus. 
+\item[-] Recherche du modèle: le modèle adopté est un modèle d'apprentissage non-supervisée, utilisant une approche de Clustering, qui va être trainer sur le données collectées dans la phase précendete.
+\item[-] Évalutation du modèle: on ferra l'évaluation du modèle dans le chapitre \ref{Chapter5}.
+\end{itemize}
 
+\subsection{Préparation des données}
+\subsubsection{DataSet : }
+Comme source de données, nous avons exploité le dataset \textbf{ CICDDoS 2019}[\citep{18}]. CICDDoS2019 contient des flux bénigs et des attaques Ddos les plus courantes, qui ressemblent aux vraies données du monde réel. Ce dataset contient différentes attaques DoS modernes réfelectives telles que Portmap, Netbios, LDAP, UDP, TFTP, NTP. La période de capture a commencé le 12 janvier à 10 h 30 et s’est terminée à 17 h 15. Des attaques ont par la suite été exécutées au cours de cette période. \\
 
+CICDDoS2019 formé de plusieurs fichier, chacun propres à une attaque. Vu la taille énormes de ces fichiers, et pour raison de simplifier le travail et pouvoir simuler l'architecture générale de notre réseau, on s'est mis d'accord sur le choix d'un seul fichier qu'on travaillera sur. Le fichier qu'on a choisi est propre à l'attaque TFTP, on réfénrencera par le nom "D-TFTP.\\
 
+D-TFTP contien **** lignes. 
