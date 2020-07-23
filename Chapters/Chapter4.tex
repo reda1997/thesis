@@ -38,20 +38,35 @@ Plusieurs autre travaux, [\cite{23}, \cite{24}] s'interèsse à la couche de tra
 Pour cette fin, nous proposons une solution, basée sur une approche de clustering, pour la détéction des d'attaque DoS réflectives dans un réseau SDN. Cette solution prend en charge aussi les attaques DoS du type UDP-Flooding (voir section \ref{rDoS}). La mitigation de l'attaque ne fait par partie de notre travail, on ferra juste la détection. La première tâche, surveillance te collecte de données, va être lancer sur la couche de transport, où on surveillera spécialement le protocole de transport UDP, vu qu'il est le plus utilisé dans les attaques RDoS. Pour la deuxième phase, qui est la détection, on utilisera notre modèle d'apprentissage pour analyser les données collectées dans la phase précédente et décider si c'est une attaque ou non.  
 
 \section{Présentation de la Solution}
-Les caractéristiques inhérentes des attaques de RDoS représentent un défis pour leur détection. Une surveillance et analyse continues du trafic réseau est nécessaire pour la détection des flux malins. La solution qu'on propose, pour ce fait, est un système de détection, appelé \textbf{F-DoS}, qui sera déployé dans le réseau cible pour assurer la surveillance du trafic au but de détecter des attaques DoS (RDoS et UDP-Flooding).\\
+Les caractéristiques inhérentes des attaques de RDoS représentent un défis pour leur détection. Une surveillance et analyse continues du trafic réseau est nécessaire pour la détection des flux malins. La solution qu'on propose, pour ce fait, est un système de détection, appelé \textbf{F-DoS}, qui sera déployé dans le réseau cible pour assurer la surveillance du trafic au but de détecter les attaques DoS (RDoS et UDP-Flooding).\\
 
-Ces deux fonctions de surveillance et de détection sont assurer par deux modules intégrée dans notre système. Le premier module, appelé \textbf{ARGUS}[28], est un annalyseur de flux, qu'on utilise pour capturer le trafic qui circulent dans le réseau, pour ensuite caculer les propriétés de chaque flux capturé. Les propriétés calculées vont être ensuite envoyées au deuxième module, appellé \textbf{FK-Means}. Ce dernier est un modèle de Clustering, qui prend en entrée les propriétés d'un flux et le met dans un des clusters préexistant, y'en a que deux clusters, un  pour le flux bénin et l'autre pour le flux malin (Attaques RDoS et UDP-Flooding).\\
+Ces deux fonctions de surveillance et de détection sont assurer par deux modules intégrées dans notre système. Le
+premier est le module d'extraction d'informations, qu'on référencera par l'acronyme \textbf{MEI}. Une copie de chaque flux circulant dans le réseau est envoyée à ce module afin d'extraire ces caractéristiques. Le caractéristiques extraites sont ensuite envoyées au deuxième module de notre système, appellé \textbf{F-Clustering}, qui est un modèle intelligent, sa fonction est de grouper les flux en clusters, cluster des flux normaux et cluster des flux malins.\\
 
-L'architecture de notre système est illusté dans la figure suivante : \\
+L'architecture et le principe de fonctionnement de notre système est illusté dans la figure suivante : \\
+
+\begin{figure}[h]
+\centering
+\begin{minipage}[b]{.5\textwidth}
+\includegraphics[width=\textwidth]{Figures/F-DoS}
+\label{fig:rDoS}
+\end{minipage}
+\begin{minipage}[b]{.45\textwidth}
+\includegraphics[width=\textwidth]{Figures/Diagramme}
+\label{fig:rDoS}
+\end{minipage}
+\decoRule
+\caption{Architecture et fonctionnemnt de F-DoS}
+\end{figure}
+
+\newpage
+\subsection{Module MEI}
+Le role principale de ce module est l'extractions d'information de flux de données. Mais pour ce faire, ce module doit assurer trois fonctions: l'écoute passive, l'analyse et l'ectraction. Ce module à un port didié à l'écoute, qui est toujours actif pour recevoir une copie de chaque paquet à l'aide de la téchnique de mise en miroir \textit{Port Miroring}. L'ensemble des paquets capturés est envoyé par la suite à l'analyseur. L'analyse des paquets n'est pas une fonction simple, elle doit être efféctuée soigneusement, si on analyse mal les paquets on risque de fausser le résultat de détection. Cette fonction est compliqué on raison que, l'analyseur recoit tous les paquets qui circulent dans le réseau, et on a dis précédemant qu'on s'intéresse au informations des flux de donnée, un flux est un ensemble de paquets qui on le même \textit{Paquet Header}(c-a-d même addresse source, addresse distination, port, ...etc). Donc l'analyseur doit filtrer les paquet; éliminer les paquets de contrôle, de solicitation, et tout autre paquet non intéréssant. Les paquet réstant sont ensuite regrouper en flux pour pouvoir ainsi exécuter la dernière fonction qui est l'éxtraction des caractéristiques. On parlera plus sur cet ensemble de caractéristiques et on justifiera le choix de chaqune dans la section ***.
+
+\subsection{Module F-Clustering}
+L'object de notre travail est de proposer une approche ce Clustering pour la détéction des attaques DoS. On s'est penché vers le K-Means, nous l'avons amélioré et adapté à notre utilisation pour construire notre modèle intelligent qui est le ceur de ce module. Ce module prend en entrée le vecteur de caractéristiques construit par le module MEI, et d'aprés ses préconaissance, et attribut le flux reçu a un des clusters préexistants. Si le flux est groupé dans le cluter des flux malin on dit qu'une attaque DoS (RDoS ou UDP-Flooding), on peut aisni lancer une alerte et c'est au administrateur réseau de prendre action.
+
+\section{Construction du module F-Clustering}
 
 
-\section{Hypothèses}
-Pour que notre système fonctionne de manière sûre et efficace, les hypothèses suivantes sont à prendre en considération :\\
-\begin{itemize}
-\item[•] Notre système est responsable de surveiller le réseau pour détecter uniquement les attaques de type DoS.\\
-\item[•] On suppose que les liens entre le plan de données et le plan de contrôle sont fiables et dotés d’une bande passante suffisante pour faire circuler le trafic de contrôle nécessaire pour le fonctionnement du système et le protocole utilisé pour la communication entre ces deux plans est OpenFlow.\\
-\item[•] Le réseau n’a pas été compromis avant ou durant le déploiement du système.\\
-\item[•] Dernière hypothèse, qui est la plus importante. Notre modèle a été traîné sur le Dataset suivant xxxxxx. Tout résultat généré par ce système après son déploiement dépendra de cette Dataset.
-\end{itemize}
 
- 

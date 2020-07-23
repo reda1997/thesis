@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  23 JUL 2020 09:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  23 JUL 2020 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -783,7 +783,14 @@ Package csquotes Info: ... found 'babel' package.
  (./main.aux
 (./Chapters/Abbreviations.aux) (./Chapters/Introduction.aux)
 (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux)
-(./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux) (./Chapters/Bib.aux
+(./Chapters/Chapter4.aux
+
+LaTeX Warning: Label `fig:rDoS' multiply defined.
+
+
+LaTeX Warning: Label `fig:rDoS' multiply defined.
+
+) (./Chapters/Chapter5.aux) (./Chapters/Bib.aux
 
 LaTeX Warning: Label `' multiply defined.
 
@@ -1183,12 +1190,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
  []
 
 [2]
-<Figures/SDN_Architecture.png, id=419, 543.02875pt x 295.1025pt>
+<Figures/SDN_Architecture.png, id=426, 543.02875pt x 295.1025pt>
 File: Figures/SDN_Architecture.png Graphic file (type png)
 <use Figures/SDN_Architecture.png>
 Package pdftex.def Info: Figures/SDN_Architecture.png  used on input line 48.
 (pdftex.def)             Requested size: 324.6446pt x 176.43245pt.
-<Figures/SDN_Plans.png, id=421, 545.03625pt x 530.98375pt>
+<Figures/SDN_Plans.png, id=428, 545.03625pt x 530.98375pt>
 File: Figures/SDN_Plans.png Graphic file (type png)
 <use Figures/SDN_Plans.png>
 Package pdftex.def Info: Figures/SDN_Plans.png  used on input line 58.
@@ -1557,7 +1564,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
  []
 
 [14]
-<Figures/IDS.jpg, id=483, 503.8825pt x 211.79124pt>
+<Figures/IDS.jpg, id=490, 503.8825pt x 211.79124pt>
 File: Figures/IDS.jpg Graphic file (type jpg)
 <use Figures/IDS.jpg>
 Package pdftex.def Info: Figures/IDS.jpg  used on input line 148.
@@ -1644,7 +1651,7 @@ LaTeX Warning: Citation '8' on page 19 undefined on input line 262.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\cite' on input line 262.
 
-<Figures/NIDS1.jpg, id=511, 490.83376pt x 385.44pt>
+<Figures/NIDS1.jpg, id=518, 490.83376pt x 385.44pt>
 File: Figures/NIDS1.jpg Graphic file (type jpg)
 <use Figures/NIDS1.jpg>
 Package pdftex.def Info: Figures/NIDS1.jpg  used on input line 266.
@@ -1898,7 +1905,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-<Figures/K-means.jpg, id=552, 1017.8025pt x 322.20375pt>
+<Figures/K-means.jpg, id=559, 1017.8025pt x 322.20375pt>
 File: Figures/K-means.jpg Graphic file (type jpg)
 <use Figures/K-means.jpg>
 Package pdftex.def Info: Figures/K-means.jpg  used on input line 105.
@@ -1935,7 +1942,7 @@ LaTeX Warning: Citation '20' on page 28 undefined on input line 14.
 
 
 ]
-<Figures/rDoS.png, id=563, 522.95375pt x 328.22626pt>
+<Figures/rDoS.png, id=570, 522.95375pt x 328.22626pt>
 File: Figures/rDoS.png Graphic file (type png)
 <use Figures/rDoS.png>
 Package pdftex.def Info: Figures/rDoS.png  used on input line 18.
@@ -1973,12 +1980,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--37
  []
 
 [29 <./Figures/rDoS.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 43--45
 
  []
 
@@ -1987,18 +1994,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
+<Figures/F-DoS.jpeg, id=576, 4601.19pt x 4866.18pt>
+File: Figures/F-DoS.jpeg Graphic file (type jpg)
+<use Figures/F-DoS.jpeg>
+Package pdftex.def Info: Figures/F-DoS.jpeg  used on input line 51.
+(pdftex.def)             Requested size: 231.89001pt x 245.17955pt.
+<Figures/Diagramme.jpeg, id=577, 3493.05pt x 3776.1075pt>
+File: Figures/Diagramme.jpeg Graphic file (type jpg)
+<use Figures/Diagramme.jpeg>
+Package pdftex.def Info: Figures/Diagramme.jpeg  used on input line 55.
+(pdftex.def)             Requested size: 208.6996pt x 225.57715pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- []
-
-) [30]
+[30]) [31 <./Figures/F-DoS.jpeg> <./Figures/Diagramme.jpeg>]
 \openout2 = `Chapters/Chapter5.aux'.
 
- (./Chapters/Chapter5.tex
+
+(./Chapters/Chapter5.tex
 Chapitre 5.
 
-LaTeX Warning: Citation '4' on page 31 undefined on input line 11.
+LaTeX Warning: Citation '4' on page 32 undefined on input line 11.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 11--13
@@ -2016,10 +2032,10 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 15
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 
-LaTeX Warning: Citation '25' on page 31 undefined on input line 23.
+LaTeX Warning: Citation '25' on page 32 undefined on input line 23.
 
 1: section
-[31
+[32
 
 
 
@@ -2053,21 +2069,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
-[32]
-
-LaTeX Warning: Citation '26' on page 33 undefined on input line 90.
-
-
-LaTeX Warning: Citation '27' on page 33 undefined on input line 94.
-
 [33]
 
-LaTeX Warning: Citation '28' on page 34 undefined on input line 97.
+LaTeX Warning: Citation '26' on page 34 undefined on input line 90.
 
-) [34]
+
+LaTeX Warning: Citation '27' on page 34 undefined on input line 94.
+
+[34]
+
+LaTeX Warning: Citation '28' on page 35 undefined on input line 97.
+
+) [35]
 \openout2 = `Chapters/Bib.aux'.
 
- (./Chapters/Bib.tex
+ (./Chapters/Bib.tex [36
+
+
+
+]
 Underfull \hbox (badness 2165) in paragraph at lines 63--64
 []\T1/ppl/m/n/12 Canadian Ins-ti-tute for Cy-ber-se-cu-rity, https ://www.unb.c
 a/cic/datasets/ids-
@@ -2075,9 +2095,6 @@ a/cic/datasets/ids-
 
 1: section
 [1
-
-
-
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 69--70
@@ -2103,7 +2120,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F8377FCDA840202F183063A5D430885D;11462.
+(rerunfilecheck)             Checksum: 51465DBFBF274788577F2665BD478034;11622.
 
 
 LaTeX Warning: There were undefined references.
@@ -2121,13 +2138,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28254 strings out of 483040
- 575056 string characters out of 5962426
- 1063757 words of memory out of 5000000
- 42679 multiletter control sequences out of 15000+600000
+ 28283 strings out of 483040
+ 575575 string characters out of 5962426
+ 1063771 words of memory out of 5000000
+ 42700 multiletter control sequences out of 15000+600000
  589246 words of font info for 127 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 58i,21n,86p,1309b,2637s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,21n,86p,1398b,2637s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
@@ -2136,10 +2153,10 @@ rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (46 pages, 573667 bytes).
+Output written on main.pdf (48 pages, 2618343 bytes).
 PDF statistics:
- 701 PDF objects out of 1000 (max. 8388607)
- 628 compressed objects within 7 object streams
- 174 named destinations out of 1000 (max. 500000)
- 559 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 719 PDF objects out of 1000 (max. 8388607)
+ 642 compressed objects within 7 object streams
+ 178 named destinations out of 1000 (max. 500000)
+ 577 words of extra memory for PDF output out of 10000 (max. 10000000)
 
