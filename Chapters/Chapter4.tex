@@ -24,7 +24,7 @@ RDoS n’attaque pas directement la cible mais envoie plutôt plusieurs requête
 À ce niveau, on peut clairement voir que l'impact de ce type d'attaque est en double; en premier lieu, la consommation de la bande passante des liens réseau à cause au nombre excessive des messages requêtes et réponses échangés. En deuxième lieu, la surchage des serveurs tiers avec des messages requêtes, qui vont les traiter évidemment, car pour eux ils paraissent des requêtes légitimes.\\ 
 
 \section{Motivation du travail}
-Un article[\cite{21}] sur les travaux connexes a montré que la défense contre les attaques RDos peut être divisée en 3 principales tâches : (1) surveillance (\textit{monitoring}) et la collecte de données du trafic réseau, (2) l’interprétation de ces données et la détection d’une attaque en cours, et (3) la mitigation de l’attaque. Selon leurs tâches principales, les solutions existantes varient considérablement dans leurs hypothèses et leurs exigences.\\
+Un article[\cite{21}] sur les travaux connexes a montré que la défense contre les attaques RDoS peut être divisée en 3 principales tâches : (1) surveillance (\textit{monitoring}) et la collecte de données du trafic réseau, (2) l’interprétation de ces données et la détection d’une attaque en cours, et (3) la mitigation de l’attaque. Selon leurs tâches principales, les solutions existantes varient considérablement dans leurs hypothèses et leurs exigences.\\
 Dans la littérature on trouve que la surveillance du trafic, qui représente la première phase du processus de détection, se fait sur ces trois couches:\\
 \begin{itemize}
 \item[•] La couche réseau.
@@ -35,7 +35,7 @@ Dans la littérature on trouve que la surveillance du trafic, qui représente la
 Par exemple \textit{PacketScore}, par Kim et al [\cite{22}], utilise le statistiques de paquets collectés pour comparer chaque paquet reçu au trafic bénin et d’attaque pour ensuite lui attribuer une note. Les paquets qui sont similaires au trafic d’attaque sont éliminés. Cette approche nécessite une surveillance active de la couche réseau.
 Plusieurs autre travaux, [\cite{23}, \cite{24}] s'interèsse à la couche de trasnport pour la détection des anomalies en analysant les paquets de transport, ICMP, TCP et UDP.\\
 
-Pour cette fin, nous proposons une solution, basée sur une approche de clustering, pour la détéction des d'attaque DoS réflectives dans un réseau SDN. Cette solution prend en charge aussi les attaques DoS du type UDP-Flooding (voir section \ref{rDoS}).
+Pour cette fin, nous proposons une solution, basée sur une approche de clustering, pour la détéction des d'attaque DoS réflectives dans un réseau SDN. Cette solution prend en charge aussi les attaques DoS du type UDP-Flooding (voir section \ref{rDoS}). La mitigation de l'attaque ne fait par partie de notre travail, on ferra juste la détection. La première tâche, surveillance te collecte de données, va être lancer sur la couche de transport, où on surveillera spécialement le protocole de transport UDP, vu qu'il est le plus utilisé dans les attaques RDoS. Pour la deuxième phase, qui est la détection, on utilisera notre modèle d'apprentissage pour comparer les données collectées dans la phase précédente et décider si c'est une attaque ou non.  
 
 \section{Présentation de la Solution}
 
