@@ -49,10 +49,10 @@
 \contentsline {subsubsection}{B) Utilisation de l’apprentissage automatique:}{18}{section*.56}%
 \contentsline {subsection}{\numberline {2.4.5}Évaluation des performances d'un NIDS}{18}{subsection.57}%
 \contentsline {section}{\numberline {2.5}Travaux existants}{19}{section.59}%
-\contentsline {subsection}{\numberline {2.5.1}Flow based Intrusion Detection System [\cite {8}]:}{20}{subsection.60}%
+\contentsline {subsection}{\numberline {2.5.1}Flow based Intrusion Detection System [\cite {11}]:}{20}{subsection.60}%
 \contentsline {subsubsection}{A) Extraction et agrégation des caractéristiques:}{20}{section*.62}%
 \contentsline {subsubsection}{B) Entraînement do modèle et la classification:}{20}{section*.63}%
-\contentsline {subsection}{\numberline {2.5.2}Machine based Intrusion Detection System [\cite {10}]:}{21}{subsection.64}%
+\contentsline {subsection}{\numberline {2.5.2}Machine based Intrusion Detection System [\cite {13}]:}{21}{subsection.64}%
 \contentsline {subsection}{\numberline {2.5.3}Comparaison entre ces deux IDS}{22}{subsection.66}%
 \contentsline {section}{\numberline {2.6}Conclusion}{22}{section.67}%
 \contentsline {chapter}{\numberline {3}Data Mining}{23}{chapter.68}%
@@ -72,24 +72,26 @@
 \contentsline {section}{\numberline {4.2}Motivation du travail}{30}{section.85}%
 \contentsline {section}{\numberline {4.3}Présentation de la Solution}{31}{section.86}%
 \contentsline {subsection}{\numberline {4.3.1}Module MEI}{32}{subsection.88}%
-\contentsline {subsection}{\numberline {4.3.2}Module F-Clustering}{32}{subsection.89}%
-\contentsline {section}{\numberline {4.4}Construction du module F-Clustering}{33}{section.90}%
-\contentsline {subsection}{\numberline {4.4.1}Préparation des données}{33}{subsection.91}%
-\contentsline {subsubsection}{A) Choix du dataset }{33}{section*.92}%
-\contentsline {subsubsection}{B) Prétraitement des données }{33}{section*.93}%
-\contentsline {subsubsection}{B-1) Data Laundry}{34}{section*.94}%
-\contentsline {subsubsection}{B-2) Sélection des attributs}{34}{section*.95}%
-\contentsline {subsubsection}{B-3) Mise à l'échelle et balancement}{34}{section*.97}%
-\contentsline {subsection}{\numberline {4.4.2}Recherche du modèle}{35}{subsection.98}%
-\contentsline {chapter}{\numberline {5}Implémentation, simulation et résultats}{36}{chapter.100}%
-\contentsline {section}{\numberline {5.1}Environnement de travail}{36}{section.101}%
-\contentsline {subsection}{\numberline {5.1.1}Contrôleur SDN}{36}{subsection.102}%
-\contentsline {subsection}{\numberline {5.1.2}Simulation du réseau SDN}{37}{subsection.103}%
-\contentsline {subsubsection}{Mininet}{37}{section*.104}%
-\contentsline {subsubsection}{Simulation d'un simple réseau SDN}{37}{section*.105}%
-\contentsline {section}{\numberline {5.2}Langage et Librairies utilisées}{38}{section.106}%
-\contentsline {subsection}{\numberline {5.2.1}Python}{38}{subsection.107}%
-\contentsline {subsection}{\numberline {5.2.2}Scikit-learn}{38}{subsection.108}%
-\contentsline {subsection}{\numberline {5.2.3}Pandas}{38}{subsection.109}%
-\contentsline {subsection}{\numberline {5.2.4}Argus}{39}{subsection.110}%
-\contentsline {section}{\numberline {5.3}Contruction du modèle de Clustering}{39}{section.111}%
+\contentsline {subsection}{\numberline {4.3.2}Module F-Clustering}{33}{subsection.89}%
+\contentsline {section}{\numberline {4.4}Conception du module MEI}{33}{section.90}%
+\contentsline {section}{\numberline {4.5}Conception du module F-Clustering}{34}{section.92}%
+\contentsline {subsection}{\numberline {4.5.1}Préparation des données}{34}{subsection.93}%
+\contentsline {subsubsection}{A) Choix du dataset }{34}{section*.94}%
+\contentsline {subsubsection}{B) Prétraitement des données }{35}{section*.95}%
+\contentsline {subsubsection}{B-1) Data Laundry}{35}{section*.96}%
+\contentsline {subsubsection}{B-2) Sélection des attributs}{35}{section*.97}%
+\contentsline {subsubsection}{B-3) Mise à l'échelle et balancement}{36}{section*.99}%
+\contentsline {subsection}{\numberline {4.5.2}Recherche du modèle}{36}{subsection.100}%
+\contentsline {section}{\numberline {4.6}Conclusion}{36}{section.102}%
+\contentsline {chapter}{\numberline {5}Implémentation, simulation et résultats}{37}{chapter.103}%
+\contentsline {section}{\numberline {5.1}Environnement de travail}{37}{section.104}%
+\contentsline {subsection}{\numberline {5.1.1}Contrôleur SDN}{37}{subsection.105}%
+\contentsline {subsection}{\numberline {5.1.2}Simulation du réseau SDN}{38}{subsection.106}%
+\contentsline {subsubsection}{Mininet}{38}{section*.107}%
+\contentsline {subsubsection}{Simulation d'un simple réseau SDN}{38}{section*.108}%
+\contentsline {section}{\numberline {5.2}Langage et Librairies utilisées}{39}{section.109}%
+\contentsline {subsection}{\numberline {5.2.1}Python}{39}{subsection.110}%
+\contentsline {subsection}{\numberline {5.2.2}Scikit-learn}{39}{subsection.111}%
+\contentsline {subsection}{\numberline {5.2.3}Pandas}{39}{subsection.112}%
+\contentsline {subsection}{\numberline {5.2.4}Argus}{40}{subsection.113}%
+\contentsline {section}{\numberline {5.3}Contruction du modèle de Clustering}{40}{section.114}%

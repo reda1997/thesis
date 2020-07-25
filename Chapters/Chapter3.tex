@@ -6,7 +6,7 @@ Pour construire n'importe quel modèle de prédiction, il est nécessaire de cho
 
 \section{Data Minig}
 \subsection{Définition}
-L’exploration de données, connue aussi sous l’expression de fouille de données, forage de données, prospection de données, a pour objet l’extraction d’un savoir ou d’une connaissance à partir de grandes quantités de données, par des méthodes automatiques ou semi-automatiques. Le processus le plus connu du Data-Mining est le KDD (knowledge discovery in database)[\cite{11}], appelé en français extraction de connaissances à partir de données ou processus de découverte de connaissances.
+L’exploration de données, connue aussi sous l’expression de fouille de données, forage de données, prospection de données, a pour objet l’extraction d’un savoir ou d’une connaissance à partir de grandes quantités de données, par des méthodes automatiques ou semi-automatiques. Le processus le plus connu du Data-Mining est le KDD (knowledge discovery in database)[\cite{14}], appelé en français extraction de connaissances à partir de données ou processus de découverte de connaissances.
 
 \subsection{Ètapes du processus KDD}
 \label{KDD}
@@ -18,7 +18,7 @@ Le processus KDD est sur trois étapes comme suit:\\
 \end{itemize}
 
 \subsection{Dataset}
-Pour concevoir notre modèle d'apprentissage on a besoin d'une grande quantité de données qui représente plusieurs flux, malins et bénins, capturés dans un réseau. Le choix du bon Dataset contenant ce type de données est cruciale pour construire notre modèle de prédiction. Dans ce qui suit quelques propriétés à prendre en considération lors du choix d'un Dataset [\cite{12}].\\
+Pour concevoir notre modèle d'apprentissage on a besoin d'une grande quantité de données qui représente plusieurs flux, malins et bénins, capturés dans un réseau. Le choix du bon Dataset contenant ce type de données est cruciale pour construire notre modèle de prédiction. Dans ce qui suit quelques propriétés à prendre en considération lors du choix d'un Dataset [\cite{15}].\\
 \begin{itemize}
 \item[•]\textbf{Year of Creation}: Étant donné que le trafic réseau est soumis à de nouveaux scénarios d’attaque apparaissent quotidiennement, l’âge d’un ensemble de données de détection d’intrusion joue un rôle important. Cette propriété décrit l’année dans laquelle le trafic a été capturé.\\
 \item[•]\textbf{Normal User Behavior}: Cette propriété indique la disponibilité du comportement normal de l’utilisateur dans un ensemble de données et prend les valeurs \textbf{Oui} ou \textbf{Non}. La valeur \textbf{Oui} indique qu’il y a un comportement normal dans l’ensemble de données. En général, la qualité d’un IDS est principalement déterminée par son taux de détection des attaques et son taux de fausses alarmes. Par conséquent, la présence d’un comportement normal est indispensable pour évaluer un IDS.\\
@@ -34,19 +34,19 @@ Pour concevoir notre modèle d'apprentissage on a besoin d'une grande quantité 
 \textbf{Dataset} & \textbf{Attaques}\\
 \hline
 \rowcolor[rgb]{0.85,0.85,0.85}
-CICDoS [\cite{13}]  & Attaques DoS sur la couche d'application (ddossim, Goldeneye, hulk, RUDY, Slowhttptest,Slowloris).\\
+CICDoS [\cite{16}]  & Attaques DoS sur la couche d'application (ddossim, Goldeneye, hulk, RUDY, Slowhttptest,Slowloris).\\
 \hline
-CICIDS 2017 [\cite{14}] & Botnet, DoS, DDoS, infiltration, SSH brute force, Injection SQL.\\
+CICIDS 2017 [\cite{17}] & Botnet, DoS, DDoS, infiltration, SSH brute force, Injection SQL.\\
 \hline
 \rowcolor[rgb]{0.85,0.85,0.85}
-CIDDS-001 [\cite{15}] & DoS, port scans, SSH brute force.\\
+CIDDS-001 [\cite{18}] & DoS, port scans, SSH brute force.\\
 \hline
-DDoS 2016 [\cite{16}] & DDoS(HTTP Flood, ICMP Flood, UDP Flood).\\
+DDoS 2016 [\cite{19}] & DDoS(HTTP Flood, ICMP Flood, UDP Flood).\\
 \hline 
 \rowcolor[rgb]{0.85,0.85,0.85}
-CICIDS 2018 [\cite{17}] & DoS, FTP and SSH brute force, Botnet, Infiltaration, DDoS.\\
+CICIDS 2018 [\cite{20}] & DoS, FTP and SSH brute force, Botnet, Infiltaration, DDoS.\\
 \hline
-CICDDoS 2019 [\cite{18}] & Attaques DDoS Reflectives.\\
+CICDDoS 2019 [\cite{21}] & Attaques DDoS Reflectives.\\
 \hline
 \end{tabular}
 \caption{Quelques Datasets disponibles pour les système de détection d'intrusions}
