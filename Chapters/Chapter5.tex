@@ -90,25 +90,37 @@ Python est un langage de programmation très puissant et adaptable à tout type 
 Scikit-learn est une bibliothèque libre Python destinée à l'apprentissage automatique. Elle est développée par de nombreux contributeurs2 notamment dans le monde académique par des instituts français d'enseignement supérieur et de recherche comme Inria3. Elle comprend notamment des fonctions pour estimer des forêts aléatoires, des régressions logistiques, des algorithmes de classification, et les machines à vecteurs de support. Elle est conçue pour s'harmoniser avec d'autres bibliothèques libres Python, notamment NumPy et SciPy.[\cite{29}] 
 
 \subsection{Pandas}
-Pandas est une bibliothèque écrite pour le langage de programmation Python permettant la manipulation et l'analyse des données. Elle propose en particulier des structures de données et des opérations de manipulation de tableaux numériques et de séries temporelles.\\
-\noindent Les principales structures de données sont les séries (pour stocker des données selon une dimension - grandeur en fonction d'un index), les DataFrames (pour stocker des données selon 2 dimensions - lignes et colonnes), les Panels (pour représenter des données selon 3 dimensions, les Panels4D ou les DataFrames avec des index hiérarchiques aussi nommés MultiIndex (pour représenter des données selon plus de 3 dimensions). [\cite{30}]
+Pandas est une bibliothèque écrite pour le langage de programmation Python permettant la manipulation et l'analyse des données. Elle propose en particulier des structures de données et des opérations de manipulation de tableaux numériques et de séries temporelles. Les principales structures de données sont les séries (pour stocker des données selon une dimension - grandeur en fonction d'un index), les DataFrames (pour stocker des données selon 2 dimensions - lignes et colonnes), les Panels (pour représenter des données selon 3 dimensions, les Panels4D ou les DataFrames avec des index hiérarchiques aussi nommés MultiIndex (pour représenter des données selon plus de 3 dimensions). [\cite{30}]
 
 \subsection{Argus}
 Argus[\cite{31}] est le premier système de flux réseau, développé par Carter Bullard au début des années 1980 à Georgia Tech. La technologie de flux réseau est devenue un élément essentiel de la cybersécurité moderne et Argus est utilisé dans certains des réseaux les plus importants du monde. Le système Argus tente de résoudre un grand nombre de problèmes liés aux données de flux réseau : échelle, performance, applicabilité, confidentialité et utilité.\\
-Nous avons utilisé Argus pour calculer les propriétés des flux qui circulent dans notre réseau SDN, parmi ses propriétés: durée de flux, nombre de paquet par seconde, nombre total de paquets, taille du paquet,...etc.
 
 \section{Réalisation du module F-Clustering}
-On rapelle que ce module est modèle intélligent qui utilise une approche de clustering pout la détection des attaques. Dans la section \ref{F-Clustering}, nous avons décrits les étapes à suivre pour construire notre modèle de clustering qui sont accomplies à l'aide des deux programmes pythons, "Preprocessos.py" et "Cluster.py".
+On rapelle que ce module est modèle intélligent qui utilise une approche de clustering pout la détection des attaques. Dans la section \ref{F-Clustering}, nous avons décrits les étapes à suivre pour construire notre modèle de clustering qui sont accomplies à l'aide des deux scripts pythons, "Preprocessos.py" et "Cluster.py".
 \begin{algorithm}[H]
 \begin{verbatim}
 
-1- def preprocessor (df):
- 
-2- 	df = cleanDataFrame(df) # Data laundry
-3- 	df = balanceDataFrame(df) 
-4- 	df = scaleDataFrame(df)
+1- def cleanDataFrame(df):
+2-  df.drop('Infinit', 'NaN')
+3-  df.drop_duplicates()
+4-  df.format_types()
+5-  return df
 
-5- 	return df
+6- def selectAttributs(df):
+7-  return df[['Protocol', 'Flow Duration', 'Total Fwd Packets',
+     'Total Backward Packets', 'Total Length of Fwd Packets',	
+     'Total Length of Bwd Packets', 'Flow Bytes/s', 'Flow Packets/s', 
+     'Fwd Packets/s', 'Bwd Packets/s', 'Label']]
+	
+   # preprocess the data frame
+8- def preprocessor (df): 
+9-  df = cleanDataFrame(df) #Data laundry
+10- df = selectAtrributs(df) #select necessary attributs 
+11- df = balanceDataFrame(df) 
+12- df = scaleDataFrame(df)
+13- return df
+
+#end
 \end{verbatim}
 \caption{Preprocessor.py}
 \end{algorithm}
@@ -119,10 +131,12 @@ On rapelle que ce module est modèle intélligent qui utilise une approche de cl
 1- from Preprocessor.py import preprocessor 
 2- from sklearn.cluster import KMeans
 
-4- df = pd.read_csv('TFTP.csv')
+4- df = read_csv('TFTP.csv')
+
 5- newDF = preprocessor(df)
 
 6- centers = calculateCenters(newDF) #returns 2 elements array
+
 7- F_Clustering = KMeans(n_clusters=2, init=centers).fit(newDF) 
 
 \end{verbatim}
@@ -145,7 +159,7 @@ Dans cette partie, nous allons entamer l'étape du processus KDD, qui est l'éva
 		\end{tabular}
 		\caption{Matrice de confusion}
 	\end{center}
-	\label{table:NIDS_Evaluation}
+	\label{table:re}
 \end{table}
 
 \begin{table}[h]
@@ -165,8 +179,9 @@ Dans cette partie, nous allons entamer l'étape du processus KDD, qui est l'éva
 
 Nous remarquons que les résultats sont trés satisfaisants. L'élément clé qui nous a permis d'avoir tel résultats c'est les prétraitements faits sur le dataset, plus spécialement l'opération de normalisation et l'opération blancement. Pour montrer leur impact  sur les performance du modèle, nous allons faire une petite experience, où nous allons anuller une opération de prétraitemnt à la fois, soit la normalisation, soit le balancement et calculer ensuite les mesures de performance du modèle.\\
 
-Les résulatats obtenus sont dans le tableau suivant:
-\begin{table}[h]
+Les résulatats obtenus sont dans le tableau \ref{table:compare} et la figure \ref{fig:histogramme}:
+
+\begin{table}[t]
 	\begin{center}
 		\begin{tabular}{  | c | c | c | c | }
 			\hline
@@ -179,19 +194,22 @@ Les résulatats obtenus sont dans le tableau suivant:
 			\hline
 			Balancement seulement & 71.5\% & 43.8\% & 60.6\% \\
 			\hline
-			\rowcolor[rgb]{0.75,0.75,0.75}
+			\rowcolor[rgb]{0.9,0.70,0.70}
 			Balancement + Normalisation & 99.3\% & 100\% & 99.3\% \\
 			\hline
 		\end{tabular}
-		\caption{Impact des prétraitements sur les performance}
-	\end{center}
-	\label{table:compare}
+		\caption{Impact des prétraitements sur les performances}
+		\label{table:compare}
+	\end{center}	
 \end{table}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{Figures/performances}
+\includegraphics[width=0.95\textwidth]{Figures/performances}
 \decoRule
 \caption{Comparaison entre les résultats obtenus selon l'opération de prétraitement effectuée}
-\label{fig:rDoS}
+\label{fig:histogramme}
 \end{figure} 
+\newpage
+En analysant l'histogramme ci-dessus, on voit clairement la différence si applique juste l'opération de normalisation ou l'opération de balancement ou les deux opérations à la fois. On choisisant la bonne méthode de normalisation ainsi 
+que celle de balancement, nous avons pu faire passer le taux d'exactitude de notre modèle de \textbf{25.4\%} à \textbf{99.3\%}. Le choix des méthodes était selon une stratégie étudiée et  une synthèse des résultats de plusieurs test effectués sur notre dataset. Les bonnes performances d'un modèle sont toujours engendrées par un bon prétraitement des données.
