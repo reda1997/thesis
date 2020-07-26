@@ -102,9 +102,9 @@ Pour concevoir ce module nous avons suivi les étapes du processus KDD décrites
 
 \subsection{Préparation des données}
 \subsubsection{A) Choix du dataset }
-Comme source de données, nous avons exploité le dataset \textbf{ CICDDoS 2019}[\cite{21}]. CICDDoS2019 contient des flux bénins et des attaques Ddos les plus courantes, qui ressemblent aux vraies données du monde réel. Ce dataset contient différentes attaques DoS modernes réflectives telles que Portmap, Netbios, LDAP, UDP, TFTP, NTP. La période de capture a commencé le 12 janvier à 10 h 30 et s’est terminée à 17 h 15. Des attaques ont par la suite été exécutées au cours de cette période. \\
-
-CICDDoS2019 est formé de plusieurs fichiers, chacun propre à une attaque. Vu la taille énorme de ces fichiers, et pour raison de simplifier le travail et pouvoir simuler l'architecture générale de notre réseau, on s'est mis d'accord sur le choix d'un seul fichier qu'on travaillera sur. Le fichier qu'on a choisi est propre à l'attaque TFTP, qui est lui-même un dataset contenant *** lignes et 87 colonnes (attributs).
+Comme source de données, nous avons exploité le dataset \textbf{ CICDDoS 2019}[\cite{21}]. CICDDoS2019 contient des flux bénins et des attaques Ddos les plus courantes, qui ressemblent aux vraies données du monde réel. Ce dataset contient différentes attaques DoS modernes réflectives telles que Portmap, Netbios, LDAP, UDP, TFTP, NTP. La période de capture a commencé le 12 janvier à 10 h 30 et s’est terminée à 17 h 15. Des attaques ont par la suite été exécutées au cours de cette période.
+\newpage
+CICDDoS2019 est formé de plusieurs fichiers, chacun propre à une attaque. Vu la taille énorme de ces fichiers, et pour raison de simplifier le travail et pouvoir simuler l'architecture générale de notre réseau, on s'est mis d'accord sur le choix d'un seul fichier qu'on travaillera sur. Le fichier qu'on a choisi est propre à l'attaque TFTP, qui est lui-même un dataset contenant *** lignes et 87 colonnes (aussi référées par caractéristiques ou attributs).
 
 \subsubsection{B) Prétraitement des données }
 Le dataset TFTP n'est pas propre, il contient des données avec des ordres de grandeur différents, des valeurs erronées, des duplicats, il n'est pas balancé et contient des attributs qu'on n'a pas besoin dans notre travail. Un prétraitement est nécessaire pour préparer le dataset en vue de l'utiliser dans l'étape de création du modèle d'apprentissage. Ce processus de prétraitement est sur trois étapes; la première est le nettoyage du dataset, connue dans la littérature sous le nom de \textbf{Data Laundry}. Deuxième étape, sélection des attributs. Troisième étape, mise à l'échelle et balancement du dataset.
@@ -119,8 +119,13 @@ Cette étape consiste à nettoyer le dataset:\\
 
 \subsubsection{B-2) Sélection des attributs}
 \label{attributs}
-Dans notre travail, nous n'avons sélectionné que 10 attributs du dataset TFTP, que nous avons trouvé suffisant pour notre modèle d'apprentissage. Chaque attribut correspond à une caractéristique calculée par le module MEI, d'où le vecteur de caractéristiques généré par le module MEI est de taille 10 égale au nombre d'attributs sélectionnés. Le tableau suivant décrit chacun de ces attributs.\\
+La qualité des données de l’ensemble d’apprentissages et des attributs qui les caractérisent forment le succès de la technique de clustering utilisée. La présence de variables redondantes, bruitées et peu corrélées avec le cluster d’un exemple rend le processus d’apprentissage plus difficile.\\
 
+\noindent La détection d’intrusion est le genre d’application pour laquelle la sélection d’attributs peut être bénéfique car elle permet tout au moins d’aboutir aux mêmes performances de reconnaissance à partir d’un nombre de caractéristique moindres.\\
+
+\noindent Nous avons choisi les attributs en analysant les propriétés intrinsèques des données, nous avons éliminé la plupart des attributs de base telles que  les hôtes source et destination, les ports, les flags, ...etc. Nous avons éliminé aussi les attributs de contenu qui sont construit à partir de la charge utile (data) des paquets de trafic tels que le nombre d’échec de connexion.  Car, ce sont des valeurs statiques et n’ont aucun impact sur la détection des attaques.\\
+
+\noindent Le choix final des attributs était: le protocole pour filtrer le trafic et étudier le cas du protocole UDP uniquement, la durée du flux, la taille et le nombre de paquets envoyées et reçus, ainsi que les débits de transfert. Le tableau suivant décrit chacun de ces attributs.
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{ | m{4cm} | m{10cm} | }
@@ -162,7 +167,7 @@ La mise à l'échelle consiste à diminuer la grande différence entre les valeu
 \end{center}
 Où :\\
 \indent X : valeur à mettre à l'échelle de la caractéristique C.\\
-\indent $X_{min}$ : plus petite valeur observée de la caractéristique C. \\
+\indent $X_{min}$ : plus petite valeur observée de la caractéristique C.\\
 \indent $X_{max}$ : plus grande valeur observée de la caractéristique C.\\
 
 Le dataset TFTP n'est pas balancé, il contient beaucoup plus de flux attaqué que de flux bénin. Si on l'utilise sans le balancer, notre modèle va toujours pencher vers le cluster des attaques. L'idée du balancement est de générer de nouveaux échantillons de la classe minoritaire à l'aide de fonctions mathématiques existantes. On parlera sur la bibliothèque python utilisée pour le balancement du dataset dans le chapitre \ref{Chapitre5}.
@@ -178,3 +183,5 @@ Deuxième étape du processus KDD. On a opté pour un modèle de Clustering, où
 \end{figure} 
 
 \section{Conclusion}
+Nous avons proposé l’architecture de notre système de détection des attaques DoS, et détaillé le rôle de chaque module et son interaction avec le système. Nous nous sommes concentrés sur la conception du système et les approches suivies pour son déploiement, et basés sur l’approche de clustering dans le développement de ce système.
+Dans le prochain chapitre, nous nous intéressons à la mise en œuvre des modèles proposés, et aux résultats expérimentaux qui montrent l’efficacité de notre système.

@@ -94,6 +94,96 @@ Pandas est une bibliothèque écrite pour le langage de programmation Python per
 \noindent Les principales structures de données sont les séries (pour stocker des données selon une dimension - grandeur en fonction d'un index), les DataFrames (pour stocker des données selon 2 dimensions - lignes et colonnes), les Panels (pour représenter des données selon 3 dimensions, les Panels4D ou les DataFrames avec des index hiérarchiques aussi nommés MultiIndex (pour représenter des données selon plus de 3 dimensions). [\cite{30}]
 
 \subsection{Argus}
-Argus[\cite{31}] est le premier système de flux réseau, développé par Carter Bullard au début des années 1980 à Georgia Tech. La technologie de flux réseau est devenue un élément essentiel de la cybersécurité moderne et Argus est utilisé dans certains des réseaux les plus importants du monde. Le système Argus tente de résoudre un grand nombre de problèmes liés aux données de flux réseau : échelle, performance, applicabilité, confidentialité et utilité.\\On a utilisé Argus pour calculer les propriétés des flux qui circulent dans notre réseau SDN, parmi ses propriétés: durée de flux, nombre de paquet par seconde, nombre total de paquets, taille du paquet,...etc.
+Argus[\cite{31}] est le premier système de flux réseau, développé par Carter Bullard au début des années 1980 à Georgia Tech. La technologie de flux réseau est devenue un élément essentiel de la cybersécurité moderne et Argus est utilisé dans certains des réseaux les plus importants du monde. Le système Argus tente de résoudre un grand nombre de problèmes liés aux données de flux réseau : échelle, performance, applicabilité, confidentialité et utilité.\\
+Nous avons utilisé Argus pour calculer les propriétés des flux qui circulent dans notre réseau SDN, parmi ses propriétés: durée de flux, nombre de paquet par seconde, nombre total de paquets, taille du paquet,...etc.
 
-\section{Contruction du modèle de Clustering}
+\section{Réalisation du module F-Clustering}
+On rapelle que ce module est modèle intélligent qui utilise une approche de clustering pout la détection des attaques. Dans la section \ref{F-Clustering}, nous avons décrits les étapes à suivre pour construire notre modèle de clustering qui sont accomplies à l'aide des deux programmes pythons, "Preprocessos.py" et "Cluster.py".
+\begin{algorithm}[H]
+\begin{verbatim}
+
+1- def preprocessor (df):
+ 
+2- 	df = cleanDataFrame(df) # Data laundry
+3- 	df = balanceDataFrame(df) 
+4- 	df = scaleDataFrame(df)
+
+5- 	return df
+\end{verbatim}
+\caption{Preprocessor.py}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\begin{verbatim}
+
+1- from Preprocessor.py import preprocessor 
+2- from sklearn.cluster import KMeans
+
+4- df = pd.read_csv('TFTP.csv')
+5- newDF = preprocessor(df)
+
+6- centers = calculateCenters(newDF) #returns 2 elements array
+7- F_Clustering = KMeans(n_clusters=2, init=centers).fit(newDF) 
+
+\end{verbatim}
+\caption{Cluster.py}
+\end{algorithm}
+
+\section{Évaluation et test des performances}
+Dans cette partie, nous allons entamer l'étape du processus KDD, qui est l'évaluation du modèle. Les résulatats des test de performance de montre modèle étaient les suivants, il est à noter que le jeu de données de test est le dataset "TFTP" aprés le prétraitement et qui contient 1.315.348 lignes.
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{  | m{2.5cm} | m{2.5cm} | m{2.5cm} || m{2cm} | }
+			\hline
+			  & Attaques & Bénins & Total\\
+			\hline
+			Attaques & 657674 & 0 & 657674\\
+			\hline
+			Bénins & 8887 & 648787 & 657674\\
+			\hline
+		\end{tabular}
+		\caption{Matrice de confusion}
+	\end{center}
+	\label{table:NIDS_Evaluation}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{  | c | c | c | c | c | }
+			\hline
+			\rowcolor[rgb]{0.85,0.85,0.85}
+			 Exactitude & Précision & Rappel & F1-Measure & Taux de fausses alertes\\
+			\hline
+			99.3\% & 98.6\% & 100\% & 99.3\% & 1.3\%\\
+			\hline
+		\end{tabular}
+		\caption{Mesures de performance }
+	\end{center}
+	\label{table:F_Clustering_Evaluation}
+\end{table}
+
+Nous remarquons que les résultats sont trés satisfaisants. L'élément clé qui nous a permis d'avoir tel résultats c'est les prétraitements faits sur le dataset, plus spécialement l'opération de normalisation et l'opération blancement. Pour montrer leur impact  sur les performance du modèle, nous allons faire une petite experience, où nous allons anuller une opération de prétraitemnt à la fois, soit la normalisation, soit le balancement et calculer ensuite les mesures de performance du modèle.\\
+
+Les résulatats obtenus sont dans le tableau suivant:
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{  | c | c | c | c | }
+			\hline
+			 Opération(s) effecutée(s) & Exactitude & Rappel & F1-Measure \\
+			\hline
+			\hline
+			Aucune & 25.4\% & 24.4\% & 39.2\% \\
+			\hline
+			Normalistion seulement & 29.6\% & 27.6\% & 43.2\% \\
+			\hline
+			Balancement seulement & 71.5\% & 43.8\% & 60.6\% \\
+			\hline
+			\rowcolor[rgb]{0.75,0.75,0.75}
+			Balancement + Normalisation & 99.3\% & 100\% & 99.3\% \\
+			\hline
+		\end{tabular}
+		\caption{Impact des prétraitements sur les performance}
+	\end{center}
+	\label{table:compare}
+\end{table}

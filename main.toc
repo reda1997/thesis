@@ -82,16 +82,17 @@
 \contentsline {subsubsection}{B-2) Sélection des attributs}{35}{section*.97}%
 \contentsline {subsubsection}{B-3) Mise à l'échelle et balancement}{36}{section*.99}%
 \contentsline {subsection}{\numberline {4.5.2}Recherche du modèle}{36}{subsection.100}%
-\contentsline {section}{\numberline {4.6}Conclusion}{36}{section.102}%
-\contentsline {chapter}{\numberline {5}Implémentation, simulation et résultats}{37}{chapter.103}%
-\contentsline {section}{\numberline {5.1}Environnement de travail}{37}{section.104}%
-\contentsline {subsection}{\numberline {5.1.1}Contrôleur SDN}{37}{subsection.105}%
-\contentsline {subsection}{\numberline {5.1.2}Simulation du réseau SDN}{38}{subsection.106}%
-\contentsline {subsubsection}{Mininet}{38}{section*.107}%
-\contentsline {subsubsection}{Simulation d'un simple réseau SDN}{38}{section*.108}%
-\contentsline {section}{\numberline {5.2}Langage et Librairies utilisées}{39}{section.109}%
-\contentsline {subsection}{\numberline {5.2.1}Python}{39}{subsection.110}%
-\contentsline {subsection}{\numberline {5.2.2}Scikit-learn}{39}{subsection.111}%
-\contentsline {subsection}{\numberline {5.2.3}Pandas}{39}{subsection.112}%
-\contentsline {subsection}{\numberline {5.2.4}Argus}{40}{subsection.113}%
-\contentsline {section}{\numberline {5.3}Contruction du modèle de Clustering}{40}{section.114}%
+\contentsline {section}{\numberline {4.6}Conclusion}{37}{section.102}%
+\contentsline {chapter}{\numberline {5}Implémentation, simulation et résultats}{38}{chapter.103}%
+\contentsline {section}{\numberline {5.1}Environnement de travail}{38}{section.104}%
+\contentsline {subsection}{\numberline {5.1.1}Contrôleur SDN}{38}{subsection.105}%
+\contentsline {subsection}{\numberline {5.1.2}Simulation du réseau SDN}{39}{subsection.106}%
+\contentsline {subsubsection}{Mininet}{39}{section*.107}%
+\contentsline {subsubsection}{Simulation d'un simple réseau SDN}{39}{section*.108}%
+\contentsline {section}{\numberline {5.2}Langage et Librairies utilisées}{40}{section.109}%
+\contentsline {subsection}{\numberline {5.2.1}Python}{40}{subsection.110}%
+\contentsline {subsection}{\numberline {5.2.2}Scikit-learn}{40}{subsection.111}%
+\contentsline {subsection}{\numberline {5.2.3}Pandas}{40}{subsection.112}%
+\contentsline {subsection}{\numberline {5.2.4}Argus}{41}{subsection.113}%
+\contentsline {section}{\numberline {5.3}Réalisation du module F-Clustering}{41}{section.114}%
+\contentsline {section}{\numberline {5.4}Évaluation et test des performances}{42}{section.117}%
