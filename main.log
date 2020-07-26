@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  26 JUL 2020 11:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  26 JUL 2020 12:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,6 +794,9 @@ LaTeX Warning: Label `fig:rDoS' multiply defined.
 
 LaTeX Warning: Label `table:NIDS_Evaluation' multiply defined.
 
+
+LaTeX Warning: Label `fig:rDoS' multiply defined.
+
 ) (./Chapters/Bib.aux
 
 LaTeX Warning: Label `' multiply defined.
@@ -1203,12 +1206,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
  []
 
 [2]
-<Figures/SDN_Architecture.png, id=468, 543.02875pt x 295.1025pt>
+<Figures/SDN_Architecture.png, id=471, 543.02875pt x 295.1025pt>
 File: Figures/SDN_Architecture.png Graphic file (type png)
 <use Figures/SDN_Architecture.png>
 Package pdftex.def Info: Figures/SDN_Architecture.png  used on input line 48.
 (pdftex.def)             Requested size: 324.6446pt x 176.43245pt.
-<Figures/SDN_Plans.png, id=470, 545.03625pt x 530.98375pt>
+<Figures/SDN_Plans.png, id=473, 545.03625pt x 530.98375pt>
 File: Figures/SDN_Plans.png Graphic file (type png)
 <use Figures/SDN_Plans.png>
 Package pdftex.def Info: Figures/SDN_Plans.png  used on input line 58.
@@ -1590,7 +1593,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 146--148
 
  []
 
-<Figures/IDS.jpg, id=540, 503.8825pt x 211.79124pt>
+<Figures/IDS.jpg, id=543, 503.8825pt x 211.79124pt>
 File: Figures/IDS.jpg Graphic file (type jpg)
 <use Figures/IDS.jpg>
 Package pdftex.def Info: Figures/IDS.jpg  used on input line 151.
@@ -1678,7 +1681,7 @@ LaTeX Warning: Citation '11' on page 20 undefined on input line 265.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\cite' on input line 265.
 
-<Figures/NIDS1.jpg, id=565, 490.83376pt x 385.44pt>
+<Figures/NIDS1.jpg, id=568, 490.83376pt x 385.44pt>
 File: Figures/NIDS1.jpg Graphic file (type jpg)
 <use Figures/NIDS1.jpg>
 Package pdftex.def Info: Figures/NIDS1.jpg  used on input line 269.
@@ -1932,7 +1935,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
-<Figures/K-means.jpg, id=607, 1017.8025pt x 322.20375pt>
+<Figures/K-means.jpg, id=610, 1017.8025pt x 322.20375pt>
 File: Figures/K-means.jpg Graphic file (type jpg)
 <use Figures/K-means.jpg>
 Package pdftex.def Info: Figures/K-means.jpg  used on input line 106.
@@ -1969,7 +1972,7 @@ LaTeX Warning: Citation '23' on page 29 undefined on input line 14.
 
 
 ]
-<Figures/rDoS.png, id=617, 522.95375pt x 328.22626pt>
+<Figures/rDoS.png, id=620, 522.95375pt x 328.22626pt>
 File: Figures/rDoS.png Graphic file (type png)
 <use Figures/rDoS.png>
 Package pdftex.def Info: Figures/rDoS.png  used on input line 18.
@@ -2021,12 +2024,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-<Figures/F-DoS.jpeg, id=622, 4510.8525pt x 4769.82pt>
+<Figures/F-DoS.jpeg, id=625, 4510.8525pt x 4769.82pt>
 File: Figures/F-DoS.jpeg Graphic file (type jpg)
 <use Figures/F-DoS.jpeg>
 Package pdftex.def Info: Figures/F-DoS.jpeg  used on input line 49.
 (pdftex.def)             Requested size: 231.89001pt x 245.20087pt.
-<Figures/Diagramme.jpeg, id=623, 3366.5775pt x 3824.2875pt>
+<Figures/Diagramme.jpeg, id=626, 3366.5775pt x 3824.2875pt>
 File: Figures/Diagramme.jpeg Graphic file (type jpg)
 <use Figures/Diagramme.jpeg>
 Package pdftex.def Info: Figures/Diagramme.jpeg  used on input line 53.
@@ -2078,7 +2081,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-<Figures/MEI.jpeg, id=633, 4318.1325pt x 3631.5675pt>
+<Figures/MEI.jpeg, id=636, 4318.1325pt x 3631.5675pt>
 File: Figures/MEI.jpeg Graphic file (type jpg)
 <use Figures/MEI.jpeg>
 Package pdftex.def Info: Figures/MEI.jpeg  used on input line 87.
@@ -2152,7 +2155,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--172
 
 LaTeX Warning: Reference `Chapitre5' on page 36 undefined on input line 173.
 
-<Figures/Diagramme2.jpeg, id=653, 4992.6525pt x 1752.5475pt>
+<Figures/Diagramme2.jpeg, id=656, 4992.6525pt x 1752.5475pt>
 File: Figures/Diagramme2.jpeg Graphic file (type jpg)
 <use Figures/Diagramme2.jpeg>
 Package pdftex.def Info: Figures/Diagramme2.jpeg  used on input line 179.
@@ -2239,15 +2242,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
-) [42]
+<Figures/performances.png, id=692, 660.4675pt x 427.5975pt>
+File: Figures/performances.png Graphic file (type png)
+<use Figures/performances.png>
+Package pdftex.def Info: Figures/performances.png  used on input line 193.
+(pdftex.def)             Requested size: 371.02544pt x 240.21634pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [42] [43 <./Figures/performances.png>]
 \openout2 = `Chapters/Bib.aux'.
 
- (./Chapters/Bib.tex
+ (./Chapters/Bib.tex [44
+
+
+
+]
 1: section
 [1
-
-
-
 
 ]
 Underfull \hbox (badness 2165) in paragraph at lines 72--73
@@ -2297,10 +2309,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28361 strings out of 483040
- 576695 string characters out of 5962426
- 1064381 words of memory out of 5000000
- 42740 multiletter control sequences out of 15000+600000
+ 28372 strings out of 483040
+ 576926 string characters out of 5962426
+ 1064416 words of memory out of 5000000
+ 42747 multiletter control sequences out of 15000+600000
  592092 words of font info for 134 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  59i,21n,86p,2839b,2637s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2312,10 +2324,10 @@ rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (54 pages, 4282625 bytes).
+Output written on main.pdf (56 pages, 4295499 bytes).
 PDF statistics:
- 809 PDF objects out of 1000 (max. 8388607)
- 723 compressed objects within 8 object streams
- 207 named destinations out of 1000 (max. 500000)
- 635 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 822 PDF objects out of 1000 (max. 8388607)
+ 733 compressed objects within 8 object streams
+ 210 named destinations out of 1000 (max. 500000)
+ 640 words of extra memory for PDF output out of 10000 (max. 10000000)
 
