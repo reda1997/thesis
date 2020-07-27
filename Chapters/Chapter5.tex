@@ -190,7 +190,7 @@ Les résulatats obtenus sont dans le tableau \ref{table:compare} et la figure \r
 			\hline
 			Aucune & 25.4\% & 24.4\% & 39.2\% \\
 			\hline
-			Normalistion seulement & 29.6\% & 27.6\% & 43.2\% \\
+			Normalisation seulement & 29.6\% & 27.6\% & 43.2\% \\
 			\hline
 			Balancement seulement & 71.5\% & 43.8\% & 60.6\% \\
 			\hline
@@ -216,11 +216,105 @@ que celle de balancement, nous avons pu faire passer le taux d'exactitude de not
 
 \newpage
 \section{Simulation}
+La simulation sera faite à l'aide de Mininet(2.2), qui est installé à coté de Ryu(4.3) sur une machine UBUNTU 20.04 LTS dotée d'un processus i5-6200U et 8Go de RAM. Le réseau qu'on veut simulé contient les élément suivants: un contrôleur SDN, un switch OpenFlow, un serveur de fichiers, un serveur d'applications, 3 hôtes (2 hôtes attaquants at un hôte victime), et essentielement notre système détection F-DoS.
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{Figures/simulation}
+\includegraphics[width=0.8\textwidth]{Figures/simulation}
 \decoRule
 \caption{Architecture de notre réseau SDN}
 \label{fig:architecture}
 \end{figure} 
+
+\subsection{Création de la topologie}
+Sur mininet nous allons créer la topologie de notre réseau constitué d'un controlleur SDN, un switch OpenFlow, et 6 hôtes qui jouent les rôles illustés dans le tableau \ref{table:nodes}:\\
+
+\noindent Commande de création :
+\begin{verbatim}
+% sudo mn --controller remote --topo single,6 --switch ovs --mac
+\end{verbatim}
+Mais faut d'abord lancé le controlleur Ryu avec:
+\begin{verbatim}
+% ryu-manager ryu_controller.py 
+\end{verbatim}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{  | c || m{5cm} | m{3cm} | }
+\hline
+\rowcolor[rgb]{0.85,0.85,0.85}
+Hôte & Rôle(s) & @IP\\
+\hline
+\textbf{h6} & Système de détection F-DoS & 10.0.0.6\\
+\hline
+\textbf{h5} & Serveur d'applications & 10.0.0.5\\
+\hline
+\textbf{h4} & Serveur de fichiers & 10.0.0.4\\
+\hline
+\textbf{h3} & hôte victime & 10.0.0.3\\
+\hline
+\textbf{h2} & Client de \textbf{h5} ou attaquant & 10.0.0.2\\
+\hline
+\textbf{h1} & Client de \textbf{h4} ou attaquant & 10.0.0.1\\
+\hline
+\end{tabular}
+\caption{Rôle de chaque hôte dans la topologie mininet}
+\label{table:nodes}
+\end{center}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/simulation/mininet/start}
+\decoRule
+\caption{Création de la topologie sous mininet}
+\label{fig:topologie}
+\end{figure}
+
 \newpage
+La figure \ref{fig:topologie} indique que la topologie a été créés avec succée et la console mninet est active. On peut voir le contrôleur \textbf{c0}, le switch \textbf{s1} et les différents liens établis (h1, s1), (h2, s1), ..etc. Létape suivante consiste à configurer chaque hôte selon notre topologie.
+
+\subsection{Installation des fonctions}
+Jusqu'a présent les hôtes créés par mininet, ainsi que les switch OF, ont les fonctions de base définies par mininet. Donc on doit passer par tous hôte, à l'exeption de h3, pour installer les fonction désignées dans le tableau \ref{table:nodes}. Sur le switch, nous allons juste activer la fonction \textit{Port-Mirroring} comme suit:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/simulation/mininet/switch/create_mirroring_port}
+\decoRule
+\caption{Activation du Port-Mirroring}
+\label{fig:topologie}
+\end{figure}
+
+\newpage
+\subsubsection{A- Installation du système F-DoS sur h6}
+Sur l'hôte h6, nous allons installer notre système de détection. Rappelons que le module MEI du système F-DoS est 
+Donc en premier nous allons activer le serveur argus sur l'hôte h6 à l'aide de la commande suivante:
+\begin{verbatim}
+% sudo argus -d -i h6-eth0 -P 561 -w /captured/today.argus
+\end{verbatim}
+Ensuite on lance le script "IDS.py" qui va installer le client argus, ainsi que le modèle de clustering \textbf{F-Clustering}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{Figures/simulation/mininet/IDS/start}
+\decoRule
+\caption{Installation du module de détection}
+\label{fig:topologie}
+\end{figure}
+
+\subsubsection{B- Installation du seveur d'applications sur h5}
+Le fonctionnement de ce serveur est basique, il se met à l'écoute des requêtes des clients, qui sont juste des messages, pour répondre avec un message "hello". Sur l'hôte h5, le script "udpServer.py" est executé comme montré dans la figure \ref{fig:udpServer}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{Figures/simulation/mininet/UDP/server/start}
+\decoRule
+\caption{Installation du serveur d'applications}
+\label{fig:udpServer}
+\end{figure}
+
+\subsubsection{B- Installation du seveur de fichier sur h4}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{Figures/simulation/mininet/TFTP/server/start}
+\decoRule
+\caption{Installation du seveur de fichiers}
+\label{fig:udpServer}
+\end{figure}

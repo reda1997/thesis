@@ -18,3 +18,8 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Comparaison entre les résultats obtenus selon l'opération de prétraitement effectuée\relax }}{43}{figure.caption.121}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture de notre réseau SDN\relax }}{44}{figure.caption.123}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Création de la topologie sous mininet\relax }}{45}{figure.caption.126}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Activation du Port-Mirroring\relax }}{46}{figure.caption.128}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Installation du module de détection\relax }}{46}{figure.caption.130}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Installation du serveur d'applications\relax }}{47}{figure.caption.132}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Installation du seveur de fichiers\relax }}{47}{figure.caption.134}%
