@@ -278,7 +278,7 @@ Jusqu'a présent les hôtes créés par mininet, ainsi que les switch OF, ont le
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{Figures/simulation/mininet/switch/create_mirroring_port}
+\includegraphics[width=0.8\textwidth]{Figures/simulation/mininet/switch/create_mirroring_port}
 \decoRule
 \caption{Activation du Port-Mirroring}
 \label{fig:topologie}
@@ -299,9 +299,9 @@ Ensuite on lance le script "IDS.py" qui va installer le client argus, ainsi que 
 \caption{Installation du module de détection}
 \label{fig:topologie}
 \end{figure}
-
-\subsubsection{B- Installation du seveur d'applications sur h5}
-Le fonctionnement de ce serveur est basique, il se met à l'écoute des requêtes des clients, qui sont juste des messages, pour répondre avec un message "hello". Sur l'hôte h5, le script "udpServer.py" est executé comme montré dans la figure \ref{fig:udpServer}.
+\newpage
+\subsubsection{B- Installation du serveur d'applications sur h5}
+Le fonctionnement de ce serveur est basique, il se met à l'écoute des requêtes des clients, qui sont juste des messages, pour les répondre avec un message "hello". Sur l'hôte h5, le script "udpServer.py" est executé comme montré dans la figure \ref{fig:udpServer}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{Figures/simulation/mininet/UDP/server/start}
@@ -310,7 +310,8 @@ Le fonctionnement de ce serveur est basique, il se met à l'écoute des requête
 \label{fig:udpServer}
 \end{figure}
 
-\subsubsection{B- Installation du seveur de fichier sur h4}
+\subsubsection{C- Installation du serveur de fichier sur h4}
+Le vrai travail a été fait au niveau de cet hôte, où nous avons écrit, à partir du zéro, un scrpit python qui lui permet de se comporter comme un serveur TFTP réel. \textbf{h4} prend en charge seulement les deux fonctions, chargement et téléchargement d'un fichier. On utilisera ce serveur pour simuler le trafic TFTP, que nous allons capturer et analyser à l'aide de notre système de détection qui vas le désigné le trafic, comme bénin (Téléchargement normal d'un fichier), ou bien attaque DoS réflective. La méthodes de génération des attaques réflectives va être expliquée par la suite, dans ce chapitre.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{Figures/simulation/mininet/TFTP/server/start}
@@ -318,3 +319,103 @@ Le fonctionnement de ce serveur est basique, il se met à l'écoute des requête
 \caption{Installation du seveur de fichiers}
 \label{fig:udpServer}
 \end{figure}
+
+\subsubsection{D- Installation des clients}
+L'hôte \textbf{h2} et l'hôte \textbf{h1} sont, respectivement, un client du serveur d'applications (client UDP) et un client du serveur de fichiers (client TFTP). Ces deux hôtes seront aussi utilisé pour lancer des attaques reflective contre ces deux serveurs, ainsi q'une attaque du type UDP-Flooding.\\
+Sur \textbf{h2} on lance le scrpit "udpClient.py" qui prend comme argument le message à envoyer au serveur.
+\begin{figure}[h]
+\centering
+\begin{subfigure}{12.5cm}
+\centering
+\includegraphics[width=\textwidth]{Figures/simulation/mininet/UDP/client/Benign}
+\caption{Client UDP}
+\end{subfigure}
+\vskip 0.4cm
+\begin{subfigure}{12.5cm}
+\centering
+\includegraphics[width=\textwidth]{Figures/simulation/mininet/UDP/server/benign_request}
+\caption{Serveur d'applications}
+\end{subfigure}
+\vskip 0.3cm
+\decoRule
+\caption{Établissement d'une connexion entre client et serveur d'applications}
+\label{fig:c/s_UDP}
+\end{figure}
+\newpage
+D'aprés la figure \ref{fig:c/s_UDP}, on peut voir qu'une connexion entre le seveur d'applications (@10.0.0.5) et le client (@10.0.0.2) a été établi sur le port 7777. Le client a envoyé le message "Salam". Le serveur lui a repondu par le message "Hello Client from Server". Ce transfet de message a fait généré un trafic UDP qui a été capturé, en temps réel, par notre système de détection. Le système a classé ce flux comme bénin, qui est bien le cas. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{Figures/simulation/mininet/IDS/benign_udp}
+\decoRule
+\caption{Capture et analyse du trafic UDP}
+\label{fig:udpTraffic}
+\end{figure}
+
+On passe à l'hôte \textbf{h1}. Le scrpit "client.py" établit une connexion avec le serveur de fichier. À l'aide de la console tftp, \textbf{h1} peut exécuter des commandes,  à distance, sur le serveur de fichier. Dans notre cas nous avons lancer une requête "get" pour télécharger le fichier "hello.txt", comme indiqué dans la figure \ref{fig:c/s_TFTP}.
+\begin{figure}[h]
+\centering
+\begin{subfigure}{12.5cm}
+\centering
+\includegraphics[width=\textwidth]{Figures/simulation/mininet/TFTP/client/benign}
+\caption{Client UDP}
+\end{subfigure}
+\vskip 0.4cm
+\begin{subfigure}{12.5cm}
+\centering
+\includegraphics[width=\textwidth]{Figures/simulation/mininet/TFTP/server/benign_request}
+\caption{Serveur d'applications}
+\end{subfigure}
+\vskip 0.3cm
+\decoRule
+\caption{Établissement d'une connexion entre client et serveur de fichiers}
+\label{fig:c/s_TFTP}
+\end{figure}
+\paragraph{}
+Le transfert de fichier est réel, sur \textbf{h1} on voit le fichier téléchargé "hello.txt". Ce trafic de téléchargement a été aussi capturé par F-DoS et classé comme bénin, comme montré dans la figure suivante.
+
+\begin{center}
+\noindent\makebox[\textwidth]{
+\includegraphics[width=0.85\textwidth]{Figures/simulation/mininet/IDS/benign_tftp}}%
+\newline
+\decoRule\\
+Capture et analyse du trafic TFTP
+\end{center}
+
+\subsection{Simulation des attaques}
+\subsubsection{A- simulation de RDoS}
+Rappelons que les attaques DoS reflective utilisent une adresse usurpé d'un hôte victime, pour envoyer des requête à un tier réflective, qui est dans notre cas un serveur. Le serveur vas répondre à la requête avec des messages réponse, mais l'hôte victime ne vas pas répondre parceque il voit que ces messages ne le concerne pas et il n'a jamais lancer une telle requête, ce qui engendrera une surcharge de bande passante.\\
+
+Pour simuler cette attaque, nous fixons comme victime l'hôte \textbf{h3} (@10.0.0.3). Au niveau de l'hôte \textbf{h1}, nous établissons une connexion avec le serveur de fichier avec l'adresse usurpée de \textbf{h3}, ensuite on demande le transfet du fichier \textit{"hello.txt"}.
+\begin{figure}[h]
+\centering
+\begin{subfigure}{12.5cm}
+\centering
+\includegraphics[width=\textwidth]{Figures/simulation/mininet/TFTP/client/attack}
+\caption{Demande de téléchargement}
+\end{subfigure}
+\vskip 0.4cm
+\begin{subfigure}{12.5cm}
+\centering
+\includegraphics[width=\textwidth]{Figures/simulation/mininet/TFTP/server/attack_request}
+\caption{Envoie du fichier}
+\label{fig:send}
+\end{subfigure}
+\vskip 0.3cm
+\decoRule
+\caption{Attaque RDoS contre le serveur de fichier}
+\label{fig:c/s_TFTP}
+\end{figure}
+\paragraph{}
+Le serveur retente plusieurs fois l'envoie du fichier à l'hôte \textbf{h3}, comme montré dans figure \ref{fig:send}, car il ne recoit aucun accusé de la part de cet hôte pour affirmer la récéption du fichier.\\
+
+En parallel, avec l'execution de l'attaque qui prend un temps considerable, notre système F-DoS est toujours actif pour l'analyse du trafic. Le trafic généré par cette attaque a été capturé et belle et bien classé comme attaque (voir \ref{fig:tftpAttack}).
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{Figures/simulation/mininet/IDS/attack_tftp}
+\decoRule
+\caption{Détection de l'attaque par F-DoS}
+\label{fig:tftpAttack}
+\end{figure}
+
+\subsubsection{b- simulation de UDP-Flooding}
+

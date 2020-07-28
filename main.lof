@@ -16,10 +16,15 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Architecture du module MEI\relax }}{34}{figure.caption.91}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Étapes de conception de F-Clustering\relax }}{37}{figure.caption.101}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Comparaison entre les résultats obtenus selon l'opération de prétraitement effectuée\relax }}{43}{figure.caption.121}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture de notre réseau SDN\relax }}{44}{figure.caption.123}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Création de la topologie sous mininet\relax }}{45}{figure.caption.126}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Activation du Port-Mirroring\relax }}{46}{figure.caption.128}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Installation du module de détection\relax }}{46}{figure.caption.130}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Installation du serveur d'applications\relax }}{47}{figure.caption.132}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Installation du seveur de fichiers\relax }}{47}{figure.caption.134}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Comparaison entre les résultats obtenus selon l'opération de prétraitement effectuée\relax }}{43}{figure.caption.122}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture de notre réseau SDN\relax }}{44}{figure.caption.124}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Création de la topologie sous mininet\relax }}{45}{figure.caption.127}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Activation du Port-Mirroring\relax }}{46}{figure.caption.129}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Installation du module de détection\relax }}{46}{figure.caption.131}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Installation du serveur d'applications\relax }}{47}{figure.caption.133}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Installation du seveur de fichiers\relax }}{47}{figure.caption.135}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Établissement d'une connexion entre client et serveur d'applications\relax }}{48}{figure.caption.137}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Capture et analyse du trafic UDP\relax }}{48}{figure.caption.138}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Établissement d'une connexion entre client et serveur de fichiers\relax }}{49}{figure.caption.139}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Attaque RDoS contre le serveur de fichier\relax }}{50}{figure.caption.143}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Détection de l'attaque par F-DoS\relax }}{51}{figure.caption.145}%
