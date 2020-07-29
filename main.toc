@@ -43,7 +43,7 @@
 \contentsline {section}{\numberline {2.4}Système de Détection d’Intrusions (IDS)}{16}{section.49}%
 \contentsline {subsection}{\numberline {2.4.1}Définition}{16}{subsection.50}%
 \contentsline {subsection}{\numberline {2.4.2}Les approches}{17}{subsection.52}%
-\contentsline {subsection}{\numberline {2.4.3}Les méthodes de détection d’intrusion}{17}{subsection.53}%
+\contentsline {subsection}{\numberline {2.4.3}Les méthodes de détection d’intrusions}{17}{subsection.53}%
 \contentsline {subsection}{\numberline {2.4.4}Les méthodes de collection d'informations sur les flux}{17}{subsection.54}%
 \contentsline {subsubsection}{A) Utilisation des statistiques OpenFlow:}{18}{section*.55}%
 \contentsline {subsubsection}{B) Utilisation de l’apprentissage automatique:}{18}{section*.56}%
@@ -104,10 +104,10 @@
 \contentsline {subsubsection}{B- Installation du serveur d'applications sur h5}{47}{section*.132}%
 \contentsline {subsubsection}{C- Installation du serveur de fichier sur h4}{47}{section*.134}%
 \contentsline {subsubsection}{D- Installation des clients}{47}{section*.136}%
-\contentsline {paragraph}{}{49}{section*.140}%
-\contentsline {subsection}{\numberline {5.5.3}Simulation des attaques}{50}{subsection.141}%
-\contentsline {subsubsection}{A- Simulation de RDoS}{50}{section*.142}%
-\contentsline {paragraph}{}{50}{section*.144}%
-\contentsline {subsubsection}{B- Simulation de UDP-Flooding}{51}{section*.146}%
-\contentsline {paragraph}{}{51}{section*.148}%
+\contentsline {paragraph}{}{48}{section*.139}%
+\contentsline {paragraph}{}{49}{section*.141}%
+\contentsline {subsection}{\numberline {5.5.3}Simulation des attaques}{50}{subsection.142}%
+\contentsline {subsubsection}{A- Simulation de RDoS}{50}{section*.143}%
+\contentsline {paragraph}{}{50}{section*.145}%
+\contentsline {subsubsection}{B- Simulation de UDP-Flooding}{51}{section*.147}%
 \contentsline {section}{\numberline {5.6}Conclusion}{52}{section.150}%

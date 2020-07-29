@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  28 JUL 2020 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  29 JUL 2020 11:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -805,9 +805,6 @@ LaTeX Warning: Label `fig:topologie' multiply defined.
 
 LaTeX Warning: Label `fig:udpServer' multiply defined.
 
-
-LaTeX Warning: Label `fig:c/s_TFTP' multiply defined.
-
 ) (./Chapters/Bib.aux
 
 LaTeX Warning: Label `' multiply defined.
@@ -1566,12 +1563,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--93
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 109--111
+Underfull \hbox (badness 10000) in paragraph at lines 108--110
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
@@ -1586,21 +1588,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--124
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+LaTeX Warning: Citation '8' on page 14 undefined on input line 127.
+
+
+LaTeX Warning: Citation '9' on page 14 undefined on input line 127.
+
+
+LaTeX Warning: Citation '10' on page 14 undefined on input line 127.
+
+[14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
 
-LaTeX Warning: Citation '8' on page 14 undefined on input line 128.
-
-
-LaTeX Warning: Citation '9' on page 14 undefined on input line 128.
-
-
-LaTeX Warning: Citation '10' on page 14 undefined on input line 128.
-
-[14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
@@ -1616,6 +1618,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
 [16 <./Figures/IDS.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
 
  []
 
@@ -1645,6 +1652,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--178
  []
 
 [17]
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
@@ -1660,79 +1672,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--212
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
 [19]
 
-LaTeX Warning: Citation '11' on page 20 undefined on input line 265.
+LaTeX Warning: Citation '11' on page 20 undefined on input line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cite' on input line 265.
+(hyperref)                removing `\cite' on input line 264.
 
 <Figures/NIDS1.jpg, id=627, 490.83376pt x 385.44pt>
 File: Figures/NIDS1.jpg Graphic file (type jpg)
 <use Figures/NIDS1.jpg>
-Package pdftex.def Info: Figures/NIDS1.jpg  used on input line 269.
+Package pdftex.def Info: Figures/NIDS1.jpg  used on input line 268.
 (pdftex.def)             Requested size: 278.27084pt x 218.52681pt.
 
-LaTeX Warning: Citation '11' on page 20 undefined on input line 271.
+LaTeX Warning: Citation '11' on page 20 undefined on input line 270.
 
 
-LaTeX Warning: Citation '11' on page 20 undefined on input line 271.
+LaTeX Warning: Citation '11' on page 20 undefined on input line 270.
 
 
-LaTeX Warning: Citation '12' on page 20 undefined on input line 279.
+LaTeX Warning: Citation '12' on page 20 undefined on input line 278.
 
 [20 <./Figures/NIDS1.jpg>]
 
-LaTeX Warning: Citation '13' on page 21 undefined on input line 281.
+LaTeX Warning: Citation '13' on page 21 undefined on input line 280.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cite' on input line 281.
+(hyperref)                removing `\cite' on input line 280.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
  []
 
 
-LaTeX Warning: Citation '13' on page 21 undefined on input line 288.
+LaTeX Warning: Citation '13' on page 21 undefined on input line 287.
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 288--288
+Underfull \hbox (badness 2573) in paragraph at lines 287--287
 []|\T1/ppl/m/n/12 Machine ba-sed In-tru-sion
  []
 
 
-LaTeX Warning: Citation '11' on page 21 undefined on input line 288.
+LaTeX Warning: Citation '11' on page 21 undefined on input line 287.
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 290--290
+Underfull \hbox (badness 1077) in paragraph at lines 289--289
 []|\T1/ppl/m/n/12 Technique d'ap-pren-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+[]\T1/ppl/m/n/12 Nombre d'oc-tets
  []
 
 
@@ -1741,13 +1753,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 295--296
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
-[]\T1/ppl/m/n/12 Nombre d'oc-tets
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+[]\T1/ppl/m/n/12 Variation dans la
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 303--304
-[]\T1/ppl/m/n/12 Variation dans la
+[]\T1/ppl/m/n/12 Variation dans le
  []
 
 
@@ -1756,33 +1768,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 304--305
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
-[]\T1/ppl/m/n/12 Variation dans le
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 308--308
+Underfull \hbox (badness 10000) in paragraph at lines 307--307
 []|\T1/ppl/m/n/12 NSL-KDD (stan-dar-disé)
  []
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 308--309
+Underfull \hbox (badness 1831) in paragraph at lines 307--308
 []|\T1/ppl/m/n/12 Généré avec une ému-la-
  []
 
 
-Underfull \hbox (badness 6364) in paragraph at lines 308--309
+Underfull \hbox (badness 6364) in paragraph at lines 307--308
 \T1/ppl/m/n/12 tion de l'en-vi-ron-ne-ment
  []
 
 
-LaTeX Warning: Citation '11' on page 21 undefined on input line 339.
+LaTeX Warning: Citation '11' on page 21 undefined on input line 338.
 
 
-LaTeX Warning: Citation '11' on page 21 undefined on input line 339.
+LaTeX Warning: Citation '11' on page 21 undefined on input line 338.
 
 
-LaTeX Warning: Citation '13' on page 21 undefined on input line 339.
+LaTeX Warning: Citation '13' on page 21 undefined on input line 338.
 
 [21]) [22]
 \openout2 = `Chapters/Chapter3.aux'.
@@ -2174,7 +2181,12 @@ Package pdftex.def Info: Figures/Diagramme2.jpeg  used on input line 179.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[36]) [37 <./Figures/Diagramme2.jpeg>]
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+ []
+
+) [37 <./Figures/Diagramme2.jpeg>]
 \openout2 = `Chapters/Chapter5.aux'.
 
  (./Chapters/Chapter5.tex
@@ -2383,7 +2395,7 @@ File: Figures/simulation/mininet/TFTP/client/benign.png Graphic file (type png)
 
 <use Figures/simulation/mininet/TFTP/client/benign.png>
 Package pdftex.def Info: Figures/simulation/mininet/TFTP/client/benign.png  use
-d on input line 364.
+d on input line 365.
 (pdftex.def)             Requested size: 355.65944pt x 98.79932pt.
 <Figures/simulation/mininet/TFTP/server/benign_request.png, id=802, 415.5525pt 
 x 122.70844pt>
@@ -2391,72 +2403,74 @@ File: Figures/simulation/mininet/TFTP/server/benign_request.png Graphic file (t
 ype png)
 <use Figures/simulation/mininet/TFTP/server/benign_request.png>
 Package pdftex.def Info: Figures/simulation/mininet/TFTP/server/benign_request.
-png  used on input line 370.
+png  used on input line 371.
 (pdftex.def)             Requested size: 355.65944pt x 105.02727pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[48 <./Figures/simulation/mininet/UDP/client/benign.png> <./Figures/simulation/
-mininet/UDP/server/benign_request.png> <./Figures/simulation/mininet/IDS/benign
-_udp.png>]
-<Figures/simulation/mininet/IDS/benign_tftp.png, id=811, 450.9347pt x 283.81032
+ [48 <./Figures/simulation/mininet/UDP/client/benign.png> <./Figures/simulation
+/mininet/UDP/server/benign_request.png> <./Figures/simulation/mininet/IDS/benig
+n_udp.png>]
+<Figures/simulation/mininet/IDS/benign_tftp.png, id=812, 450.9347pt x 283.81032
 pt>
 File: Figures/simulation/mininet/IDS/benign_tftp.png Graphic file (type png)
 <use Figures/simulation/mininet/IDS/benign_tftp.png>
 Package pdftex.def Info: Figures/simulation/mininet/IDS/benign_tftp.png  used o
-n input line 383.
-(pdftex.def)             Requested size: 394.21587pt x 248.12553pt.
+n input line 384.
+(pdftex.def)             Requested size: 380.30302pt x 239.36908pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 391--392
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 
  []
 
 [49 <./Figures/simulation/mininet/TFTP/client/benign.png> <./Figures/simulation
 /mininet/TFTP/server/benign_request.png> <./Figures/simulation/mininet/IDS/beni
 gn_tftp.png>]
-<Figures/simulation/mininet/TFTP/client/attack.png, id=820, 365.86688pt x 94.85
+<Figures/simulation/mininet/TFTP/client/attack.png, id=821, 365.86688pt x 94.85
 437pt>
 File: Figures/simulation/mininet/TFTP/client/attack.png Graphic file (type png)
 
 <use Figures/simulation/mininet/TFTP/client/attack.png>
 Package pdftex.def Info: Figures/simulation/mininet/TFTP/client/attack.png  use
-d on input line 398.
-(pdftex.def)             Requested size: 355.65944pt x 92.21269pt.
-<Figures/simulation/mininet/TFTP/server/attack_request.png, id=821, 517.935pt x
+d on input line 399.
+(pdftex.def)             Requested size: 369.88582pt x 95.90201pt.
+<Figures/simulation/mininet/TFTP/server/attack_request.png, id=822, 517.935pt x
  256.96pt>
 File: Figures/simulation/mininet/TFTP/server/attack_request.png Graphic file (t
 ype png)
 <use Figures/simulation/mininet/TFTP/server/attack_request.png>
 Package pdftex.def Info: Figures/simulation/mininet/TFTP/server/attack_request.
-png  used on input line 404.
-(pdftex.def)             Requested size: 355.65944pt x 176.4596pt.
+png  used on input line 405.
+(pdftex.def)             Requested size: 369.88582pt x 183.5172pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
-<Figures/simulation/mininet/IDS/attack_tftp.png, id=824, 451.6875pt x 319.94531
+<Figures/simulation/mininet/IDS/attack_tftp.png, id=825, 451.6875pt x 319.94531
 pt>
 File: Figures/simulation/mininet/IDS/attack_tftp.png Graphic file (type png)
 <use Figures/simulation/mininet/IDS/attack_tftp.png>
 Package pdftex.def Info: Figures/simulation/mininet/IDS/attack_tftp.png  used o
-n input line 419.
+n input line 420.
 (pdftex.def)             Requested size: 403.48637pt x 285.81956pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [50 <./Figures/simulation/mininet/TFTP/client/attack.png> <./Figures/simulation
 /mininet/TFTP/server/attack_request.png>]
-<Figures/simulation/mininet/UDP/attack_udp_flood.png, id=833, 365.86688pt x 74.
+<Figures/simulation/mininet/UDP/attack_udp_flood.png, id=834, 365.86688pt x 74.
 52844pt>
 File: Figures/simulation/mininet/UDP/attack_udp_flood.png Graphic file (type pn
 g)
 <use Figures/simulation/mininet/UDP/attack_udp_flood.png>
 Package pdftex.def Info: Figures/simulation/mininet/UDP/attack_udp_flood.png  u
-sed on input line 437.
+sed on input line 438.
 (pdftex.def)             Requested size: 417.3992pt x 85.03038pt.
-<Figures/simulation/mininet/IDS/attack_udp_flood.png, id=835, 370.38374pt x 319
+ [51 <./Figures/simulation/mininet/IDS/attack_tftp.png> <./Figures/simulation/m
+ininet/UDP/attack_udp_flood.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
+
+ []
+
+<Figures/simulation/mininet/IDS/attack_udp_flood.png, id=844, 370.38374pt x 319
 .94531pt>
 File: Figures/simulation/mininet/IDS/attack_udp_flood.png Graphic file (type pn
 g)
@@ -2465,25 +2479,19 @@ Package pdftex.def Info: Figures/simulation/mininet/IDS/attack_udp_flood.png  u
 sed on input line 448.
 (pdftex.def)             Requested size: 417.3992pt x 360.56247pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 455--456
 
  []
 
-[51 <./Figures/simulation/mininet/IDS/attack_tftp.png> <./Figures/simulation/mi
-ninet/UDP/attack_udp_flood.png>]
+[52 <./Figures/simulation/mininet/IDS/attack_udp_flood.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 457--458
 
  []
 
-[52 <./Figures/simulation/mininet/IDS/attack_udp_flood.png>]) [53]
+) [53]
 \openout2 = `Chapters/Bib.aux'.
 
-
-(./Chapters/Bib.tex [54
+ (./Chapters/Bib.tex [54
 
 
 
@@ -2520,9 +2528,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
 (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux) (./Chapters/Bib.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4DE1B02083011C37F4B4FA95C41F9CD9;13683.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 7D52D3581994AEC83FD112C60B3B5C94;13683
+(rerunfilecheck)             After:  5BD9A2B6AEFD6BBBD719D197B14E71C8;13688.
 
 LaTeX Warning: There were undefined references.
 
@@ -2539,10 +2553,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28658 strings out of 483040
- 585952 string characters out of 5962426
- 1066874 words of memory out of 5000000
- 42957 multiletter control sequences out of 15000+600000
+ 28659 strings out of 483040
+ 585973 string characters out of 5962426
+ 1066977 words of memory out of 5000000
+ 42958 multiletter control sequences out of 15000+600000
  594598 words of font info for 136 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  61i,21n,86p,2839b,2637s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2554,7 +2568,7 @@ rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (66 pages, 5081323 bytes).
+Output written on main.pdf (66 pages, 5082658 bytes).
 PDF statistics:
  985 PDF objects out of 1000 (max. 8388607)
  852 compressed objects within 9 object streams

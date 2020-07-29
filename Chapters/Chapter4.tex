@@ -72,7 +72,7 @@ Pour concevoir ce module, nous étions dans l’obligation de choisir un outil d
 \item[-] Assure les trois fonctions de notre module MEI.
 \item[-] Fonctionne en temps réel ce qui permet, par la suite, une détection d'attaques en temps réel.\\
 \end{itemize} 
-Pour mettre en oeuvre le module MEI, nous avons procédé comme suit:\\
+Pour mettre en oeuvre ce module nous avons procédé comme suit:\\
 \begin{itemize}
 \item[1-] Premièrement, une copie du trafic réseau est redirigée vers ce module à l'aide du \textit{Port-Miroring} activé au niveau des \textit{switches}.\\
 \item[2-] Un filtrage est appliqué pour supprimer tout paquet non intéressant pou ce travail.\\
@@ -183,8 +183,9 @@ Deuxième étape du processus KDD. On a opté pour un modèle de Clustering, où
 \end{figure} 
 
 \section{Module d'archivage}
-Nous avons pensé à rajouter un module d’archives qui sauvegarde des logs datés et classés par ordre chronologique sur les caractéristiques et les informations des flux  comme la date et la durée du flux, les adresses IP source et destination et bien d’autres,  ainsi que leurs cluster (flux bénin ou flux d’attaque). Ce module d’archive servira à l’analyse périodique de l’efficacité du système de détection.
+Nous avons pensé à rajouter, comme fonctionnalité additionnelle à notre système, un module d’archivages qui sauvegarde des logs datés et classés par ordres chronologiques sur les caractéristiques et les informations collectées sur les flux de données.  Une étiquette, qui porte la valeur \textit{"ATTACK"} ou \textit{"BENIGN"}, sera ajoutée à chaque flux, par le modèle de Clustering, pour l'identifier. 57 caractéristiques seront calculées et sauvegardées dans ce module, on trouve : la durée du flux, les adresses source et destination, Timestamp (heure de capture), protocole, ports source et destination, et bien d'autres. Ce module peut servir à plusieurs besoins, par exemple l'analyse périodique du système, il peut servir comme un source de données (dataset) pour d'autres projets qui nécessitent des données fiables et capturées dans un réseau réel. 
 
 \section{Conclusion}
-Nous avons proposé l’architecture de notre système de détection des attaques DoS, et détaillé le rôle de chaque module et son interaction avec le système. Nous nous sommes concentrés sur la conception du système et les approches suivies pour son déploiement, et basés sur l’approche de clustering dans le développement de ce système.
-Dans le prochain chapitre, nous nous intéressons à la mise en œuvre des modèles proposés, et aux résultats expérimentaux qui montrent l’efficacité de notre système.
+Ce chapitre a porté entièrement sur la conception de notre solution, nous avons commencé par définir la problématique des attaques de déni de service réflectives et décrire la motivation de notre travail. Notre contribution dans ce domaine était un système de détection d'attaques DoS, nous avons vu son architecture générale et détaillé le rôle de chacun des modules qui le composent. Nous avons décrit son fonctionnement et présenté les différentes étapes de conception.\\
+
+\noindent Dans le prochain chapitre, nous allons entamer la partie d'implémentation de notre système et son déploiement dans un réseau SDN simulé. Des tests expérimentaux seront aussi faits pour des raisons d'évaluation du système.

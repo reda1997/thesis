@@ -342,12 +342,12 @@ Sur \textbf{h2} on lance le script "udpClient.py" qui prend comme argument le me
 \end{subfigure}
 \vskip 0.3cm
 \decoRule
-\caption{Établissement d'une connexion entre le client et le serveur d'applications}
+\caption{Établissement de connexion entre le client et le serveur d'applications}
 \label{fig:c/s_UDP}
 \end{figure}
 \newpage
 D'après la figure \ref{fig:c/s_UDP}, on peut voir qu'une connexion entre le seveur d'applications (@10.0.0.5) et le client (@10.0.0.2) a été établi sur le port 7777. Le client a envoyé le message \textit{"Salam"}. Le serveur lui a répondu par le message \textit{"Hello Client from Server"}. \\
-Ce transfert de message a fait générer un trafic UDP qui a été capturé, en temps réel, par notre système de détection. Le système a classé ce flux comme bénin, qui est bien le cas. 
+Ce transfert de message a fait générer un trafic UDP qui a été capturé, en temps réel, par notre système de détection et l'a classé ce flux comme bénin, qui est bien le cas. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.85\textwidth]{Figures/simulation/mininet/IDS/benign_udp}
@@ -355,24 +355,25 @@ Ce transfert de message a fait générer un trafic UDP qui a été capturé, en 
 \caption{Capture et analyse du trafic UDP}
 \label{fig:udpTraffic}
 \end{figure}
-
+\paragraph{}
 On passe à l'hôte \textbf{h1}. Le script "client.py" établit une connexion avec le serveur de fichier. À l'aide de la console tftp, \textbf{h1} peut exécuter des commandes,  à distance, sur le serveur de fichier. Dans notre cas nous avons lancé une requête "get" pour télécharger le fichier \textit{"hello.txt"}, comme indiqué dans la figure \ref{fig:c/s_TFTP}.
+
 \begin{figure}[h]
 \centering
 \begin{subfigure}{12.5cm}
 \centering
 \includegraphics[width=\textwidth]{Figures/simulation/mininet/TFTP/client/benign}
-\caption{Client UDP}
+\caption{Client TFTP}
 \end{subfigure}
 \vskip 0.4cm
 \begin{subfigure}{12.5cm}
 \centering
 \includegraphics[width=\textwidth]{Figures/simulation/mininet/TFTP/server/benign_request}
-\caption{Serveur d'applications}
+\caption{Serveur de fichiers}
 \end{subfigure}
 \vskip 0.3cm
 \decoRule
-\caption{Établissement d'une connexion entre client et serveur de fichiers}
+\caption{Établissement de connexion entre le client et le serveur de fichiers}
 \label{fig:c/s_TFTP}
 \end{figure}
 \paragraph{}
@@ -380,7 +381,7 @@ Le transfert de fichier est réel, sur \textbf{h1} on voit le fichier téléchar
 
 \begin{center}
 \noindent\makebox[\textwidth]{
-\includegraphics[width=0.85\textwidth]{Figures/simulation/mininet/IDS/benign_tftp}}%
+\includegraphics[width=0.82\textwidth]{Figures/simulation/mininet/IDS/benign_tftp}}%
 \newline
 \decoRule\\
 Capture et analyse du trafic TFTP
@@ -390,16 +391,16 @@ Capture et analyse du trafic TFTP
 \subsubsection{A- Simulation de RDoS}
 Rappelons que les attaques DoS reflective utilisent une adresse usurpée d'un hôte victime, pour envoyer des requêtes à un tier réflectif, qui est dans notre cas un serveur. Le serveur va répondre à la requête avec des messages réponses, mais l'hôte victime ne va pas accuser réception parce qu'il voit que ces messages ne le concernent pas et il n'a jamais lancé une telle requête, ce qui engendrera une surcharge de bande passante.\\
 
-Pour simuler cette attaque, nous fixons comme victime l'hôte \textbf{h3} (@10.0.0.3). Au niveau de l'hôte \textbf{h1}, nous établissons une connexion avec le serveur de fichier avec l'adresse usurpée de \textbf{h3}, ensuite on demande le transfert du fichier \textit{"hello.txt"}.
+\noindent Pour simuler cette attaque, nous fixons comme victime l'hôte \textbf{h3} (@10.0.0.3). Au niveau de l'hôte \textbf{h1}, nous établissons une connexion avec le serveur de fichier avec l'adresse usurpée de \textbf{h3}, ensuite on demande le transfert du fichier \textit{"hello.txt"}.\\
 \begin{figure}[h]
 \centering
-\begin{subfigure}{12.5cm}
+\begin{subfigure}{13cm}
 \centering
 \includegraphics[width=\textwidth]{Figures/simulation/mininet/TFTP/client/attack}
 \caption{Demande de téléchargement}
 \end{subfigure}
 \vskip 0.4cm
-\begin{subfigure}{12.5cm}
+\begin{subfigure}{13cm}
 \centering
 \includegraphics[width=\textwidth]{Figures/simulation/mininet/TFTP/server/attack_request}
 \caption{Envoie du fichier}
@@ -408,12 +409,12 @@ Pour simuler cette attaque, nous fixons comme victime l'hôte \textbf{h3} (@10.0
 \vskip 0.3cm
 \decoRule
 \caption{Simulation d'une attaque RDoS}
-\label{fig:c/s_TFTP}
+\label{fig:rdos_simulation}
 \end{figure}
 \paragraph{}
 Le serveur retente plusieurs fois l'envoie du fichier à l'hôte \textbf{h3}, comme montré dans figure \ref{fig:send}, car il ne reçoit aucun accusé de la part de cet hôte pour affirmer la réception du fichier.\\
 
-En parallel, avec l'exécution de l'attaque qui prend un temps considérable, notre système F-DoS est toujours actif pour l'analyse du trafic. Le trafic généré par cette attaque a été capturé et belle et bien classé comme attaque (voir \ref{fig:tftpAttack}).
+\noindent En parallel, avec l'exécution de l'attaque, qui prend un temps considérable, notre système F-DoS est toujours actif pour l'analyse du trafic. Le trafic généré par cette attaque a été capturé et belle et bien classé comme attaque (voir \ref{fig:tftpAttack}).
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.87\textwidth]{Figures/simulation/mininet/IDS/attack_tftp}
@@ -439,9 +440,8 @@ L'option :
 \caption{Simulation d'une attaque UDP-Flooding}
 \label{fig:FloodingAttackSimulation}
 \end{figure}
-
-\paragraph{}
-D'après la figure \ref{fig:FloodingAttack}, on voit que plusieurs flux ont été générés, qui est le cas d'une attaque par inondation (Flooding). F-DoS a capturé chacun de ces flux et l'a identifié comme attaque.
+\newpage
+D'après la figure \ref{fig:FloodingAttack}, on voit que plusieurs flux ont été générés, qui est le cas d'une attaque par inondation (Flooding). F-DoS a capturé chacun de ces flux et l'a identifié comme attaque.\\
 
 \begin{figure}[h]
 \centering
@@ -452,7 +452,7 @@ D'après la figure \ref{fig:FloodingAttack}, on voit que plusieurs flux ont ét�
 \end{figure}
 
 \section{Conclusion}
-Au long de ce chapitre, nous avons présenté l'implémentation de notre solution de détection des attaques par déni de service dans un réseau SDN. Nous avons commencé par présenter l'environnement de travail suivi des outils utilisés pour la mise en oeuvre de notre solution. Nous avons aussi présenté la réalisation du module F-Clustering qui assure la fonction de détection des attaques en analysant les caractéristiques des flux en entrée. Pour voir l'efficacité de ce module nous l'avons mis sous le test, avec comme données de test le dataset "TFTP". Le module a montré des performances excellentes. Une précision de 98.6\% et un taux de fausses alertes de 1.3\%. Nous avons conclu, après la petite expérience faite dans la section \ref{tests} que les bonnes performances d'un modèle d'apprentissage depend, à grand part, du prétraitement des données d'apprentissage en non pas le choix de l'algorithme d'apprentissage.\\
+Au long de ce chapitre, nous avons présenté l'implémentation de notre solution de détection des attaques par déni de service dans un réseau SDN. Nous avons commencé par présenter l'environnement de travail suivi des outils utilisés pour la mise en oeuvre de notre solution. Nous avons aussi présenté la réalisation du module F-Clustering qui assure la fonction de détection des attaques en analysant les caractéristiques des flux en entrée. Pour voir l'efficacité de ce module nous l'avons mis sous le test, avec comme données de test le dataset "TFTP". Le module a montré des performances excellentes. Une précision de 98.6\% et un taux de fausses alertes de 1.3\%. Nous avons conclu, après la petite expérience faite dans la section \ref{tests} que les bonnes performances d'un modèle d'apprentissage depend, à grand part, du prétraitement des données d'apprentissage et non pas du choix de l'algorithme d'apprentissage.\\
 
 La section la plus importante de ce chapitre était la simulation. Nous avons commencé par décrire l'architecture du réseau SDN à simuler. L'étape suivante était la création de la topologie du réseau sur Mininet suivi de l'attribution des rôles. Nous avons défini deux hôtes qui vont jouer le rôle d'un serveur, deux hôtes clients et un hôte victime. Une connexion a été établi, entre chaque serveur et son client potentiel, pour l'échange de données. À partir d'hôte, désigné comme client, une attaque RDoS a été lancé et on a observé le comportement de notre réseau, en particulier notre système de détection, qui a réagi en temps réel aux flux générés pour l'identifier comme attaque. Une autre du type Flooding a été simulé et notre système a été capable de la détecter.\\
 
