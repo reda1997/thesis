@@ -1,7 +1,7 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {french}{}
-\contentsline {chapter}{Liste des abréviations}{v}{chapter*.4}%
-\contentsline {chapter}{Introduction générale}{vi}{chapter*.5}%
+\contentsline {chapter}{Liste des abréviations}{vi}{chapter*.4}%
+\contentsline {chapter}{Introduction générale}{vii}{chapter*.5}%
 \contentsline {chapter}{\numberline {1}Software Defined Networking}{1}{chapter.6}%
 \contentsline {section}{\numberline {1.1}Limites des réseaux traditionnelles}{1}{section.7}%
 \contentsline {section}{\numberline {1.2}Une approche réseau moderne}{2}{section.8}%
@@ -35,7 +35,7 @@
 \contentsline {subsection}{\numberline {2.3.3}Classification d'une attaque DoS}{14}{subsection.41}%
 \contentsline {subsubsection}{A) Attaque par complexité d’algorithme:}{14}{section*.42}%
 \contentsline {subsubsection}{B) Attaque par inondation (Flooding):}{14}{section*.43}%
-\contentsline {subsubsection}{C) Attaque par réflection/amplification}{14}{section*.44}%
+\contentsline {subsubsection}{C) Attaque par réflexion/amplification}{14}{section*.44}%
 \contentsline {subsection}{\numberline {2.3.4}Impacts des attaques DoS sur un réseau SDN}{15}{subsection.45}%
 \contentsline {subsubsection}{Impact sur le plan de contrôle:}{15}{section*.46}%
 \contentsline {subsubsection}{Impact sur le plan de données:}{15}{section*.47}%
@@ -111,3 +111,5 @@
 \contentsline {paragraph}{}{50}{section*.145}%
 \contentsline {subsubsection}{B- Simulation de UDP-Flooding}{51}{section*.147}%
 \contentsline {section}{\numberline {5.6}Conclusion}{52}{section.150}%
+\contentsline {chapter}{Conclusion générale}{i}{chapter*.151}%
+\contentsline {chapter}{Résumé}{iii}{chapter*.184}%

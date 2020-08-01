@@ -1,0 +1,33 @@
+
+\chapter{Conclusion générale} 
+
+\label{Conclusion} 
+
+Le but de notre travail était d’étudier les réseaux à définition logicielle (Software-defined Networking), tout en abordant les différents problèmes de sécurité auxquels sont confronté ces réseaux SDN, pour ainsi développer une solution pour protéger ces réseaux contre les attaques par déni de service. Ce travail avait deux principaux objectifs :
+\begin{itemize}
+\item[-] Concevoir un système de détection des attaques DoS avec les fonctionnalités suivantes:\\
+\begin{itemize}
+\item[•] Capture des flux de trafic.
+\item[•] Analyse des flux capturés et extraction des informations.
+\item[•] Identification de la nature du flux (flux dénin ou attaque).\\
+\end{itemize}
+\item[-] Simulation d'un réseau SDN sous Mininet et déploiement du système dans cet environnement.\\
+\end{itemize}
+
+\noindent Nous avons, tout d'abord, entamé notre étude par la présentation des réseaux SDN ainsi que les problèmes liés à leur sécurité, les méthodes de détection d’intrusions et les solutions d’IDS proposées pour ce type de réseaux. Ensuite nous avons procédé à l'analyse comparative des IDS existants, qui nous a permis de constater que l’approche de l’apprentissage automatique est très intéressante pour une solution IDS dans ce genre de réseaux. Par la suite, nous avons défini l’apprentissage automatique et sa branche Clustering, étudié le Data-Mining en présentant le processus KDD et comment choisir et évaluer dataset pour le modèle d’apprentissage automatique. \\
+
+\noindent En se basant sur cette technique de Clustering et ces études, nous avons proposé une solution de détection des attaques DoS pour les réseaux à définition logicielle et défini les principales fonctionnalités du système. Enfin, l'implémentation, qui nous a permis de développer notre système en tenant compte de l'architecture matérielle et de l'environnement logiciel, et l’évaluation de notre système en présentant le résultat de cette évaluation pour comparer l’efficacité de notre système de détection avec des IDS similaires.\\
+
+\noindent Ce projet de fin d’études s'est révélé profitable sur plusieurs points : il nous a permis de travailler sur la technologie des réseaux à définition logicielle et approfondir nos connaissances dans le domaine de sécurité des réseaux en abordant plusieurs aspects techniques et mettre en épreuve nos compétences en matière de programmation afin de développer une telle solution. Ce projet nous a également donné l'occasion de manipuler de nouveaux outils, spécialement les outils de simulation qui sont indispensables à un administrateur réseau, et nous a permis de progresser plus dans le domaine d'apprentissage automatique.\\
+
+\noindent Nous pensons avoir atteint l’objectif de notre projet de fin d’études. Cependant, tout travail est perfectible et peut être enrichi. Nous pensons que nous pouvons l’améliorer par :\\ 
+\begin{itemize}
+\item[-] Un algorithme d’extraction des informations de flux plus puissant et permettant d’avoir plus d’informations sur le flux afin de pouvoir offrir des meilleures performances de détection d’attaque.\\
+\item[-] Utilisation d'une collection de données (dataset) contenant d'autres attaques DoS afin d'étendre l'ensemble des attaques perceptibles par notre système.\\
+\item[-] Nous avons utilisé la méthode de Clustering avec deux clusters seulement; cluster pour flux bénin, et l'autre pour le flux attaque peu importe son type (RDoS, UDP-Flooding, etc). On peut rajouter, par exemple, plusieurs autres clusters, chacun propre à un seul type attaque DoS. Cette solution permet d'un côté d'améliorer les performances du système et de l'autre côté offre une certaine modulation, dans le sens où on aura la possibilité de gérer chaque type d'attaque de manière indépendante puisqu'il aura son propre cluster.\\
+\item[-] Au lieu de faire juste la détection, on peut intégrer quelques fonctions de mitigation dans notre système.\\ 
+\end{itemize}
+
+
+
+

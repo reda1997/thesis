@@ -61,10 +61,10 @@ Dans l’architecture traditionnelle le plan de données et le plan de contrôle
 \label{fig:SDN_Plans}
 \end{figure}
 
-L’architecture SDN définit trois couches,  comme indiqué dans la figure \ref{fig: SDN_Plans}, chacune représente un plan, plan de données, plan de contrôle ou plan d’application. Chaque couche ne peut communiquer qu’avec ces couches voisines. 
+L’architecture SDN définit trois couches,  comme indiqué dans la figure \ref{fig:SDN_Plans}, chacune représente un plan, plan de données, plan de contrôle ou plan d’application. Chaque couche ne peut communiquer qu’avec ces couches voisines. 
 
 \subsection{Plan de Données}
-Le plan de données se compose de commutateurs physiques et de commutateurs virtuels, qui sont responsables de la transmission des paquets. Cependant chaque commutateur doit implémenter un modèle de transfert de paquet, ce modèle est défini à travers une API (Application programming interface) qui réside entre le plan de contrôle et le plan de données permettant la communication entre le contrôleur et les commutateurs du plan de données. Parmi ces API on peut citer OpenFlow, qui sera détaillé par la suite dans ce chapitre.\\
+Le plan de données se compose de commutateurs physiques et de commutateurs virtuels, qui sont responsables de la transmission des paquets. Cependant chaque commutateur doit implémenter un modèle de transfert de paquet, ce modèle est défini à travers une API (Application programming interface) qui réside entre le plan de contrôle et le plan de données permettant la communication entre le contrôleur et les commutateurs du plan de données. Parmi ces API, le OpenFlow, qui nous allons détailler par la suite.\\
 
 \noindent Le plan de données assure une fonction autre que la transmission des données, le support de contrôle. Cette fonction permet la communication avec le contrôleur SDN pour l’échange des informations liées à la gestion du périphérique.  
 %----------------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ Le plan d’application contient des applications et des services qui définisse
 %----------------------------------------------------------------------------------------
 
 \section{Caractéristiques des SDN}
-Après avoir vu la nouvelle architecture réseau, le software-defined Networking, en opposition avec l'architecture traditionnelle, on peut dire que les principales caractéristiques des SDN sont les suivantes :\\
+Après avoir vu la nouvelle architecture réseau, le software-defined Networking, en opposition avec l'architecture traditionnelle,nous trouvons que les principales caractéristiques des SDN sont les suivantes :\\
 \begin{itemize}
 \item[-]\textbf{Séparation des plans}: le plan de contrôle est séparé du plan de données. Les périphériques de plan de données deviennent des simples dispositifs de transfert de paquets. Le plan de contrôle est installé dans un contrôleur ou ensemble de contrôleurs centralisés et coordonnés.\\
 \item[-]\textbf{Programmabilité}: le réseau est programmable par des applications qui s’exécutent au-dessus du contrôleur SDN. Les contrôleurs présentent une vue abstraite des ressources du réseau aux applications.\\

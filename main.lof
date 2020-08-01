@@ -11,7 +11,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces K-Means\relax }}{28}{figure.caption.80}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Principe de dénie de service réflectif\relax }}{30}{figure.caption.84}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Principe de déni de service réflectif\relax }}{30}{figure.caption.84}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Architecture et fonctionnemnt de F-DoS\relax }}{32}{figure.caption.87}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Architecture du module MEI\relax }}{34}{figure.caption.91}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Étapes de conception de F-Clustering\relax }}{37}{figure.caption.101}%
@@ -30,3 +30,5 @@
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Détection de l'attaque RDoS\relax }}{51}{figure.caption.146}%
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Simulation d'une attaque UDP-Flooding\relax }}{51}{figure.caption.148}%
 \contentsline {figure}{\numberline {5.14}{\ignorespaces Détection de l'attaque UDP-Flooding\relax }}{52}{figure.caption.149}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -18,7 +18,7 @@ Le processus KDD est sur trois étapes comme suit:\\
 \end{itemize}
 
 \subsection{Dataset}
-Pour concevoir notre modèle d'apprentissage on a besoin d'une grande quantité de données qui représente plusieurs flux, malins et bénins, capturés dans un réseau. Le choix du bon Dataset contenant ce type de données est cruciale pour construire notre modèle de prédiction. Dans ce qui suit quelques propriétés à prendre en considération lors du choix d'un Dataset [\cite{15}].\\
+Pour concevoir notre modèle d'apprentissage nous avons besoin d'une grande quantité de données qui représentent plusieurs flux, malins et bénins, capturés dans un réseau SDN réel. Le choix du bon Dataset contenant ce type de données est cruciale pour construire notre modèle de prédiction. Dans ce qui suit quelques propriétés à prendre en considération lors du choix d'un Dataset [\cite{15}].\\
 \begin{itemize}
 \item[•]\textbf{Year of Creation}: Étant donné que le trafic réseau est soumis à de nouveaux scénarios d’attaque apparaissent quotidiennement, l’âge d’un ensemble de données de détection d’intrusion joue un rôle important. Cette propriété décrit l’année dans laquelle le trafic a été capturé.\\
 \item[•]\textbf{Normal User Behavior}: Cette propriété indique la disponibilité du comportement normal de l’utilisateur dans un ensemble de données et prend les valeurs \textbf{Oui} ou \textbf{Non}. La valeur \textbf{Oui} indique qu’il y a un comportement normal dans l’ensemble de données. En général, la qualité d’un IDS est principalement déterminée par son taux de détection des attaques et son taux de fausses alarmes. Par conséquent, la présence d’un comportement normal est indispensable pour évaluer un IDS.\\
@@ -85,7 +85,7 @@ Il s'agit essentiellement d'un type de méthode d'apprentissage non supervisé. 
 \noindent Le clustering est très important car il détermine le groupement intrinsèque des données non marquées. Il n'y a aucun critère pour un bon clustering. Cela dépend de l'utilisateur, quels sont les critères qu'il peut utiliser pour satisfaire ses besoins. Par exemple, nous pourrions être intéressés à trouver des représentants pour des groupes homogènes (réduction des données), à trouver des groupements utiles et appropriés (“useful” data classes) ou à trouver des objets de données inhabituels (outlier détection). L'algorithme du clustering doit faire quelques hypothèses qui constituent la similitude des points et chaque hypothèse fait des clusters différents et également valides. 
 
 \paragraph{{\large 3.2.2.2 Méthodes de clustering}\\\\}
-Parmi les méthodes de Clustering on trouve:\\
+Parmi les méthodes de Clustering, nous citons:\\
 \begin{itemize}
 \item[-]Méthodes basées sur la densité: ces méthodes considèrent les clusters comme la région dense ayant une certaine similitude et différence des autres régions denses de l'espace. Ces méthodes ont une bonne précision et la capacité de fusionner deux clusters. Exemples : DBSCAN, OPTICS …etc.\\
 \item[-]Méthodes basées sur la hiérarchie : les clusters formés dans cette méthode forment une structure de type arbre basé sur la hiérarchie. Les nouveaux clusters sont formés en utilisant ceux précédemment formés.\\
@@ -110,4 +110,4 @@ Après quelques itérations, l’algorithme trouve un découpage stable du jeu d
 \end{figure}
 
 \subsection{Conclusion}
-Dans ce chapitre nous avons discuté sur le Data-Minig, en commençant par définir c'est quoi cette discipline, pour passer par la suite au dataset en exposant les majeures propriétés à considérer lors du choix d'un dataset. L'apprentissage automatique était la dernière section de ce chapitre, où on a présenté les différentes méthodes et algorithmes d'apprentissage existants. 
+Dans ce chapitre nous avons discuté sur le Data-Minig, en commençant par définir c'est quoi cette discipline, pour passer par la suite au dataset en exposant les majeures propriétés à considérer lors du choix d'un dataset. L'apprentissage automatique était la dernière section de ce chapitre, où nous avons présenté les différentes méthodes et algorithmes d'apprentissage existants. 
