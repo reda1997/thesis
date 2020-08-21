@@ -9,8 +9,9 @@ Au cours de ce chapitre nous allons présenter l'implémentation et le test de n
 Cette partie décrit l'environnement dans lequel notre solution sera déployée en présentant le contrôleur SDN choisi et l'outil de simulation du réseau utilisé.
 
 \subsection{Contrôleur SDN}
-Parmi les différents contrôleurs SDN qui existent nous avons opté pour travailler avec \textbf{Ryu}[\cite{4}] vu la simplicité d'utilisation qui offre, en plus il est basé sur \textit{Python} et supporte la majorité des versions d’OpenFlow. \\\\
-Ryu est un contrôleur de réseau défini par logiciel (SDN) conçu pour augmenter l’agilité du réseau en le rendant facile à gérer et adapte la façon dont le trafic est traité. Il fournit des composants logiciels, avec des interfaces de programme d'applications (API) bien définies, qui rendent facile pour les développeurs de créer de nouvelles applications de gestion et de contrôle du réseau. Cette approche par composants aide les organisations à personnaliser leur déploiement pour répondre à leurs besoins spécifiques; les développeurs peuvent rapidement et facilement modifier les composants existants ou mettre en œuvre leurs propres pour s’assurer que le réseau sous-jacent peut répondre aux demandes changeantes de leurs applications.\\
+Parmi les différents contrôleurs SDN qui existent nous avons opté pour travailler avec \textbf{Ryu}[\cite{4}] vu la simplicité d'utilisation qui offre, en plus il est basé sur \textit{Python} et supporte la majorité des versions d’OpenFlow.\\
+
+\noindent Ryu est un contrôleur de réseau défini par logiciel (SDN) conçu pour augmenter l’agilité du réseau en le rendant facile à gérer et adapte la façon dont le trafic est traité. Il fournit des composants logiciels, avec des interfaces de programme d'applications (API) bien définies, qui rendent facile pour les développeurs de créer de nouvelles applications de gestion et de contrôle du réseau. Cette approche par composants aide les organisations à personnaliser leur déploiement pour répondre à leurs besoins spécifiques; les développeurs peuvent rapidement et facilement modifier les composants existants ou mettre en œuvre leurs propres pour s’assurer que le réseau sous-jacent peut répondre aux demandes changeantes de leurs applications.\\
 
 \noindent Pour télécharger et installer Ryu sur une machine UBUNTU:
 \begin{verbatim}
@@ -150,7 +151,7 @@ Dans cette partie, nous allons entamer la dernière étape du processus KDD qui 
 
 \noindent Les résultats des tests de performance étaient les suivants: 
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{  | m{2.5cm} | m{2.5cm} | m{2.5cm} || m{2cm} | }
 			\hline
@@ -166,7 +167,7 @@ Dans cette partie, nous allons entamer la dernière étape du processus KDD qui 
 	\label{table:re}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{  | c | c | c | c | c | }
 			\hline
@@ -184,7 +185,7 @@ Dans cette partie, nous allons entamer la dernière étape du processus KDD qui 
 Nous remarquons que les résultats sont très satisfaisants. L'élément-clé qui nous a permis d'avoir tels résultats est le prétraitement du dataset, plus spécialement l'opération de normalisation et l'opération balancement. Pour montrer leur impact sur les performances du modèle nous allons faire une petite expérience, où nous allons annuler une opération de prétraitement à la fois, soit la normalisation, soit le balancement et calculer ensuite les mesures de performance du modèle.\\
 
 \noindent Les résultats obtenus sont dans le tableau \ref{table:compare} et la figure \ref{fig:histogramme};
-\begin{table}[t]
+\begin{table}[h]
 	\begin{center}
 		\begin{tabular}{  | c | c | c | c | }
 			\hline
@@ -206,7 +207,7 @@ Nous remarquons que les résultats sont très satisfaisants. L'élément-clé qu
 	\end{center}	
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{Figures/performances}
 \decoRule
@@ -239,7 +240,7 @@ Mais faut d'abord lancé le contrôleur Ryu avec:
 % ryu-manager ryu_controller.py 
 \end{verbatim}
 
-\begin{table}
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{  | c || m{5cm} | m{3cm} | }
 \hline
@@ -264,7 +265,7 @@ Hôte & Rôle(s) & @IP\\
 \end{center}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/simulation/mininet/start}
 \decoRule
@@ -278,7 +279,7 @@ La figure \ref{fig:topologie} indique que la topologie a été créés avec succ
 \subsection{Installation des fonctions}
 Jusqu'à présent les hôtes créés par mininet, ainsi que les switchs OF, n'ont que les fonctions de base définies par mininet. Donc nous devon passer par tout hôte, à l'exception de \textbf{h3}, pour installer les fonctions désignées dans le tableau \ref{table:nodes}. Sur le switch, nous allons juste activer la fonction \textit{Port-Mirroring} comme suit:
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/simulation/mininet/switch/create_mirroring_port}
 \decoRule
@@ -358,7 +359,7 @@ Ce transfert de message a fait générer un trafic UDP qui a été capturé, en 
 \paragraph{}
 Nous passons à l'hôte \textbf{h1}. Le script "client.py" établit une connexion avec le serveur de fichier. À l'aide de la console tftp, \textbf{h1} peut exécuter des commandes,  à distance, sur le serveur de fichier. Dans notre cas nous avons lancé une requête "get" pour télécharger le fichier \textit{"hello.txt"}, comme indiqué dans la figure \ref{fig:c/s_TFTP}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{12.5cm}
 \centering
@@ -392,7 +393,7 @@ Capture et analyse du trafic TFTP
 Rappelons que les attaques DoS reflective utilisent une adresse usurpée d'un hôte victime, pour envoyer des requêtes à un tier réflectif, qui est dans notre cas un serveur. Le serveur va répondre à la requête avec des messages réponses, mais l'hôte victime ne va pas accuser réception parce qu'il voit que ces messages ne le concernent pas et il n'a jamais lancé une telle requête, ce qui engendrera une surcharge de bande passante.\\
 
 \noindent Pour simuler cette attaque, nous fixons comme victime l'hôte \textbf{h3} (@10.0.0.3). Au niveau de l'hôte \textbf{h1}, nous établissons une connexion avec le serveur de fichier avec l'adresse usurpée de \textbf{h3}, ensuite nous demandons le transfert du fichier \textit{"hello.txt"}.\\
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{13cm}
 \centering
@@ -433,7 +434,7 @@ L'option :
 \item[\textbf{-c}]: permet de spécifier le nombre de flux.
 \item[\textbf{-d}]: permet de définir la taille des données.
 \end{itemize}
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{Figures/simulation/mininet/UDP/attack_udp_flood}
 \decoRule
@@ -443,7 +444,7 @@ L'option :
 \newpage
 D'après la figure \ref{fig:FloodingAttack}, on constate que plusieurs flux ont été générés, qui est le cas d'une attaque par inondation (Flooding). F-DoS a capturé chacun de ces flux et l'a identifié comme attaque.\\
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{Figures/simulation/mininet/IDS/attack_udp_flood}
 \decoRule

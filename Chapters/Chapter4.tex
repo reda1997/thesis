@@ -106,6 +106,51 @@ Comme source de données, nous avons exploité le dataset \textbf{ CICDDoS 2019}
 \newpage
 CICDDoS2019 est formé de plusieurs fichiers, chacun propre à une attaque. Vu la taille énorme de ces fichiers, et pour raison de simplifier le travail et pouvoir simuler l'architecture générale de notre réseau, nous nous sommes mis d’accord sur le choix d'un seul fichier pour travailler sur. Le fichier que nous avons choisi est propre à l'attaque TFTP, qui est lui-même un dataset contenant *** lignes et 87 colonnes (aussi référées par caractéristiques ou attributs).
 
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ | m{4cm} | m{10cm} | }
+\hline
+\textbf{Attribut} & \textbf{Déscription}\\
+\hline
+Source IP/Port & Adresse IP/port source\\
+\hline
+Destination IP/Port & Adresse IP/port destination\\
+\hline
+Protocol & Protocole \\
+\hline
+Flow Duration &  La durée du flux\\
+\hline
+Total Fwd/Backward Packets & Nombre de paquets transmis/reçus \\
+\hline
+Total Length of Fwd/Bwd Packets & Taille totale des paquets envoyés/reçus \\
+\hline
+Fwd/Bwd Packets Length Max/Min/Mean/Std &  Taille maximale/minimale/moyenne/standard des packets envoyés/reçus\\ 
+\hline
+Flow Packets/s \& Flow Bytes/s & Nombre de packets/octects transmis par seconde\\
+\hline
+Flow IAT Mean/Std/Max/Min & Temps de déviation moyen/standard/maximum/minimum entre deux flux\\
+\hline
+Fwd/Bwd IAT Tot/Mean/Std/Max/Min & Temps de déviation ttal/moyen/standard/maximum/minimum entre deux paquets envoyés/reçus\\
+Fwd/Bwd PSH/URG & Nombre de fois l'indice PSH/URG a été envoyé/reçu\\
+\hline
+Fwd/Bwd Header length & Nombre d'octects contenus dans l'ne tête du paquet envoyé/reçu\\
+\hline
+Fwd/Bwd packets/s & Nombre de paquets envoyés/reçus par seconde\\
+\hline
+Packet Length Max/Min/Mean/Std & Taille maximale/minimale/moyenne/standard d'un paquet\\
+\hline
+Packet Length Variance & variance de la taille d'un paquet\\
+\hline
+FIN/SYN/RST/PSH/ACK/URG/CWE/ECE Flag Count & Nombre de paquet contenat FIN/SYN/RST/PSH/ACK/URG/CWE/ECE\\
+\hline
+Down/Up ratio & ratio de téléchargement/chargement\\
+\hline 
+Average Packet Size & Taille moyenne d'un paquet\\
+\hline
+Fwd/Bwd Seg Size/Byts/b/Blk Rate Avg & ffff\\
+\hline
+\end{tabular}
+
 \subsubsection{B) Prétraitement des données }
 Le dataset TFTP n'est pas propre, il contient des données avec des ordres de grandeur différents, des valeurs erronées, des duplicats, il n'est pas balancé et contient des attributs que nous n'avons pas besoin dans notre travail. Un prétraitement est nécessaire pour préparer le dataset en vue de l'utiliser dans l'étape de création du modèle d'apprentissage. Ce processus de prétraitement est sur trois étapes; la première est le nettoyage du dataset, connue dans la littérature sous le nom de \textbf{Data Laundry}. Deuxième étape, sélection des attributs. Troisième étape, mise à l'échelle et balancement du dataset.
 

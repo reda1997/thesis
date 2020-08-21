@@ -1,7 +1,7 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {french}{}
-\contentsline {chapter}{Liste des abréviations}{vi}{chapter*.4}%
-\contentsline {chapter}{Introduction générale}{vii}{chapter*.5}%
+\contentsline {chapter}{Liste des abréviations}{v}{chapter*.4}%
+\contentsline {chapter}{Introduction générale}{vi}{chapter*.5}%
 \contentsline {chapter}{\numberline {1}Software Defined Networking}{1}{chapter.6}%
 \contentsline {section}{\numberline {1.1}Limites des réseaux traditionnelles}{1}{section.7}%
 \contentsline {section}{\numberline {1.2}Une approche réseau moderne}{2}{section.8}%
@@ -77,39 +77,3 @@
 \contentsline {section}{\numberline {4.5}Conception du module F-Clustering}{34}{section.92}%
 \contentsline {subsection}{\numberline {4.5.1}Préparation des données}{34}{subsection.93}%
 \contentsline {subsubsection}{A) Choix du dataset }{34}{section*.94}%
-\contentsline {subsubsection}{B) Prétraitement des données }{35}{section*.95}%
-\contentsline {subsubsection}{B-1) Data Laundry}{35}{section*.96}%
-\contentsline {subsubsection}{B-2) Sélection des attributs}{35}{section*.97}%
-\contentsline {subsubsection}{B-3) Mise à l'échelle et balancement}{36}{section*.99}%
-\contentsline {subsection}{\numberline {4.5.2}Recherche du modèle}{36}{subsection.100}%
-\contentsline {section}{\numberline {4.6}Module d'archivage}{37}{section.102}%
-\contentsline {section}{\numberline {4.7}Conclusion}{37}{section.103}%
-\contentsline {chapter}{\numberline {5}Implémentation, simulation et résultats}{38}{chapter.104}%
-\contentsline {section}{\numberline {5.1}Environnement de travail}{38}{section.105}%
-\contentsline {subsection}{\numberline {5.1.1}Contrôleur SDN}{38}{subsection.106}%
-\contentsline {subsection}{\numberline {5.1.2}Simulation du réseau SDN}{39}{subsection.107}%
-\contentsline {subsubsection}{Mininet}{39}{section*.108}%
-\contentsline {subsubsection}{Simulation d'un simple réseau SDN}{39}{section*.109}%
-\contentsline {section}{\numberline {5.2}Langage et Librairies utilisées}{40}{section.110}%
-\contentsline {subsection}{\numberline {5.2.1}Python}{40}{subsection.111}%
-\contentsline {subsection}{\numberline {5.2.2}Scikit-learn}{40}{subsection.112}%
-\contentsline {subsection}{\numberline {5.2.3}Pandas}{40}{subsection.113}%
-\contentsline {subsection}{\numberline {5.2.4}Argus}{41}{subsection.114}%
-\contentsline {section}{\numberline {5.3}Réalisation du module F-Clustering}{41}{section.115}%
-\contentsline {section}{\numberline {5.4}Évaluation et test des performances}{42}{section.118}%
-\contentsline {section}{\numberline {5.5}Simulation}{44}{section.123}%
-\contentsline {subsection}{\numberline {5.5.1}Création de la topologie}{44}{subsection.125}%
-\contentsline {subsection}{\numberline {5.5.2}Installation des fonctions}{45}{subsection.128}%
-\contentsline {subsubsection}{A- Installation du système F-DoS sur h6}{46}{section*.130}%
-\contentsline {subsubsection}{B- Installation du serveur d'applications sur h5}{47}{section*.132}%
-\contentsline {subsubsection}{C- Installation du serveur de fichier sur h4}{47}{section*.134}%
-\contentsline {subsubsection}{D- Installation des clients}{47}{section*.136}%
-\contentsline {paragraph}{}{48}{section*.139}%
-\contentsline {paragraph}{}{49}{section*.141}%
-\contentsline {subsection}{\numberline {5.5.3}Simulation des attaques}{50}{subsection.142}%
-\contentsline {subsubsection}{A- Simulation de RDoS}{50}{section*.143}%
-\contentsline {paragraph}{}{50}{section*.145}%
-\contentsline {subsubsection}{B- Simulation de UDP-Flooding}{51}{section*.147}%
-\contentsline {section}{\numberline {5.6}Conclusion}{52}{section.150}%
-\contentsline {chapter}{Conclusion générale}{i}{chapter*.151}%
-\contentsline {chapter}{Résumé}{iii}{chapter*.184}%
