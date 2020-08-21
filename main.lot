@@ -12,3 +12,12 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Quelques Datasets disponibles pour les système de détection d'intrusions\relax }}{25}{table.caption.73}%
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Attributs du dataset TFTP\relax }}{35}{table.caption.95}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Déscription des attributs\relax }}{37}{table.caption.99}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Matrice de confusion\relax }}{43}{table.caption.120}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Mesures de performance \relax }}{43}{table.caption.121}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Impact des prétraitements sur les performances\relax }}{44}{table.caption.122}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Rôle de chaque hôte dans la topologie mininet\relax }}{47}{table.caption.127}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

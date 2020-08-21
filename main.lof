@@ -14,3 +14,21 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Principe de déni de service réflectif\relax }}{30}{figure.caption.84}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Architecture et fonctionnemnt de F-DoS\relax }}{32}{figure.caption.87}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Architecture du module MEI\relax }}{34}{figure.caption.91}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Étapes de conception de F-Clustering\relax }}{38}{figure.caption.102}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Comparaison entre les résultats obtenus selon l'opération de prétraitement effectuée\relax }}{44}{figure.caption.123}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture de notre réseau SDN\relax }}{46}{figure.caption.125}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Création de la topologie sous mininet\relax }}{47}{figure.caption.128}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Activation du Port-Mirroring\relax }}{48}{figure.caption.130}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Installation du module de détection\relax }}{49}{figure.caption.132}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Installation du serveur d'applications\relax }}{50}{figure.caption.134}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Installation du seveur de fichiers\relax }}{50}{figure.caption.136}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Établissement de connexion entre le client et le serveur d'applications\relax }}{51}{figure.caption.138}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Capture et analyse du trafic UDP\relax }}{51}{figure.caption.139}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Établissement de connexion entre le client et le serveur de fichiers\relax }}{52}{figure.caption.141}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Simulation d'une attaque RDoS\relax }}{53}{figure.caption.145}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Détection de l'attaque RDoS\relax }}{54}{figure.caption.147}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Simulation d'une attaque UDP-Flooding\relax }}{54}{figure.caption.149}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Détection de l'attaque UDP-Flooding\relax }}{55}{figure.caption.150}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

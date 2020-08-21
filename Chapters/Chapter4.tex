@@ -104,11 +104,11 @@ Pour concevoir ce module nous avons suivi les étapes du processus KDD décrites
 \subsubsection{A) Choix du dataset }
 Comme source de données, nous avons exploité le dataset \textbf{ CICDDoS 2019}[\cite{21}]. CICDDoS2019 contient des flux bénins et des attaques Ddos les plus courantes, qui ressemblent aux vraies données du monde réel. Ce dataset contient différentes attaques DoS modernes réflectives telles que Portmap, Netbios, LDAP, UDP, TFTP, NTP. La période de capture a commencé le 12 janvier à 10 h 30 et s’est terminée à 17 h 15. Des attaques ont par la suite été exécutées au cours de cette période.
 \newpage
-CICDDoS2019 est formé de plusieurs fichiers, chacun propre à une attaque. Vu la taille énorme de ces fichiers, et pour raison de simplifier le travail et pouvoir simuler l'architecture générale de notre réseau, nous nous sommes mis d’accord sur le choix d'un seul fichier pour travailler sur. Le fichier que nous avons choisi est propre à l'attaque TFTP, qui est lui-même un dataset contenant *** lignes et 87 colonnes (aussi référées par caractéristiques ou attributs).
+CICDDoS2019 est formé de plusieurs fichiers, chacun propre à une attaque. Vu la taille énorme de ces fichiers, et pour raison de simplifier le travail et pouvoir simuler l'architecture générale de notre réseau, nous nous sommes mis d’accord sur le choix d'un seul fichier pour travailler sur. Le fichier que nous avons choisi est propre à l'attaque TFTP, qui est lui-même un dataset contenant 20 millions de lignes et 88 colonnes (aussi référées par caractéristiques ou attributs).
 
-\begin{table}[h]
+\begin{table}[H]
 \begin{center}
-\begin{tabular}{ | m{4cm} | m{10cm} | }
+\begin{tabular}{ | m{4cm} | m{12cm} | }
 \hline
 \textbf{Attribut} & \textbf{Déscription}\\
 \hline
@@ -130,7 +130,8 @@ Flow Packets/s \& Flow Bytes/s & Nombre de packets/octects transmis par seconde\
 \hline
 Flow IAT Mean/Std/Max/Min & Temps de déviation moyen/standard/maximum/minimum entre deux flux\\
 \hline
-Fwd/Bwd IAT Tot/Mean/Std/Max/Min & Temps de déviation ttal/moyen/standard/maximum/minimum entre deux paquets envoyés/reçus\\
+Fwd/Bwd IAT Tot/Mean/ Std/Max/Min & Temps de déviation ttal/moyen/standard/maximum/minimum entre deux paquets envoyés/reçus\\
+\hline
 Fwd/Bwd PSH/URG & Nombre de fois l'indice PSH/URG a été envoyé/reçu\\
 \hline
 Fwd/Bwd Header length & Nombre d'octects contenus dans l'ne tête du paquet envoyé/reçu\\
@@ -141,7 +142,7 @@ Packet Length Max/Min/Mean/Std & Taille maximale/minimale/moyenne/standard d'un 
 \hline
 Packet Length Variance & variance de la taille d'un paquet\\
 \hline
-FIN/SYN/RST/PSH/ACK/URG/CWE/ECE Flag Count & Nombre de paquet contenat FIN/SYN/RST/PSH/ACK/URG/CWE/ECE\\
+FIN/SYN/RST/ PSH/ACK/URG/ CWE/ECE Flag Count & Nombre de paquet contenat FIN/SYN/RST/PSH/ACK/ URG/CWE/ECE\\
 \hline
 Down/Up ratio & ratio de téléchargement/chargement\\
 \hline 
@@ -150,6 +151,10 @@ Average Packet Size & Taille moyenne d'un paquet\\
 Fwd/Bwd Seg Size/Byts/b/Blk Rate Avg & ffff\\
 \hline
 \end{tabular}
+\caption{Attributs du dataset TFTP}
+\label{table:attributs}
+\end{center}
+\end{table}
 
 \subsubsection{B) Prétraitement des données }
 Le dataset TFTP n'est pas propre, il contient des données avec des ordres de grandeur différents, des valeurs erronées, des duplicats, il n'est pas balancé et contient des attributs que nous n'avons pas besoin dans notre travail. Un prétraitement est nécessaire pour préparer le dataset en vue de l'utiliser dans l'étape de création du modèle d'apprentissage. Ce processus de prétraitement est sur trois étapes; la première est le nettoyage du dataset, connue dans la littérature sous le nom de \textbf{Data Laundry}. Deuxième étape, sélection des attributs. Troisième étape, mise à l'échelle et balancement du dataset.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  16 AUG 2020 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.18)  21 AUG 2020 12:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -795,7 +795,14 @@ LaTeX Warning: Label `fig:rDoS' multiply defined.
 
 LaTeX Warning: Label `fig:rDoS' multiply defined.
 
-) (./Chapters/Chapter5.aux) (./Chapters/Conclusion.aux) (./Chapters/Bib.aux
+
+LaTeX Warning: Label `table:attributs' multiply defined.
+
+) (./Chapters/Chapter5.aux
+
+LaTeX Warning: Label `fig:udpServer' multiply defined.
+
+) (./Chapters/Conclusion.aux) (./Chapters/Bib.aux
 
 LaTeX Warning: Label `' multiply defined.
 
@@ -1072,17 +1079,17 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 [1
 
 
-])
+] [2])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [2] (./main.lof)
+ [3] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
 
 1: section
-[3
+[4
 
 ] (./main.lot)
 \tf@lot=\write7
@@ -1091,14 +1098,14 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 
 1: section
 1: section
-[4
+[5
 
 ]
 \openout2 = `Chapters/Abbreviations.aux'.
 
  (./Chapters/Abbreviations.tex)
 1: section
-[5
+[6
 
 
 ]
@@ -1136,14 +1143,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--166
  []
 
 1: section
-[6
+[7
 
 
 
-] [7] [8
-
-
-]
+] [8]
 \openout2 = `Chapters/Chapter1.aux'.
 
  (./Chapters/Chapter1.tex
@@ -1167,6 +1171,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
 1: section
 [1
+
+
 
 
 
@@ -1211,12 +1217,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
  []
 
 [2]
-<Figures/SDN_Architecture.png, id=393, 543.02875pt x 295.1025pt>
+<Figures/SDN_Architecture.png, id=542, 543.02875pt x 295.1025pt>
 File: Figures/SDN_Architecture.png Graphic file (type png)
 <use Figures/SDN_Architecture.png>
 Package pdftex.def Info: Figures/SDN_Architecture.png  used on input line 48.
 (pdftex.def)             Requested size: 324.6446pt x 176.43245pt.
-<Figures/SDN_Plans.png, id=395, 545.03625pt x 530.98375pt>
+<Figures/SDN_Plans.png, id=544, 545.03625pt x 530.98375pt>
 File: Figures/SDN_Plans.png Graphic file (type png)
 <use Figures/SDN_Plans.png>
 Package pdftex.def Info: Figures/SDN_Plans.png  used on input line 58.
@@ -1603,7 +1609,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
-<Figures/IDS.jpg, id=465, 503.8825pt x 211.79124pt>
+<Figures/IDS.jpg, id=614, 503.8825pt x 211.79124pt>
 File: Figures/IDS.jpg Graphic file (type jpg)
 <use Figures/IDS.jpg>
 Package pdftex.def Info: Figures/IDS.jpg  used on input line 151.
@@ -1696,7 +1702,7 @@ LaTeX Warning: Citation '11' on page 20 undefined on input line 264.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\cite' on input line 264.
 
-<Figures/NIDS1.jpg, id=490, 490.83376pt x 385.44pt>
+<Figures/NIDS1.jpg, id=639, 490.83376pt x 385.44pt>
 File: Figures/NIDS1.jpg Graphic file (type jpg)
 <use Figures/NIDS1.jpg>
 Package pdftex.def Info: Figures/NIDS1.jpg  used on input line 268.
@@ -1950,7 +1956,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
-<Figures/K-means.jpg, id=531, 1017.8025pt x 322.20375pt>
+<Figures/K-means.jpg, id=680, 1017.8025pt x 322.20375pt>
 File: Figures/K-means.jpg Graphic file (type jpg)
 <use Figures/K-means.jpg>
 Package pdftex.def Info: Figures/K-means.jpg  used on input line 106.
@@ -1987,7 +1993,7 @@ LaTeX Warning: Citation '23' on page 29 undefined on input line 14.
 
 
 ]
-<Figures/rDoS.png, id=542, 522.95375pt x 328.22626pt>
+<Figures/rDoS.png, id=690, 522.95375pt x 328.22626pt>
 File: Figures/rDoS.png Graphic file (type png)
 <use Figures/rDoS.png>
 Package pdftex.def Info: Figures/rDoS.png  used on input line 18.
@@ -2036,12 +2042,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-<Figures/F-DoS.jpeg, id=548, 4510.8525pt x 4769.82pt>
+<Figures/F-DoS.jpeg, id=696, 4510.8525pt x 4769.82pt>
 File: Figures/F-DoS.jpeg Graphic file (type jpg)
 <use Figures/F-DoS.jpeg>
 Package pdftex.def Info: Figures/F-DoS.jpeg  used on input line 49.
 (pdftex.def)             Requested size: 231.89001pt x 245.20087pt.
-<Figures/Diagramme.jpeg, id=549, 3366.5775pt x 3824.2875pt>
+<Figures/Diagramme.jpeg, id=697, 3366.5775pt x 3824.2875pt>
 File: Figures/Diagramme.jpeg Graphic file (type jpg)
 <use Figures/Diagramme.jpeg>
 Package pdftex.def Info: Figures/Diagramme.jpeg  used on input line 53.
@@ -2093,7 +2099,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-<Figures/MEI.jpeg, id=559, 4281.9975pt x 3565.32pt>
+<Figures/MEI.jpeg, id=708, 4281.9975pt x 3565.32pt>
 File: Figures/MEI.jpeg Graphic file (type jpg)
 <use Figures/MEI.jpeg>
 Package pdftex.def Info: Figures/MEI.jpeg  used on input line 87.
@@ -2115,9 +2121,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
-
-
-LaTeX Warning: Reference `Chapter5' on page 34 undefined on input line 100.
 
 
 LaTeX Warning: Citation '21' on page 34 undefined on input line 105.
@@ -2155,11 +2158,6 @@ Overfull \hbox (1.00398pt too wide) in paragraph at lines 127--127
  []
 
 
-Underfull \hbox (badness 2922) in paragraph at lines 127--128
-[]|\T1/ppl/m/n/12 Taille maxi-male/minimale/moyenne/standard des
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 129--129
 []|\T1/ppl/m/n/12 Flow Pa-ckets/s &
  []
@@ -2175,7 +2173,7 @@ Overfull \hbox (1.00398pt too wide) in paragraph at lines 131--131
  []
 
 
-Overfull \hbox (33.81743pt too wide) in paragraph at lines 131--132
+Underfull \hbox (badness 5817) in paragraph at lines 131--132
 []|\T1/ppl/m/n/12 Temps de dé-via-tion moyen/standard/maximum/minimum
  []
 
@@ -2185,77 +2183,138 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--133
  []
 
 
-Overfull \hbox (24.99165pt too wide) in paragraph at lines 133--133
-\T1/ppl/m/n/12 Tot/Mean/Std/Max/Min| 
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
+\T1/ppl/m/n/12 Tot/Mean/
  []
 
 
-Overfull \hbox (58.40497pt too wide) in paragraph at lines 133--134
+Overfull \hbox (1.49947pt too wide) in paragraph at lines 133--134
 []|\T1/ppl/m/n/12 Temps de dé-via-tion ttal/moyen/standard/maximum/minimum
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--134
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
 []|\T1/ppl/m/n/12 Fwd/Bwd
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--136
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
 []|\T1/ppl/m/n/12 Fwd/Bwd Hea-der
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--140
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
 []|\T1/ppl/m/n/12 Packet Length
  []
 
 
-Overfull \hbox (1.00398pt too wide) in paragraph at lines 140--140
+Overfull \hbox (1.00398pt too wide) in paragraph at lines 141--141
 \T1/ppl/m/n/12 Max/Min/Mean/Std| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--142
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
 []|\T1/ppl/m/n/12 Packet Length Va-
  []
 
 
-Overfull \hbox (131.33487pt too wide) in paragraph at lines 144--144
-[]|\T1/ppl/m/n/12 FIN/SYN/RST/PSH/ACK/URG/CWE/ECE
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
+[]|\T1/ppl/m/n/12 FIN/SYN/RST/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
-[]|\T1/ppl/m/n/12 Nombre de pa-quet conte-nat
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
+\T1/ppl/m/n/12 PSH/ACK/URG/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
+\T1/ppl/m/n/12 CWE/ECE Flag
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+[]|\T1/ppl/m/n/12 Nombre de pa-quet conte-nat FIN/SYN/RST/PSH/ACK/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
 []|\T1/ppl/m/n/12 Fwd/Bwd Seg
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
 \T1/ppl/m/n/12 Size/Byts/b/Blk
  []
 
 
-Underfull \hbox (badness 2980) in paragraph at lines 187--187
+Overfull \hbox (16.66402pt too wide) in paragraph at lines 111--154
+ [] 
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
+
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 192--192
 []|\T1/ppl/m/n/12 Total Ba-ck-ward Pa-
  []
 
-<Figures/Diagramme2.jpeg, id=571, 4992.6525pt x 1752.5475pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 218--222
+
+ []
+
+<Figures/Diagramme2.jpeg, id=732, 4992.6525pt x 1752.5475pt>
 File: Figures/Diagramme2.jpeg Graphic file (type jpg)
 <use Figures/Diagramme2.jpeg>
-Package pdftex.def Info: Figures/Diagramme2.jpeg  used on input line 224.
+Package pdftex.def Info: Figures/Diagramme2.jpeg  used on input line 229.
 (pdftex.def)             Requested size: 463.78004pt x 162.77664pt.
-)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
+
+ []
+
+) [38 <./Figures/Diagramme2.jpeg>]
 \openout2 = `Chapters/Chapter5.aux'.
 
  (./Chapters/Chapter5.tex
 Chapitre 5.
 
-LaTeX Warning: Citation '4' on page 35 undefined on input line 12.
+LaTeX Warning: Citation '4' on page 39 undefined on input line 12.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
 
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 17
 .
@@ -2263,16 +2322,58 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 17
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 
-LaTeX Warning: Citation '28' on page 35 undefined on input line 25.
+LaTeX Warning: Citation '28' on page 39 undefined on input line 25.
+
+1: section
+[39
 
 
-LaTeX Warning: Citation '29' on page 35 undefined on input line 92.
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
 
 
-LaTeX Warning: Citation '30' on page 35 undefined on input line 95.
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
 
 
-LaTeX Warning: Citation '31' on page 35 undefined on input line 98.
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+[40]
+
+LaTeX Warning: Citation '29' on page 41 undefined on input line 92.
+
+
+LaTeX Warning: Citation '30' on page 41 undefined on input line 95.
+
+[41]
+
+LaTeX Warning: Citation '31' on page 42 undefined on input line 98.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+ []
 
 
 Overfull \hbox (33.01974pt too wide) in paragraph at lines 126--126
@@ -2282,46 +2383,49 @@ ets/s',[]
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 127.
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
-LaTeX Warning: Reference `table:compare' on page 35 undefined on input line 187
-.
+ []
 
 
-LaTeX Warning: Reference `fig:histogramme' on page 35 undefined on input line 1
-87.
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
-<Figures/performances.png, id=574, 660.4675pt x 427.5975pt>
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Figures/performances.png, id=768, 660.4675pt x 427.5975pt>
 File: Figures/performances.png Graphic file (type png)
 <use Figures/performances.png>
 Package pdftex.def Info: Figures/performances.png  used on input line 212.
 (pdftex.def)             Requested size: 440.58961pt x 285.25568pt.
-<Figures/simulation.jpeg, id=575, 2890.8pt x 2330.7075pt>
+[43] [44 <./Figures/performances.png>] [45]
+<Figures/simulation.jpeg, id=783, 2890.8pt x 2330.7075pt>
 File: Figures/simulation.jpeg Graphic file (type jpg)
 <use Figures/simulation.jpeg>
 Package pdftex.def Info: Figures/simulation.jpeg  used on input line 225.
 (pdftex.def)             Requested size: 371.02544pt x 299.12617pt.
 
-LaTeX Warning: Reference `table:nodes' on page 35 undefined on input line 232.
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+
+ []
 
 
 Underfull \hbox (badness 2818) in paragraph at lines 250--250
 []|\T1/ppl/m/n/12 Système de dé-tec-tion F-
  []
 
-<Figures/simulation/mininet/start.png, id=576, 578.16pt x 419.5675pt>
+[46 <./Figures/simulation.jpeg>]
+<Figures/simulation/mininet/start.png, id=789, 578.16pt x 419.5675pt>
 File: Figures/simulation/mininet/start.png Graphic file (type png)
 <use Figures/simulation/mininet/start.png>
 Package pdftex.def Info: Figures/simulation/mininet/start.png  used on input li
 ne 270.
 (pdftex.def)             Requested size: 324.6446pt x 235.59pt.
-
-LaTeX Warning: Reference `fig:topologie' on page 35 undefined on input line 277
-.
-
-
-LaTeX Warning: Reference `table:nodes' on page 35 undefined on input line 280.
-
-<Figures/simulation/mininet/switch/create_mirroring_port.png, id=577, 365.86688
+ [47 <./Figures/simulation/mininet/start.png>]
+<Figures/simulation/mininet/switch/create_mirroring_port.png, id=797, 365.86688
 pt x 261.22594pt>
 File: Figures/simulation/mininet/switch/create_mirroring_port.png Graphic file 
 (type png)
@@ -2329,38 +2433,46 @@ File: Figures/simulation/mininet/switch/create_mirroring_port.png Graphic file
 Package pdftex.def Info: Figures/simulation/mininet/switch/create_mirroring_por
 t.png  used on input line 284.
 (pdftex.def)             Requested size: 371.02544pt x 264.92427pt.
-<Figures/simulation/mininet/IDS/start.png, id=578, 451.6875pt x 115.93312pt>
+
+[48 <./Figures/simulation/mininet/switch/create_mirroring_port.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
+
+ []
+
+<Figures/simulation/mininet/IDS/start.png, id=804, 451.6875pt x 115.93312pt>
 File: Figures/simulation/mininet/IDS/start.png Graphic file (type png)
 <use Figures/simulation/mininet/IDS/start.png>
 Package pdftex.def Info: Figures/simulation/mininet/IDS/start.png  used on inpu
 t line 301.
 (pdftex.def)             Requested size: 417.3992pt x 107.13914pt.
-
-LaTeX Warning: Reference `fig:udpServer' on page 35 undefined on input line 308
-.
-
-<Figures/simulation/mininet/UDP/server/start.png, id=579, 365.86688pt x 77.5396
+[49 <./Figures/simulation/mininet/IDS/start.png>]
+<Figures/simulation/mininet/UDP/server/start.png, id=812, 365.86688pt x 77.5396
 9pt>
 File: Figures/simulation/mininet/UDP/server/start.png Graphic file (type png)
 <use Figures/simulation/mininet/UDP/server/start.png>
 Package pdftex.def Info: Figures/simulation/mininet/UDP/server/start.png  used 
 on input line 311.
 (pdftex.def)             Requested size: 417.3992pt x 88.46594pt.
-<Figures/simulation/mininet/TFTP/server/start.png, id=580, 415.5525pt x 86.5734
+<Figures/simulation/mininet/TFTP/server/start.png, id=813, 415.5525pt x 86.5734
 4pt>
 File: Figures/simulation/mininet/TFTP/server/start.png Graphic file (type png)
 <use Figures/simulation/mininet/TFTP/server/start.png>
 Package pdftex.def Info: Figures/simulation/mininet/TFTP/server/start.png  used
  on input line 321.
 (pdftex.def)             Requested size: 417.3992pt x 86.96158pt.
-<Figures/simulation/mininet/UDP/client/Benign.png, id=581, 365.86688pt x 104.64
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+
+ []
+
+<Figures/simulation/mininet/UDP/client/Benign.png, id=814, 365.86688pt x 104.64
 093pt>
 File: Figures/simulation/mininet/UDP/client/Benign.png Graphic file (type png)
 <use Figures/simulation/mininet/UDP/client/Benign.png>
 Package pdftex.def Info: Figures/simulation/mininet/UDP/client/Benign.png  used
  on input line 335.
 (pdftex.def)             Requested size: 355.65944pt x 101.72668pt.
-<Figures/simulation/mininet/UDP/server/benign_request.png, id=582, 365.86688pt 
+<Figures/simulation/mininet/UDP/server/benign_request.png, id=815, 365.86688pt 
 x 103.88812pt>
 File: Figures/simulation/mininet/UDP/server/benign_request.png Graphic file (ty
 pe png)
@@ -2369,20 +2481,18 @@ Package pdftex.def Info: Figures/simulation/mininet/UDP/server/benign_request.p
 ng  used on input line 341.
 (pdftex.def)             Requested size: 355.65944pt x 100.99486pt.
 
-LaTeX Warning: Reference `fig:c/s_UDP' on page 35 undefined on input line 350.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Figures/simulation/mininet/IDS/benign_udp.png, id=583, 450.9347pt x 206.27063p
+[50 <./Figures/simulation/mininet/UDP/server/start.png> <./Figures/simulation/m
+ininet/TFTP/server/start.png>]
+<Figures/simulation/mininet/IDS/benign_udp.png, id=826, 450.9347pt x 206.27063p
 t>
 File: Figures/simulation/mininet/IDS/benign_udp.png Graphic file (type png)
 <use Figures/simulation/mininet/IDS/benign_udp.png>
 Package pdftex.def Info: Figures/simulation/mininet/IDS/benign_udp.png  used on
  input line 354.
 (pdftex.def)             Requested size: 394.21587pt x 180.33527pt.
-
-LaTeX Warning: Reference `fig:c/s_TFTP' on page 35 undefined on input line 360.
-
-
-<Figures/simulation/mininet/TFTP/client/benign.png, id=584, 365.86688pt x 101.6
+<Figures/simulation/mininet/TFTP/client/benign.png, id=828, 365.86688pt x 101.6
 2968pt>
 File: Figures/simulation/mininet/TFTP/client/benign.png Graphic file (type png)
 
@@ -2390,7 +2500,7 @@ File: Figures/simulation/mininet/TFTP/client/benign.png Graphic file (type png)
 Package pdftex.def Info: Figures/simulation/mininet/TFTP/client/benign.png  use
 d on input line 366.
 (pdftex.def)             Requested size: 355.65944pt x 98.79932pt.
-<Figures/simulation/mininet/TFTP/server/benign_request.png, id=585, 415.5525pt 
+<Figures/simulation/mininet/TFTP/server/benign_request.png, id=829, 415.5525pt 
 x 122.70844pt>
 File: Figures/simulation/mininet/TFTP/server/benign_request.png Graphic file (t
 ype png)
@@ -2398,14 +2508,25 @@ ype png)
 Package pdftex.def Info: Figures/simulation/mininet/TFTP/server/benign_request.
 png  used on input line 372.
 (pdftex.def)             Requested size: 355.65944pt x 105.02727pt.
-<Figures/simulation/mininet/IDS/benign_tftp.png, id=586, 450.9347pt x 283.81032
+ [51 <./Figures/simulation/mininet/UDP/client/benign.png> <./Figures/simulation
+/mininet/UDP/server/benign_request.png> <./Figures/simulation/mininet/IDS/benig
+n_udp.png>]
+<Figures/simulation/mininet/IDS/benign_tftp.png, id=839, 450.9347pt x 283.81032
 pt>
 File: Figures/simulation/mininet/IDS/benign_tftp.png Graphic file (type png)
 <use Figures/simulation/mininet/IDS/benign_tftp.png>
 Package pdftex.def Info: Figures/simulation/mininet/IDS/benign_tftp.png  used o
 n input line 385.
 (pdftex.def)             Requested size: 380.30302pt x 239.36908pt.
-<Figures/simulation/mininet/TFTP/client/attack.png, id=587, 365.86688pt x 94.85
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
+
+ []
+
+[52 <./Figures/simulation/mininet/TFTP/client/benign.png> <./Figures/simulation
+/mininet/TFTP/server/benign_request.png> <./Figures/simulation/mininet/IDS/beni
+gn_tftp.png>]
+<Figures/simulation/mininet/TFTP/client/attack.png, id=848, 365.86688pt x 94.85
 437pt>
 File: Figures/simulation/mininet/TFTP/client/attack.png Graphic file (type png)
 
@@ -2413,7 +2534,7 @@ File: Figures/simulation/mininet/TFTP/client/attack.png Graphic file (type png)
 Package pdftex.def Info: Figures/simulation/mininet/TFTP/client/attack.png  use
 d on input line 400.
 (pdftex.def)             Requested size: 369.88582pt x 95.90201pt.
-<Figures/simulation/mininet/TFTP/server/attack_request.png, id=588, 517.935pt x
+<Figures/simulation/mininet/TFTP/server/attack_request.png, id=849, 517.935pt x
  256.96pt>
 File: Figures/simulation/mininet/TFTP/server/attack_request.png Graphic file (t
 ype png)
@@ -2422,20 +2543,28 @@ Package pdftex.def Info: Figures/simulation/mininet/TFTP/server/attack_request.
 png  used on input line 406.
 (pdftex.def)             Requested size: 369.88582pt x 183.5172pt.
 
-LaTeX Warning: Reference `fig:send' on page 35 undefined on input line 416.
+Underfull \hbox (badness 10000) in paragraph at lines 395--414
+
+ []
 
 
-LaTeX Warning: Reference `fig:tftpAttack' on page 35 undefined on input line 41
-8.
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
-<Figures/simulation/mininet/IDS/attack_tftp.png, id=589, 451.6875pt x 319.94531
+ []
+
+<Figures/simulation/mininet/IDS/attack_tftp.png, id=852, 451.6875pt x 319.94531
 pt>
 File: Figures/simulation/mininet/IDS/attack_tftp.png Graphic file (type png)
 <use Figures/simulation/mininet/IDS/attack_tftp.png>
 Package pdftex.def Info: Figures/simulation/mininet/IDS/attack_tftp.png  used o
 n input line 421.
 (pdftex.def)             Requested size: 403.48637pt x 285.81956pt.
-<Figures/simulation/mininet/UDP/attack_udp_flood.png, id=590, 365.86688pt x 74.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[53 <./Figures/simulation/mininet/TFTP/client/attack.png> <./Figures/simulation
+/mininet/TFTP/server/attack_request.png>]
+<Figures/simulation/mininet/UDP/attack_udp_flood.png, id=861, 365.86688pt x 74.
 52844pt>
 File: Figures/simulation/mininet/UDP/attack_udp_flood.png Graphic file (type pn
 g)
@@ -2443,11 +2572,13 @@ g)
 Package pdftex.def Info: Figures/simulation/mininet/UDP/attack_udp_flood.png  u
 sed on input line 439.
 (pdftex.def)             Requested size: 417.3992pt x 85.03038pt.
+ [54 <./Figures/simulation/mininet/IDS/attack_tftp.png> <./Figures/simulation/m
+ininet/UDP/attack_udp_flood.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
 
-LaTeX Warning: Reference `fig:FloodingAttack' on page 35 undefined on input lin
-e 445.
+ []
 
-<Figures/simulation/mininet/IDS/attack_udp_flood.png, id=591, 370.38374pt x 319
+<Figures/simulation/mininet/IDS/attack_udp_flood.png, id=870, 370.38374pt x 319
 .94531pt>
 File: Figures/simulation/mininet/IDS/attack_udp_flood.png Graphic file (type pn
 g)
@@ -2456,15 +2587,90 @@ Package pdftex.def Info: Figures/simulation/mininet/IDS/attack_udp_flood.png  u
 sed on input line 449.
 (pdftex.def)             Requested size: 417.3992pt x 360.56247pt.
 
-LaTeX Warning: Reference `tests' on page 35 undefined on input line 456.
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
 
-)
+ []
+
+[55 <./Figures/simulation/mininet/IDS/attack_udp_flood.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 458--459
+
+ []
+
+) [56]
 \openout2 = `Chapters/Conclusion.aux'.
 
- (./Chapters/Conclusion.tex)
+ (./Chapters/Conclusion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+
+ []
+
+1: section
+[1
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+) [2]
 \openout2 = `Chapters/Bib.aux'.
 
  (./Chapters/Bib.tex
+1: section
+[1
+
+
+
+
+]
 Underfull \hbox (badness 2165) in paragraph at lines 72--73
 []\T1/ppl/m/n/12 Canadian Ins-ti-tute for Cy-ber-se-cu-rity, https ://www.unb.c
 a/cic/datasets/ids-
@@ -2482,25 +2688,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--79
 vai-lable :
  []
 
-)
+) [2]
 \openout2 = `Chapters/Abstract.aux'.
 
- (./Chapters/Abstract.tex)
+ (./Chapters/Abstract.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+)
+1: section
+[3
+
+
+
+]
 
 LaTeX Warning: Empty bibliography on input line 195.
-
-
-! LaTeX Error: \begin{center} on input line 110 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.199 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 199.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
@@ -2511,7 +2715,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 199.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 199.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B3BE63B171F66DDF3EF578004ABE658E;10625.
+(rerunfilecheck)             Checksum: 52CF78EABB443CE71466D14CFB43C349;13922.
 
 
 LaTeX Warning: There were undefined references.
@@ -2527,42 +2731,27 @@ Package biblatex Warning: Please (re)run BibTeX on the file(s):
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
-! You can't use `\end' in internal vertical mode.
-\enddocument ...cumenthook \deadcycles \z@ \@@end 
-                                                  
-l.199 \end{document}
-                    
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-! LaTeX Error: \begin{center} on input line 110 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.199 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
-! Emergency stop.
-<*> main.tex
-            
-*** (job aborted, no legal \end found)
-
- 
+ ) 
 Here is how much of TeX's memory you used:
- 28534 strings out of 483040
- 584743 string characters out of 5962426
- 1141505 words of memory out of 5000000
- 42938 multiletter control sequences out of 15000+600000
- 590780 words of font info for 127 fonts, out of 8000000 for 9000
+ 28695 strings out of 483040
+ 586632 string characters out of 5962426
+ 1072399 words of memory out of 5000000
+ 42972 multiletter control sequences out of 15000+600000
+ 594598 words of font info for 136 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 59i,21n,81p,2835b,2637s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 61i,21n,86p,2835b,2637s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
+uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (71 pages, 5090188 bytes).
+PDF statistics:
+ 1022 PDF objects out of 1200 (max. 8388607)
+ 884 compressed objects within 9 object streams
+ 257 named destinations out of 1000 (max. 500000)
+ 789 words of extra memory for PDF output out of 10000 (max. 10000000)
+
