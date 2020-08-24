@@ -35,8 +35,8 @@
 \contentsline {subsection}{\numberline {2.3.3}Classification d'une attaque DoS}{14}{subsection.41}%
 \contentsline {subsubsection}{A) Attaque par complexité d’algorithme:}{14}{section*.42}%
 \contentsline {subsubsection}{B) Attaque par inondation (Flooding):}{14}{section*.43}%
-\contentsline {subsubsection}{C) Attaque par réflexion/amplification}{14}{section*.44}%
-\contentsline {subsection}{\numberline {2.3.4}Impacts des attaques DoS sur un réseau SDN}{15}{subsection.45}%
+\contentsline {subsection}{\numberline {2.3.4}Attaque par réflexion/amplification RDoS}{14}{subsection.44}%
+\contentsline {subsection}{\numberline {2.3.5}Impacts des attaques par déni de service sur un réseau SDN}{15}{subsection.45}%
 \contentsline {subsubsection}{Impact sur le plan de contrôle:}{15}{section*.46}%
 \contentsline {subsubsection}{Impact sur le plan de données:}{15}{section*.47}%
 \contentsline {subsubsection}{Impact sur la liaison contrôleur-commutateur:}{16}{section*.48}%
