@@ -122,7 +122,6 @@ Rappellons que ce module est composé d'un modèle intelligent qui utilise une a
 12- df = scaleDataFrame(df)
 13- return df
 
-#end
 \end{verbatim}
 \caption{Preprocessor.py}
 \end{algorithm}
@@ -140,7 +139,6 @@ Rappellons que ce module est composé d'un modèle intelligent qui utilise une a
 6- centers = calculateCenters(newDF) #returns 2 elements array
 
 7- F_Clustering = KMeans(n_clusters=2, init=centers).fit(newDF) 
-
 \end{verbatim}
 \caption{Cluster.py}
 \end{algorithm}
@@ -209,13 +207,25 @@ Nous remarquons que les résultats sont très satisfaisants. L'élément-clé qu
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/performances}
+\includegraphics[width=\textwidth]{Figures/performances}
 \decoRule
 \caption{Comparaison entre les résultats obtenus selon l'opération de prétraitement effectuée}
 \label{fig:histogramme}
 \end{figure} 
+
+En analysant l'histogramme ci-dessus on voit clairement la différence si on applique juste une seule opération de prétraitement à la fois, ou bien les deux opérations combinées. En choisissant la bonne méthode de normalisation ainsi que celle de balancement, nous avons pu faire passer le taux d'exactitude de notre modèle de \textbf{25.4\%} à \textbf{99.3\%}. Le choix des méthodes était selon une stratégie étudiée et une synthèse des résultats de plusieurs tests effectués sur notre dataset. Les bonnes performances d'un modèle sont toujours engendrées par un bon prétraitement des données.\\
+
 \newpage
-En analysant l'histogramme ci-dessus on voit clairement la différence si on applique juste une seule opération de prétraitement à la fois, ou bien les deux opérations combinées. En choisissant la bonne méthode de normalisation ainsi que celle de balancement, nous avons pu faire passer le taux d'exactitude de notre modèle de \textbf{25.4\%} à \textbf{99.3\%}. Le choix des méthodes était selon une stratégie étudiée et une synthèse des résultats de plusieurs tests effectués sur notre dataset. Les bonnes performances d'un modèle sont toujours engendrées par un bon prétraitement des données.
+La sélection des attributs est aussi une étape primordiale pour le développement d'un modèle d'apprentissage. Pour notre modèle, nous nous sommes contenté de 10 attributs que nous avons trouvés suffisants. Ces attributs ont été choisi en faisant la correspondance entre les attributs qu'on peut calculer (extraire) à l'aide du module \textbf{MEI}  et entre cels existant dans le dataset TFTP, ainsi que plusieurs tests effectués qui nous ont permis de distinguer les attributs les plus pertinents. \\
+
+\noindent Le choix d'un grand nombre d'attributs ne garantit pas nécessairement de bonnes performances du modèle. La figure suivante fait la comparaison entre les résultats obtenus de notre modèle avec et sans sélection d'attributs. On peut clairement voir qu'avec la sélection des attributs les résultats ont été améliorés.\\
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Figures/attributsHist}
+\decoRule
+\caption{Comparaison entre les résultats obtenues (avec et sans séléction des attributs)}
+\label{fig:histogrammeAttributs}
+\end{figure} 
 
 \newpage
 \section{Simulation}
@@ -273,7 +283,6 @@ Hôte & Rôle(s) & @IP\\
 \label{fig:topologie}
 \end{figure}
 
-\newpage
 La figure \ref{fig:topologie} indique que la topologie a été créés avec succès et la console mninet est active. On peut voir le contrôleur \textbf{c0}, le switch \textbf{s1} et les différents liens établis (h1, s1), (h2, s1), etc. L'étape suivante consiste à configurer chaque hôte de notre topologie.
 
 \subsection{Installation des fonctions}
@@ -287,7 +296,6 @@ Jusqu'à présent les hôtes créés par mininet, ainsi que les switchs OF, n'on
 \label{fig:portMirroring}
 \end{figure}
 
-\newpage
 \subsubsection{A- Installation du système F-DoS sur h6}
 Sur l'hôte \textbf{h6}, nous allons installer notre système de détection. Rappelons que le module MEI du système F-DoS fait appel au client et au serveur ARGUS. Donc en premier nous allons activer le serveur ARGUS sur l'hôte h6 à l'aide de la commande suivante:
 \begin{verbatim}
@@ -298,7 +306,7 @@ L'option \textbf{-i} : permet de spécifier l'interface d'écoute, qui est, dans
 \noindent Nous lançons ensuite script "IDS.py" qui va installer le client argus, ainsi que le modèle de clustering \textbf{F-Clustering}.
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{Figures/simulation/mininet/IDS/start}
+\includegraphics[width=\textwidth]{Figures/simulation/mininet/IDS/start}
 \decoRule
 \caption{Installation du module de détection}
 \label{fig:fileServer}

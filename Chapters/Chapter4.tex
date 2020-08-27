@@ -45,7 +45,7 @@ L'architecture et le principe de fonctionnement de notre système sont illustré
 
 \begin{figure}[h]
 \centering
-\begin{minipage}[b]{.5\textwidth}
+\begin{minipage}[b]{.52\textwidth}
 \includegraphics[width=\textwidth]{Figures/F-DoS}
 \label{fig:rDoS}
 \end{minipage}
@@ -77,14 +77,15 @@ Pour mettre en oeuvre ce module nous avons procédé comme suit:\\
 \item[1-] Premièrement, une copie du trafic réseau est redirigée vers ce module à l'aide du \textit{Port-Miroring} activé au niveau des \textit{switches}.\\
 \item[2-] Un filtrage est appliqué pour supprimer tout paquet non intéressant pou ce travail.\\
 \item[3-] Nous avons lancé le serveur ARGUS pour capturer les flux.\\
-\item[4-] Nous avons lancé l’outil ARGUS-client, qui nous permet de sélectionner les caractéristiques et les informations des flux à extraire.\\
-\item[5-] Nous traitons par la suite les informations collectées et nous les envoyons au module \textbf{F-Clustering}.\\
+\item[4-] Nous avons lancé l’outil ARGUS-client qui nous permet d'extraire les caractéristiques du flux.\\
+\item[5-] À partir des caractéristiques extraites nous sélectionnons celles désirées.\\
+\item[6-] Nous traitons par la suite toutes les informations collectées et nous les envoyons au module \textbf{F-Clustering}.\\
 \end{itemize}
 
 L'architecture interne du module MEI est illustrée dans la figure \ref{fig:MEI}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.6\textwidth]{Figures/MEI}
+\includegraphics[width=0.65\textwidth]{Figures/MEI}
 \decoRule
 \caption{Architecture du module MEI}
 \label{fig:MEI}
@@ -146,14 +147,6 @@ Down/Up ratio & Ratio de téléchargement/chargement\\
 \hline 
 Average Packet Size & Taille moyenne d'un paquet\\
 \hline
-Fwd/Bwd Seg Size/Byts/Bulk Rate Avg & \\
-\hline
-Subflow Fwd/Bwd Packets/Byts/b/Blk Rate Avg & \\
-\hline
-Init\_Win\_Bytes\_Forward & \\
-\hline
-Init\_Win\_Bytes\_Backward & \\
-\hline
 act\_data\_pkt\_fwd & Nombre de paquets avec au moins 1 octet de données TCP envoyées\\
 \hline
 min\_seg\_size\_forward & Taille minimale observée d'un segement envoyé\\
@@ -161,6 +154,14 @@ min\_seg\_size\_forward & Taille minimale observée d'un segement envoyé\\
 Active Mean/Std/Max/Min & Temps moyen/standard/maximal/minimal durant lequel un flux était actif avant de devenir inactif\\
 \hline 
 Idle Mean/Std/Max/Min & Temps moyen/standard/maximal/minimal durant lequel un flux était inactif avant de devenir actif\\
+\hline
+Fwd/Bwd Seg Size/Byts/Bulk Rate Avg & \\
+\hline
+Subflow Fwd/Bwd Packets/Byts/b/Blk Rate Avg & \\
+\hline
+Init\_Win\_Bytes\_Forward & \\
+\hline
+Init\_Win\_Bytes\_Backward & \\
 \hline
 SimilarHTTP & \\
 \hline
@@ -226,11 +227,17 @@ Bwd Packets/s & Nombre de paquets reçus par seconde \\
 \end{table}
 
 \subsubsection{B-3) Mise à l'échelle et balancement}
-La mise à l'échelle consiste à diminuer la grande différence entre les valeurs d'une même caractéristique C. Nous avons utilisé la technique Min-Max Scaler sur ce dataset, qui pour chaque valeur X applique l'opération suivante:
+La mise à l'échelle des caractéristiques est une méthode utilisée pour normaliser la plage des variables indépendantes ou des caractéristiques des données. Dans le traitement des données, elle est également connue sous le nom de normalisation des données et est généralement effectuée lors de l'étape de prétraitement des données.\\
+
+\noindent Étant donné que la plage de valeurs des données brutes varie considérablement, dans certains algorithmes d'apprentissage automatique, les fonctions objectives ne fonctionneront pas correctement sans normalisation. Par exemple, de nombreux classificateurs calculent la distance entre deux points par la distance euclidienne. Si l'une des entités a une large plage de valeurs, la distance sera régie par cette caractéristique particulière. Par conséquent, la portée de toutes les entités doit être normalisée afin que chaque entité contribue approximativement proportionnellement à la distance finale.
+
+\paragraph{Min-Max Scaler: \\\\}
+Également appelée min-max normalisation, c'est la méthode la plus simple et consiste à redimensionner la plage de caractéristiques pour mettre à l'échelle la plage en [0, 1] ou [-1, 1]. La sélection de la plage cible dépend de la nature des données. La formule générale pour un min-max de [0, 1] est donnée comme suit :
 \begin{center}
 {\large $ X_{scaled} = \frac{X - X_{min}}{X_{max} - X_{min}} $}
 \end{center}
 Où :\\
+
 \indent X : valeur à mettre à l'échelle de la caractéristique C.\\
 \indent $X_{min}$ : plus petite valeur observée de la caractéristique C.\\
 \indent $X_{max}$ : plus grande valeur observée de la caractéristique C.\\
@@ -246,6 +253,36 @@ Deuxième étape du processus KDD. Nous avons opté pour un modèle de Clusterin
 \caption{Étapes de conception de F-Clustering}
 \label{fig:F-Clustering_Diagramme}
 \end{figure} 
+
+\subsubsection{A- Fonctionnement de K-Means} 
+\begin{algorithm}[H]
+\begin{verbatim}
+Donnée : k le nombre maximum de classe désiré.
+
+Début 
+1- Choisir k individus au hasard (comme centre des classes initiales)
+2- Affecter chaque individu au centre le plus proche 
+3- Recalculer le centre de chacune de ces classes 
+4- Répéter l’étape (2) et (3) jusqu’à stabilité des centres 
+5- Editer la partition obtenue 
+Fin
+\end{verbatim}
+\caption{K-Means}
+\end{algorithm}
+
+\subsubsection{B- La distance de dissimilarité:}
+Pour pouvoir regrouper un jeu de données en K clusters distincts, l’algorithme K-Means a besoin d’un moyen de comparer le degré de similarité entre les différentes observations. Ainsi, deux données qui se ressemblent, auront une distance de dissimilarité réduite, alors que deux objets différents auront une distance de séparation plus grande.\\
+
+\noindent Dans notre cas nous avons choisi la distance Euclidienne: c’est la distance géométrique (aussi appelée la distance à vol d’oiseau). Soit une matrice $X$ à $n$ variables quantitatives dans l’espace vectoriel $E^{n}$. La distance euclidienne $d$ entre deux observations $x_{1}$ et $x_{2}$ se calcule comme suit :
+
+\begin{large}
+		\begin{center}
+			$ d(x_{1}, x_{2}) = \sqrt{\sum_{j=1}^{n}(x_{1n} - x_{2n})^{2}}$
+		\end{center}
+	\end{large}
+
+\subsubsection{C- Le choix des centres}
+La principale limite de cette méthode de clustering est la dépendance des résultats des valeurs de départ (centres initiaux). À chaque initialisation correspond une solution différente (optimum local) qui peut dans certains cas être très loin de la solution optimale (optimum global). Notre solution à ce problème consiste à lancer l'algorithme une fois avec les attaques uniquement et une autrefois avec les données bénignes uniquement pour calculer leurs centres des clusters souhaités.
 
 \section{Module d'archivage}
 Nous avons pensé à rajouter, comme fonctionnalité additionnelle à notre système, un module d’archivages qui sauvegarde des logs datés et classés par ordres chronologiques sur les caractéristiques et les informations collectées sur les flux de données.  Une étiquette, qui porte la valeur \textit{"ATTACK"} ou \textit{"BENIGN"}, sera ajoutée à chaque flux, par le modèle de Clustering, pour l'identifier. 57 caractéristiques seront calculées et sauvegardées dans ce module, par exemple : la durée du flux, les adresses source et destination, Timestamp (heure de capture), protocole, ports source et destination, et bien d'autres. Ce module peut servir à plusieurs besoins, par exemple l'analyse périodique du système, il peut servir comme un source de données (dataset) pour d'autres projets qui nécessitent des données fiables et capturées dans un réseau réel. 

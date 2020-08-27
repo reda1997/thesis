@@ -81,35 +81,39 @@
 \contentsline {subsubsection}{B-1) Data Laundry}{36}{section*.97}%
 \contentsline {subsubsection}{B-2) Sélection des attributs}{36}{section*.98}%
 \contentsline {subsubsection}{B-3) Mise à l'échelle et balancement}{37}{section*.100}%
-\contentsline {subsection}{\numberline {4.5.2}Recherche du modèle}{37}{subsection.101}%
-\contentsline {section}{\numberline {4.6}Module d'archivage}{38}{section.103}%
-\contentsline {section}{\numberline {4.7}Conclusion}{38}{section.104}%
-\contentsline {chapter}{\numberline {5}Implémentation, simulation et résultats}{39}{chapter.105}%
-\contentsline {section}{\numberline {5.1}Environnement de travail}{39}{section.106}%
-\contentsline {subsection}{\numberline {5.1.1}Contrôleur SDN}{39}{subsection.107}%
-\contentsline {subsection}{\numberline {5.1.2}Simulation du réseau SDN}{40}{subsection.108}%
-\contentsline {subsubsection}{Mininet}{40}{section*.109}%
-\contentsline {subsubsection}{Simulation d'un simple réseau SDN}{40}{section*.110}%
-\contentsline {section}{\numberline {5.2}Langage et Librairies utilisées}{41}{section.111}%
-\contentsline {subsection}{\numberline {5.2.1}Python}{41}{subsection.112}%
-\contentsline {subsection}{\numberline {5.2.2}Scikit-learn}{41}{subsection.113}%
-\contentsline {subsection}{\numberline {5.2.3}Pandas}{41}{subsection.114}%
-\contentsline {subsection}{\numberline {5.2.4}Argus}{42}{subsection.115}%
-\contentsline {section}{\numberline {5.3}Réalisation du module F-Clustering}{42}{section.116}%
-\contentsline {section}{\numberline {5.4}Évaluation et test des performances}{43}{section.119}%
-\contentsline {section}{\numberline {5.5}Simulation}{46}{section.124}%
-\contentsline {subsection}{\numberline {5.5.1}Création de la topologie}{46}{subsection.126}%
-\contentsline {subsection}{\numberline {5.5.2}Installation des fonctions}{48}{subsection.129}%
-\contentsline {subsubsection}{A- Installation du système F-DoS sur h6}{49}{section*.131}%
-\contentsline {subsubsection}{B- Installation du serveur d'applications sur h5}{50}{section*.133}%
-\contentsline {subsubsection}{C- Installation du serveur de fichier sur h4}{50}{section*.135}%
-\contentsline {subsubsection}{D- Installation des clients}{50}{section*.137}%
-\contentsline {paragraph}{}{51}{section*.140}%
-\contentsline {paragraph}{}{52}{section*.142}%
-\contentsline {subsection}{\numberline {5.5.3}Simulation des attaques}{53}{subsection.143}%
-\contentsline {subsubsection}{A- Simulation de RDoS}{53}{section*.144}%
-\contentsline {paragraph}{}{53}{section*.146}%
-\contentsline {subsubsection}{B- Simulation de UDP-Flooding}{54}{section*.148}%
-\contentsline {section}{\numberline {5.6}Conclusion}{55}{section.151}%
-\contentsline {chapter}{Conclusion générale}{i}{chapter*.152}%
-\contentsline {chapter}{Résumé}{iii}{chapter*.185}%
+\contentsline {paragraph}{Min-Max Scaler: \\\\}{37}{section*.101}%
+\contentsline {subsection}{\numberline {4.5.2}Recherche du modèle}{38}{subsection.102}%
+\contentsline {subsubsection}{A- Fonctionnement de K-Means}{39}{section*.104}%
+\contentsline {subsubsection}{B- La distance de dissimilarité:}{39}{section*.106}%
+\contentsline {subsubsection}{C- Le choix des centres}{39}{section*.107}%
+\contentsline {section}{\numberline {4.6}Module d'archivage}{39}{section.108}%
+\contentsline {section}{\numberline {4.7}Conclusion}{40}{section.109}%
+\contentsline {chapter}{\numberline {5}Implémentation, simulation et résultats}{41}{chapter.110}%
+\contentsline {section}{\numberline {5.1}Environnement de travail}{41}{section.111}%
+\contentsline {subsection}{\numberline {5.1.1}Contrôleur SDN}{41}{subsection.112}%
+\contentsline {subsection}{\numberline {5.1.2}Simulation du réseau SDN}{42}{subsection.113}%
+\contentsline {subsubsection}{Mininet}{42}{section*.114}%
+\contentsline {subsubsection}{Simulation d'un simple réseau SDN}{42}{section*.115}%
+\contentsline {section}{\numberline {5.2}Langage et Librairies utilisées}{43}{section.116}%
+\contentsline {subsection}{\numberline {5.2.1}Python}{43}{subsection.117}%
+\contentsline {subsection}{\numberline {5.2.2}Scikit-learn}{43}{subsection.118}%
+\contentsline {subsection}{\numberline {5.2.3}Pandas}{43}{subsection.119}%
+\contentsline {subsection}{\numberline {5.2.4}Argus}{44}{subsection.120}%
+\contentsline {section}{\numberline {5.3}Réalisation du module F-Clustering}{44}{section.121}%
+\contentsline {section}{\numberline {5.4}Évaluation et test des performances}{45}{section.124}%
+\contentsline {section}{\numberline {5.5}Simulation}{48}{section.130}%
+\contentsline {subsection}{\numberline {5.5.1}Création de la topologie}{48}{subsection.132}%
+\contentsline {subsection}{\numberline {5.5.2}Installation des fonctions}{49}{subsection.135}%
+\contentsline {subsubsection}{A- Installation du système F-DoS sur h6}{50}{section*.137}%
+\contentsline {subsubsection}{B- Installation du serveur d'applications sur h5}{51}{section*.139}%
+\contentsline {subsubsection}{C- Installation du serveur de fichier sur h4}{51}{section*.141}%
+\contentsline {subsubsection}{D- Installation des clients}{51}{section*.143}%
+\contentsline {paragraph}{}{52}{section*.146}%
+\contentsline {paragraph}{}{53}{section*.148}%
+\contentsline {subsection}{\numberline {5.5.3}Simulation des attaques}{54}{subsection.149}%
+\contentsline {subsubsection}{A- Simulation de RDoS}{54}{section*.150}%
+\contentsline {paragraph}{}{54}{section*.152}%
+\contentsline {subsubsection}{B- Simulation de UDP-Flooding}{55}{section*.154}%
+\contentsline {section}{\numberline {5.6}Conclusion}{56}{section.157}%
+\contentsline {chapter}{Conclusion générale}{i}{chapter*.158}%
+\contentsline {chapter}{Résumé}{iii}{chapter*.191}%
