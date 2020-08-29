@@ -4,15 +4,15 @@
 
 \label{Chapter1} 
 
-Les nouvelles exigences des réseaux modernes en terme d’adaptabilité, d’automatisation, de maintenabilité ont fait naître une nouvelle technologie de réseaux informatique, connue sous le nom de \textit{Software Defined Networking}, qui donne un contrôle centralisé et programmable des ressources réseaux.\\
+Les nouvelles exigences des réseaux modernes en terme d’adaptabilité, d’automatisation, de maintenabilité ont fait naître une nouvelle technologie de réseaux informatiques, connue sous le nom de \textit{Software Defined Networking}, qui donne un contrôle centralisé et programmable des ressources réseaux.\\
 Ce chapitre donne un aperçu sur l’environnement SDN et montre comment il est conçu  pour répondre aux besoins changeants du réseau.
 %----------------------------------------------------------------------------------------
 
-\section{Limites des réseaux traditionnelles}
-Avant de passer au Software-Defined Networking, rappelons deux majeures limites des réseaux traditionnels cités par l'ONF (Open Networking Foundation) [\cite{1}] :\\
+\section{Limites des réseaux traditionnels}
+Avant de passer au Software-Defined Networking, rappelons deux limites majeures des réseaux traditionnels cités par l'ONF (Open Networking Foundation) [\cite{1}] :\\
 \begin{itemize}
 \item[•] \textbf{Architecture statique et complexe} : pour répondre aux différents niveaux de qualité de service, le volume de trafic élevé et les exigences en matière de sécurité; la technologie réseau est devenue plus complexe et difficile à gérer. Cela a donné lieu à un certain nombre de protocoles définis de façon indépendante dont chacun répond à une partie des besoins de réseautage. Un exemple de la difficulté que cela présente est lorsque les appareils sont ajoutés ou déplacés. Le personnel de gestion du réseau doit utiliser des outils de gestion au niveau de l’appareil pour modifications des paramètres de configuration dans plusieurs commutateurs, routeurs, pare-feu,...etc. Les opérations de mise à jour sont fastidieuses et coûteuses en matière de temps et donnent place aux erreurs de configuration qui peuvent engendrer des problèmes au niveau du réseau.\\
-\item[•] \textbf{Scalabilité limitée} : la demande sur les réseaux augmente rapidement, tant en volume qu’en variétés. Ajouter plus de commutateurs ou augmenter la capacité de transmission est difficile en raison de la complexité et nature statique du réseau.
+\item[•] \textbf{Scalabilité limitée} : la demande sur les réseaux augmente rapidement tant en volume qu’en variétés. Ajouter plus de commutateurs ou augmenter la capacité de transmission est difficile en raison de la complexité et la nature statique du réseau.
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ Avant de passer au Software-Defined Networking, rappelons deux majeures limites 
 Une approche réseau moderne doit satisfaire les exigences citées par L’Open Data Center Alliance (ODCA)  [\cite{2}], notamment :\\
 \begin{itemize}
 \item[•] \textbf{Adaptabilité}: les réseaux doivent s’adapter dynamiquement, en fonction des besoins des applications, des activités, la politique et les conditions du réseau.\\
-\item[•] \textbf{Automatisation}: les changements de politique doivent être propagé automatiquement afin de réduire le travail manuel et les erreurs.\\
+\item[•] \textbf{Automatisation}: les changements de politique doivent être propagés automatiquement afin de réduire le travail manuel et les erreurs.\\
 \item[•] \textbf{Sécurité intégrée}: les applications réseau doivent intégrer la sécurité comme service de base et non pas comme solution complémentaire.\\
 \item[•] \textbf{Mise à l’échelle sur demande}: les implémentations doivent avoir la capacité à prendre de l’expansion ou à réduire le réseau et ses services pour répondre aux requêtes à la demande.
 \end{itemize}
@@ -30,9 +30,9 @@ Une approche réseau moderne doit satisfaire les exigences citées par L’Open 
 
 \section{Définition}
 
-Software-defined networking est une nouvelle architecture réseau, qui a pour but pratique de rendre programmables les réseaux par le biais d’un contrôleur centralisé. Rappelons que dans les réseaux traditionnels les périphériques réseaux (commutateurs et routeurs) construisent leurs tables de routage localement, ce qui signifie qu’ils prennent leurs propres décisions en interne sur la meilleure façon d’aiguiller le trafic. \\
+Software-defined networking est une nouvelle architecture réseau qui a pour but pratique de rendre programmables les réseaux par le biais d’un contrôleur centralisé. Rappelons que dans les réseaux traditionnels les périphériques réseaux (commutateurs et routeurs) construisent leurs tables de routage localement, ce qui signifie qu’ils prennent leurs propres décisions en interne sur la meilleure façon d’aiguiller le trafic. \\
 
-Dans les SDN les décisions de routage sont prises par un contrôleur centralisé ce qui fait que les périphériques n’ont plus intérêt à prendre des décisions localement, ils n’ont qu’à suivre celles prises par le contrôleur. Ce qui rend cette architecture dynamique, programmable et idéale pour les réseaux modernes à haute demande.
+Dans les SDN les décisions de routage sont prises par un contrôleur centralisé ce qui fait que les périphériques n’ont plus intérêt à prendre des décisions localement; ils n’ont qu’à suivre celles prises par le contrôleur. Ce qui rend cette architecture dynamique, programmable et idéale pour les réseaux modernes à haute demande.
 
 %----------------------------------------------------------------------------------------
 
@@ -61,7 +61,7 @@ Dans l’architecture traditionnelle le plan de données et le plan de contrôle
 \label{fig:SDN_Plans}
 \end{figure}
 
-L’architecture SDN définit trois couches,  comme indiqué dans la figure \ref{fig:SDN_Plans}, chacune représente un plan, plan de données, plan de contrôle ou plan d’application. Chaque couche ne peut communiquer qu’avec ces couches voisines. 
+L’architecture SDN définit trois couches comme indiqué dans la figure \ref{fig:SDN_Plans}. Chacune représente un plan : plan de données, plan de contrôle ou plan d’application. Chaque couche ne peut communiquer qu’avec ses couches voisines. 
 
 \subsection{Plan de Données}
 Le plan de données se compose de commutateurs physiques et de commutateurs virtuels, qui sont responsables de la transmission des paquets. Cependant chaque commutateur doit implémenter un modèle de transfert de paquet, ce modèle est défini à travers une API (Application programming interface) qui réside entre le plan de contrôle et le plan de données permettant la communication entre le contrôleur et les commutateurs du plan de données. Parmi ces API, le OpenFlow, qui nous allons détailler par la suite.\\
@@ -89,9 +89,9 @@ Le plan d’application contient des applications et des services qui définisse
 \section{Caractéristiques des SDN}
 Après avoir vu la nouvelle architecture réseau, le software-defined Networking, en opposition avec l'architecture traditionnelle,nous trouvons que les principales caractéristiques des SDN sont les suivantes :\\
 \begin{itemize}
-\item[-]\textbf{Séparation des plans}: le plan de contrôle est séparé du plan de données. Les périphériques de plan de données deviennent des simples dispositifs de transfert de paquets. Le plan de contrôle est installé dans un contrôleur ou ensemble de contrôleurs centralisés et coordonnés.\\
+\item[-]\textbf{Séparation des plans}: le plan de contrôle est séparé du plan de données. Les périphériques de plan de données deviennent de simples dispositifs de transfert de paquets. Le plan de contrôle est installé dans un contrôleur ou ensemble de contrôleurs centralisés et coordonnés.\\
 \item[-]\textbf{Programmabilité}: le réseau est programmable par des applications qui s’exécutent au-dessus du contrôleur SDN. Les contrôleurs présentent une vue abstraite des ressources du réseau aux applications.\\
-\item[-]\textbf{Centralisation}: le cerveau du réseau est (logiquement) centralisée dans des contrôleurs SDN basé sur des logiciels qui maintiennent une vue globale du réseau.
+\item[-]\textbf{Centralisation}: le cerveau du réseau est (logiquement) centralisé dans des contrôleurs SDN basés sur des logiciels qui maintiennent une vue globale du réseau.
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
@@ -106,10 +106,10 @@ Les entrées de flux consistent en :\\
 \item[•] Set of instructions / actions - à appliquer en cas de correspondance.\\
 \end{itemize}
 
-Lorsqu’un paquet arrive à un commutateur Open Flow, les champs d’en-tête du paquet sont extraits et comparés aux règles correspondances. Si une correspondance est trouvée, le commutateur applique l’action appropriée. S’il n’y a pas de correspondance, l’action effectuée par le commutateur dépend de l’instruction définie par l’entrée de \textit{ table-miss flow}. Chaque table de flux doit avoir cette entrée afin de gérer la non-correspondance d’un flux dans une table. Des exemples d’actions qui peuvent être effectuées lorsque'aucune correspondance n’est trouvée sont: abandonner le paquet, continuer le processus de correspondance sur la table de flux suivant, acheminer le paquet au contrôleur. 
+Lorsqu’un paquet arrive à un commutateur Open Flow, les champs d’en-tête du paquet sont extraits et comparés aux règles de correspondances. Si une correspondance est trouvée, le commutateur applique l’action appropriée. S’il n’y a pas de correspondance, l’action effectuée par le commutateur dépend de l’instruction définie par l’entrée de \textit{ table-miss flow}. Chaque table de flux doit avoir cette entrée afin de gérer la non-correspondance d’un flux dans une table. Des exemples d’actions qui peuvent être effectuées lorsqu'aucune correspondance n’est trouvée sont: abandonner le paquet, continuer le processus de correspondance sur la table de flux suivant, acheminer le paquet au contrôleur. 
 
 \subsection{Table de Flux}
-La table de flux contient plusieurs entrées. Chaque entrée de cette table a la structure suivante:\\
+La table de flux contient plusieurs entrées. Chaque entrée a la structure suivante:\\
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{ | c | c | c | c | c | c |}
@@ -159,7 +159,7 @@ Le champ principal dans une entrée de table de flux est le \textbf{Match Fields
 %----------------------------------------------------------------------------------------
 \newpage
 \section{Contrôleur SDN}
-Comme mentionné précédemment, le contrôleur est le composant principal de toute l'infrastructure SDN où tous les calculs y sont effectués. Il est responsable de la gestion de tout le réseau.\\
+Comme mentionné précédemment, le contrôleur est le composant principal de toute l'infrastructure SDN où tous les calculs sont effectués. Il est responsable de la gestion de tout le réseau.\\
 En résumé, les fonctions assurées par un contrôleur SDN sont [\cite{6}]: \\
 
 \noindent\textbf{- Routage plus court chemin}: utilise les informations de routage collectées à partir des commutateurs pour établir la table de routage.\\
@@ -188,4 +188,4 @@ En résumé, les fonctions assurées par un contrôleur SDN sont [\cite{6}]: \\
 \noindent- Toute l'intelligence du réseau est placée dans le contrôleur, ce qui constitue un point de défaillance unique. Si le contrôleur tombe en panne ou il est compromis tout le réseau cessera de fonctionner.
 
 \section{Conclusion}
-Le Software Defined Networking annonce des changements importants sur les réseaux dans les années à venir. Ce chapitre n'a parlé que brièvement sur cette nouvelle technologie, sa définition est bien plus vague et son domaine d'application est bien plus large. Les profits qui peuvent être tirés de cette technologie sont innombrables si bien exploitée.
+Le Software Defined Networking annonce des changements importants sur les réseaux dans les années à venir. Ce chapitre n'a parlé que brièvement de cette nouvelle technologie. Sa définition est bien plus vague et son domaine d'application est bien plus large. Les profits qui peuvent être tirés de cette technologie sont innombrables si elle est bien exploitée.
