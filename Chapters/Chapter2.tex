@@ -60,7 +60,7 @@ et l'application de gestion\\
 \end{center}
 \end{table}
 
-Parmi ces vecteurs d'attaques, numéros 3,4 et 5 ne sont pas présents dans les réseaux traditionnels. Ils sont spécifiques aux SDN, et résultent de la séparation du plan de contrôle et de données et de la centralisation logique des contrôleurs. D'autres vecteurs étaient déjà présentés dans les réseaux traditionnels.
+Parmi ces vecteurs d'attaques, numéros 3,4 et 5 ne sont pas présents dans les réseaux traditionnels. Ils sont spécifiques aux SDN, et résultent de la séparation du plan de contrôle et du plan de données, et de la centralisation des contrôleurs. D'autres vecteurs étaient déjà présentés dans les réseaux traditionnels.
 
 \subsection{Les failles de sécurité des réseaux SDN}
 Du point de vue sécurité, les différences majeures du modèle SDN avec les installations traditionnelles sont: \\
@@ -133,7 +133,7 @@ Due à la centralisation du contrôle dans l’architecture SDN, les attaques de
 En cas d’une attaque de DoS, l’attaquant va envoyer une grande quantité de flux à travers le réseau SDN. Lorsque les commutateurs dans la couche infrastructure reçoivent ces nouveaux flux entrants, ils envoient des demandes au contrôleur pour obtenir des règles de commutation afin de les envoyer à la destination demandée. Par conséquent, le contrôleur SDN sera surchargé à cause de la quantité énorme de demandes provenant du plan de données du réseau menant à des cas où le contrôleur devient totalement paralysé et ne peut prendre aucune décision du routage.
 
 \subsubsection{Impact sur le plan de données:}
-Généralement, les commutateurs doivent enregistrer les règles de commutation dans leurs tables de commutation et les utiliser jusqu’à l’expiration des temporisateurs, l'idle timeout et le hard timeout. Dans une situation d’attaque de Dos, où l’attaquant inonde le commutateur avec une quantité importante de flux, tout le trafic de données reçu par les commutateurs se traduit en règles de commutation fourni par le contrôleur, afin de les acheminer vers la destination. En effet, la mémoire TCAM du commutateur sera remplie par ces règles envoyées de contrôleur jusqu’à sa saturation. Lorsque cela se produit, les commutateurs sont forcés d’ajouter et de supprimer continuellement les règles de flux et d’envoyer plus des demandes vers le contrôleur; cela engendre la congestion du plan de transmission ainsi qu’un retard dans le temps de transmission de données.
+Généralement, les commutateurs doivent enregistrer les règles de commutation dans leurs tables de commutation et les utiliser jusqu’à l’expiration des temporisateurs, l'idle timeout et le hard timeout. Dans une situation d’attaque de DoS, où l’attaquant inonde le commutateur avec une quantité importante de flux, tout le trafic de données reçu par les commutateurs se traduit en règles de commutation fournies par le contrôleur, afin de les acheminer vers la destination. En effet, la mémoire TCAM du commutateur sera remplie par ces règles envoyées par le contrôleur jusqu’à sa saturation. Lorsque cela se produit, les commutateurs sont forcés d’ajouter et de supprimer continuellement les règles de flux et d’envoyer plus de demandes vers le contrôleur. Cela engendre la congestion du plan de transmission ainsi qu’un retard dans le temps de transmission de données.
 
 \subsubsection{Impact sur la liaison contrôleur-commutateur:}
 Due à la communication agressive entre le contrôleur SDN et les commutateurs demandant des décisions de routage, la liaison entre le contrôleur et le commutateur (appelé aussi la bande passante du plan de contrôle) sera exténuée et congestionnée; cela cause la perte de plusieurs messages «paquet-in» ainsi que le retard dans le temps de réponse des messages échangés entre le contrôleur et les commutateurs.
@@ -161,7 +161,7 @@ Il existe deux approches d’IDS :\\
 \item[-]\textbf{Le NIDS} (Network Based IDS) assure la sécurité au niveau réseau. Il va donc écouter tout le trafic du réseau et générer des alertes en cas de comportement anormal.\\
 \item[-]\textbf{Le HIDS} (Host Based IDS) réside sur une machine en particulier. Il surveille et analyse le trafic de la machine hôte pour déceler des intrusions ou des attaques (DoS par exemple). \\
 \end{itemize}
-Ces deux approches peuvent être fusionnées afin d’améliorer la précision de détection d’intrusion ; cette approche est appelée l’approche hybride.
+Ces deux approches peuvent être fusionnées afin d’améliorer la précision de détection d’intrusion ; il en résulte l’approche hybride.
 
 \subsection{Les méthodes de détection d’intrusions} 
 Il existe trois méthodes principales de détection d’intrusions:\\
@@ -172,17 +172,17 @@ Il existe trois méthodes principales de détection d’intrusions:\\
 \end{itemize} 
 
 \subsection{Les méthodes de collection d'informations sur les flux}
-Les IDS collectent les informations sur les flux en utilisant une de ces deux méthodes:\\
+Les IDS collectent les informations sur les flux en utilisant une des deux méthodes suivantes:\\
 \begin{itemize}
-\item[-] \textbf{Première méthode:} Collecter les statistiques sur les flux calculés par les switches OpenFlow.\\
-\item[-] \textbf{Deuxième méthode:} Capturer les paquets avec leur renfilage et extraire les informations contenues dans ces paquets. 
+\item[-] \textbf{Première méthode:} collecter les statistiques sur les flux calculés par les switches OpenFlow.\\
+\item[-] \textbf{Deuxième méthode:} capturer les paquets avec leur renfilage et extraire les informations contenues dans ces paquets. 
 \end{itemize}
 
 \subsubsection{A) Utilisation des statistiques OpenFlow:}
-La plupart des solutions de détection d’intrusions dans les SDN utilisent les statistiques calculées par les switches OpenFlow. Dans ce type de solution l’IDS est implémenté sous forme d’application SDN qui demande périodiquement les statistiques concernant les flux en utilisant le protocole OpenFlow. Les statistiques sont par la suite analysées au niveau de cette application SDN pour détecter l’intrusion. Les méthodes d’analyse sont basées sur des méthodes statistiques ou d’apprentissage automatique.
+La plupart des solutions de détection d’intrusions dans les SDN utilisent les statistiques calculées par les switches OpenFlow. Dans ce type de solution, l’IDS est implémenté sous forme d’application SDN qui demande périodiquement les statistiques concernant les flux en utilisant le protocole OpenFlow. Les statistiques sont par la suite analysées au niveau de cette application SDN pour détecter l’intrusion. Les méthodes d’analyse sont basées sur des méthodes statistiques ou d’apprentissage automatique.
 
 \subsubsection{B) Utilisation de l’apprentissage automatique:}
-Le principe de ce type de solutions est d’utiliser un dataset (un ensemble de données) présentant des caractéristiques extraites de différents flux de paquets pour entrainer un système intelligent capable de prendre en entrée un vecteur de caractéristiques décrivant un flux de paquets et le classifier comme flux d’attaque ou flux bénins. L’efficacité de ce type de solutions est directement liée au choix du dataset, aux caractéristiques utilisées, et au modèle d’apprentissage automatique.
+Le principe de ce type de solutions est d’utiliser un dataset (un ensemble de données) présentant des caractéristiques extraites de différents flux de paquets pour entrainer un système intelligent capable de prendre en entrée un vecteur de caractéristiques décrivant un flux de paquets et le classifier comme flux d’attaque ou flux bénins. L’efficacité de ce type de solutions est directement liée au choix du dataset, aux caractéristiques utilisées et au modèle d’apprentissage automatique.
 
 \subsection{Évaluation des performances d'un NIDS}
 \label{evaluation}
@@ -258,11 +258,11 @@ Afin d'évaluer le NIDS, les métriques suivantes sont calculées :\\
 \end{itemize}
 
 \section{Travaux existants}
-Récemment, diverses solutions ont été proposées pour régler les problèmes de sécurité au sein des réseaux SDN. Les techniques d’apprentissage automatique sont largement appliquées pour améliorer l’efficacité de détection, y compris les réseaux neurone, les arbres de décision, les SVM (Support Vector Machine) et les réseaux bayésiens. L'intégration d'un système de détection d'intrusions dans l'architecture SDN reste la meilleure solution pour sécuriser l'environnement SDN. Comme mentionné dans la section \ref{approchesIDS}, deux approches existent pour concevoir un IDS, une est basée machine (HIDS) et l'autre est basée réseau (NIDS), autrement appelé basé flux. Dans notre travail nous nous focaliserons sur les systèmes de détection basés flux, donc nous allons présenter en ce qui suit quelques IDS déjà existants afin de pouvoir faire une étude comparative; technique d'apprentissage adoptée, les caractéristiques utilisées, le dataset, résultat de prédiction.\\
+Récemment, diverses solutions ont été proposées pour régler les problèmes de sécurité au sein des réseaux SDN. Les techniques d’apprentissage automatique sont largement appliquées pour améliorer l’efficacité de détection, y compris les réseaux neurone, les arbres de décision, les SVM (Support Vector Machine) et les réseaux bayésiens. L'intégration d'un système de détection d'intrusions dans l'architecture SDN reste la meilleure solution pour sécuriser l'environnement SDN. Comme mentionné dans la section \ref{approchesIDS}, deux approches existent pour concevoir un IDS : l'une est basée machine (HIDS) et l'autre est basée réseau (NIDS), autrement appelé basé flux. Dans notre travail nous nous focaliserons sur les systèmes de détection basés flux, donc nous allons présenter dans ce qui suit quelques IDS déjà existants afin de pouvoir faire une étude comparative; technique d'apprentissage adoptée, les caractéristiques utilisées, le dataset, résultat de prédiction.\\
 
 \newpage
 \subsection{Flow based Intrusion Detection System [\cite{11}]:}
-Les auteurs de ce travail ont proposé un système de détection basé flux pour détecter le trafic anormal circulant dans les réseaux SDN. Leur IDS est basé sur l’extraction d’un ensemble de caractéristiques prédéfinies de manière régulière chaque une seconde. Cette étape est suivie par l’agrégation des caractéristiques extraites pour pouvoir traîner le modèle. La figure \ref{fig:NIDS1} illustre l'architecture de cette IDS.
+Les auteurs de ce travail ont proposé un système de détection basé flux pour détecter le trafic anormal circulant dans les réseaux SDN. Leur IDS est basé sur l’extraction d’un ensemble de caractéristiques prédéfinies de manière régulière chaque seconde. Cette étape est suivie par l’agrégation des caractéristiques extraites pour pouvoir entraîner le modèle. La figure \ref{fig:NIDS1} illustre l'architecture de cet IDS.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/NIDS1}
@@ -274,11 +274,11 @@ Les auteurs de ce travail ont proposé un système de détection basé flux pour
 \subsubsection{A) Extraction et agrégation des caractéristiques:}
 Les commutateurs OF envoient souvent des messages \textit{Packet-In} au contrôleur quand aucune correspondance n’est trouvée dans la table de flux du commutateur. Chaque message contient les informations du premier paquet de chaque flux et quand il est reçu au niveau du contrôleur ces informations sont extraites et sauvegardées. En plus, ce qui est bien avec les SDN, ces commutateurs peuvent envoyer des statistiques pour chaque entrée de flux, ce qui permettra la collecte d'informations de flux chaque seconde. 
 
-\subsubsection{B) Entraînement do modèle et la classification:}
-Les échantillons extraits de la phase d’agrégation sont utilisés dans un modèle de classification supervisé. Par conséquent, le classificateur formé attribuera des classes à chaque échantillon chaque seconde. Puisque chaque flux peut avoir plus d’une instance au cours de sa durée de vie, son comportement sera classé plusieurs fois. Le classifieur \textit{Bagged-Trees} [\cite{12}] a été utilisé pour construire le modèle.
+\subsubsection{B) Entraînement du modèle et la classification:}
+Les échantillons extraits de la phase d’agrégation sont utilisés dans un modèle de classification supervisé. Par conséquent, le classifieur formé attribuera des classes à chaque échantillon chaque seconde. Puisque chaque flux peut avoir plus d’une instance au cours de sa durée de vie, son comportement sera classé plusieurs fois. Le classifieur \textit{Bagged-Trees} [\cite{12}] a été utilisé pour construire le modèle.
 \newpage
 \subsection{Machine based Intrusion Detection System [\cite{13}]:}
-Dans ce travail un modèle de réseaux de neurones a été intégré dans le système pour détecter les anomalies dans le trafic. Le système fonctionne comme suit; les commutateurs OF envoient périodiquement les statistiques de flux au contrôleur, ces statistiques vont être récupérées et traitées par le module responsable pour détecter le comportement d’anomalie dans le flux. Pattern recognition (la reconnaissance de motifs) est implémentée dans ce modèle pour classer les entrées dans un ensemble de catégories cibles. L’architecture de cet IDS se compose de trois couches : une couche d’entrée (Input Layer), une couche cachée (Hidden Layer) et une couche de sortie (Output Layer). L’algorithme "\textbf{Backpropagation}" est utilisé pour traîner le modèle.\\
+Dans ce travail un modèle de réseaux de neurones a été intégré dans le système pour détecter les anomalies dans le trafic. Le système fonctionne comme suit : les commutateurs OF envoient périodiquement les statistiques de flux au contrôleur, ces statistiques vont être récupérées et traitées par le module responsable pour détecter le comportement d’anomalie dans le flux. Pattern recognition (la reconnaissance de motifs) est implémentée dans ce modèle pour classer les entrées dans un ensemble de catégories cibles. L’architecture de cet IDS se compose de trois couches : une couche d’entrée (Input Layer), une couche cachée (Hidden Layer) et une couche de sortie (Output Layer). L’algorithme "\textbf{Backpropagation}" est utilisé pour entraîner le modèle.\\
 
 \begin{table}[h]
 \begin{center}
@@ -334,9 +334,9 @@ Exactitude & 0.973 & Non mentionnée \\
 \hline
 \end{tabular}
 
-\subsection{Comparaison entre ces deux IDS}
-Nous remarquons que les deux solutions donnent des résultats de performances très intéressants. Les auteurs de la solution [\cite{11}] n’ont pas mentionné le taux de faux négatifs qu’est un élément très important dans l’évaluation d’un IDS. L’utilisation d’un dataset non standardisé dans [\cite{11}] est discutable sur le plan de la validité des attaques, les flux générés et le bon déroulement de l’extraction des informations et caractéristiques lors de la création du dataset. La solution [\cite{13}] utilise un ancien dataset(NSL-KDD créé en 1999) qui s’avère dépassé dû aux grands changements dans les réseaux, et l’apparition de nouveaux types d’attaques récentes. Par conséquent, l’IDS peut être inefficaces face aux attaques récentes ainsi que dans la reconnaissance des caractéristiques des flux normaux modernes.\\
+\subsection{Comparaison de ces deux IDS}
+Nous remarquons que les deux solutions donnent des résultats de performances très intéressants. Les auteurs de la solution [\cite{11}] n’ont pas mentionné le taux de faux négatifs qu’est un élément très important dans l’évaluation d’un IDS. L’utilisation d’un dataset non standardisé dans [\cite{11}] est discutable sur le plan de la validité des attaques, les flux générés et le bon déroulement de l’extraction des informations et caractéristiques lors de la création du dataset. La solution [\cite{13}] utilise un ancien dataset(NSL-KDD créé en 1999) qui s’avère dépassé dû aux grands changements dans les réseaux, et l’apparition de nouveaux types d’attaques récentes. Par conséquent, l’IDS peut être inefficace face aux attaques récentes ainsi que dans la reconnaissance des caractéristiques des flux normaux modernes.\\
 D’après cette étude nous constatons qu’il est nécessaire de mettre en place une solution de détection des attaques DoS dans les SDN qui prend en considération les critiques susmentionnées. 
 
 \section{Conclusion}
-Dans ce chapitre nous avons tout d’abord étudié les problèmes de sécurité dans l’environnement SDN. Nous avons ensuite présenté quelques solutions déjà proposées pour détecter les attaques Dos. Dans le chapitre suivant, nous allons nous familiariser avec la technique d’apprentissage que nous utiliserons pour la conception de nore solution. 
+Dans ce chapitre nous avons tout d’abord étudié les problèmes de sécurité dans l’environnement SDN. Nous avons ensuite présenté quelques solutions déjà proposées pour détecter les attaques DoS. Dans le chapitre suivant, nous allons nous familiariser avec la technique d’apprentissage que nous utiliserons pour la conception de nore solution. 
