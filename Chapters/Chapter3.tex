@@ -2,30 +2,30 @@
 \chapter{Data Mining}
 
 \label{Chapter3} 
-Pour construire n'importe quel modèle de prédiction, il est nécessaire de choisir une technique d'apprentissage automatique ainsi qu'un Dataset pour traîner le modèle. Dans ce chapitre nous allons parler sur les Dataset, comment choisir et évaluer un Dataset, nous parlerons aussi sur l’apprentissage automatique ainsi que ses deux grandes classes. Cette discipline de traitement de grandes quantité de données et choix de modèles et connue sous le nom de \textit{Data-Mining}.
+Pour construire n'importe quel modèle de prédiction, il est nécessaire de choisir une technique d'apprentissage automatique ainsi qu'un Dataset pour entraîner le modèle. Dans ce chapitre nous allons parler des Dataset, comment choisir et évaluer un Dataset. Nous parlerons aussi de l’apprentissage automatique ainsi que de ses deux grandes classes. Cette discipline de traitement de grandes quantité de données et choix de modèles est connue sous le nom de \textit{Data-Mining}.
 
 \section{Data Minig}
 \subsection{Définition}
 L’exploration de données, connue aussi sous l’expression de fouille de données, forage de données, prospection de données, a pour objet l’extraction d’un savoir ou d’une connaissance à partir de grandes quantités de données, par des méthodes automatiques ou semi-automatiques. Le processus le plus connu du Data-Mining est le KDD (knowledge discovery in database)[\cite{14}], appelé en français extraction de connaissances à partir de données ou processus de découverte de connaissances.
 
-\subsection{Ètapes du processus KDD}
+\subsection{Processus KDD}
 \label{KDD}
-Le processus KDD est sur trois étapes comme suit:\\
+Le processus KDD est composé de trois étapes :\\
 \begin{itemize}
 \item[1-]\textbf{Préparation des données} : Elle comprend la collecte, l'intégration, la transformation, le nettoyage et la réduction des données. Dans notre cas la Collecte d'information est faite en capturant le trafic réseau à l'aide du \textit{port-mirroring} des équipements réseau.\\
 \item[2-]\textbf{Recherche des modèles} : Consiste à appliquer l'analyse des données et les algorithmes de découverte qui produisent une énumération de modèles sur les données.\\
-\item[3-]\textbf{Évaluation des modèles} : Consiste à estimer l'erreur et la précision sur les modèles extraites.Un modèle est considéré comme une connaissance s'il dépasse un certain pourcentage de précision.
+\item[3-]\textbf{Évaluation des modèles} : Consiste à estimer l'erreur et la précision sur les modèles extraits.Un modèle est considéré comme une connaissance s'il dépasse un certain pourcentage de précision.
 \end{itemize}
 
 \subsection{Dataset}
-Pour concevoir notre modèle d'apprentissage nous avons besoin d'une grande quantité de données qui représentent plusieurs flux, malins et bénins, capturés dans un réseau SDN réel. Le choix du bon Dataset contenant ce type de données est cruciale pour construire notre modèle de prédiction. Dans ce qui suit quelques propriétés à prendre en considération lors du choix d'un Dataset [\cite{15}].\\
+Pour concevoir notre modèle d'apprentissage nous avons besoin d'une grande quantité de données qui représentent plusieurs flux, malins et bénins, capturés dans un réseau SDN réel. Le choix du bon Dataset contenant ce type de données est crucial pour construire notre modèle de prédiction. Dans ce qui suit quelques propriétés à prendre en considération lors du choix d'un Dataset [\cite{15}].\\
 \begin{itemize}
-\item[•]\textbf{Year of Creation}: Étant donné que le trafic réseau est soumis à de nouveaux scénarios d’attaque apparaissent quotidiennement, l’âge d’un ensemble de données de détection d’intrusion joue un rôle important. Cette propriété décrit l’année dans laquelle le trafic a été capturé.\\
+\item[•]\textbf{Year of Creation}: Étant donné que le trafic réseau est soumis à de nouveaux scénarios d’attaques, l’âge d’un ensemble de données de détection d’intrusion joue un rôle important. Cette propriété décrit l’année à laquelle le trafic a été capturé.\\
 \item[•]\textbf{Normal User Behavior}: Cette propriété indique la disponibilité du comportement normal de l’utilisateur dans un ensemble de données et prend les valeurs \textbf{Oui} ou \textbf{Non}. La valeur \textbf{Oui} indique qu’il y a un comportement normal dans l’ensemble de données. En général, la qualité d’un IDS est principalement déterminée par son taux de détection des attaques et son taux de fausses alarmes. Par conséquent, la présence d’un comportement normal est indispensable pour évaluer un IDS.\\
 \item[•]\textbf{Attack Traffic}: Un Dataset pour IDS devrait contenir divers scénarios d’attaque. Cette propriété indique la présence de trafic réseau malicieux dans le Dataset.\\
 \item[•]\textbf{Kind of Traffic}: La propriété Type de trafic décrit trois origines possibles du trafic réseau : réel, émulé ou synthétique. Réel signifie que le trafic réseau réel a été capturé dans un environnement réseau en production. Émulé signifie que le trafic réseau réel a été capturé dans un banc d’essai ou un environnement réseau émulé. Synthétique signifie que le trafic réseau a été créé synthétiquement (par exemple, par un générateur de trafic) et non capturé par un dispositif réseau réel.\\
-\item[•]\textbf{Balanced}: Pour la phase d'apprentissage les données doivent être équilibrés et respectent  leurs étiquettes de classe. Cette propriété indique si le Dataset est équilibré. Un Dataset déséquilibré devrait être équilibrés selon des méthodes appropriées, avant de passer au algorithme d'apprentissage.\\
-\item[•]\textbf{Labeled}: Un Dataset étiqueté est nécessaire pour traîner et tester les modèles d’apprentissage, supervisés et non-supervisés. Cette propriété indique si le Dataset est étiqueté ou non. 
+\item[•]\textbf{Balanced}: Pour la phase d'apprentissage les données doivent être équilibrés et respecter  leurs étiquettes de classe. Cette propriété indique si le Dataset est équilibré. Un Dataset déséquilibré devrait être équilibré selon des méthodes appropriées, avant de passer à l'algorithme d'apprentissage.\\
+\item[•]\textbf{Labeled}: Un Dataset étiqueté est nécessaire pour entraîner et tester les modèles d’apprentissage supervisés et non-supervisés. Cette propriété indique si le Dataset est étiqueté ou non. 
 \end{itemize}
 
 \begin{table}[h]
@@ -57,11 +57,11 @@ CICDDoS 2019 [\cite{21}] & Attaques DDoS Reflectives.\\
 
 \newpage
 \section{Apprentissage automatique}
-L’apprentissage automatique est un concept de développement, d’analyse et d’implémentation qui permet à une machine d’apprendre d’une manière automatique la résolution de problèmes qui s’avéraient complexe à traiter en utilisant les algorithmes classiques.\\
+L’apprentissage automatique est un concept de développement, d’analyse et d’implémentation qui permet à une machine d’apprendre d’une manière automatique la résolution de problèmes qui s’avéraient complexes à traiter en utilisant les algorithmes classiques.\\
 
-\noindent L’apprentissage automatique est utilisé pour résoudre plusieurs types de problèmes complexes dont la classification et la régression. Le problème de classification s’agit de classifier des données ou des instances en plusieurs classes selon les caractéristiques de ces derniers. Par exemple, apprendre à reconnaître si un flux est bénin ou malin est un problème de classification binaire ; décider le type d’une attaque parmi plusieurs types d’attaques possibles est un problème de classification multi-classes. Les problèmes de régressions sont des problèmes d’approximation des valeurs continues d’une certaine fonction. Par exemple, apprendre à prédire la température pour un jour donné connaissant les diverses conditions atmosphériques.\\
+\noindent L’apprentissage automatique est utilisé pour résoudre plusieurs types de problèmes complexes dont la classification et la régression. Le problème de classification est de classifier des données ou des instances en plusieurs classes selon les caractéristiques de ces derniers. Par exemple, apprendre à reconnaître si un flux est bénin ou malin est un problème de classification binaire ; détecter le type d’une attaque parmi plusieurs types d’attaques possibles est un problème de classification multi-classes. Les problèmes de régressions sont des problèmes d’approximation des valeurs continues d’une certaine fonction. Par exemple, apprendre à prédire la température pour un jour donné connaissant les diverses conditions atmosphériques.\\
 
-\noindent Les algorithmes d’apprentissage automatique sont classés sous deux grandes classes. Cette classification est directement liée à l’inclusion ou pas d’étiquettes dans l’ensemble de données.
+\noindent Les algorithmes d’apprentissage automatique sont classés en deux grandes classes. Cette classification est directement liée à l’inclusion ou pas d’étiquettes dans l’ensemble de données.
 
 \subsection{Apprentissage supervisé}
 L’apprentissage supervisé est un système qui fournit à la fois les données en entrée et les données attendues en sortie. Les données en entrée et en sortie sont étiquetées en vue de leur classification, afin d'établir une base d'apprentissage pour le traitement ultérieur des données. Les systèmes d'apprentissage automatique supervisé alimentent les algorithmes d'apprentissage avec des quantités connues qui étayeront les futures décisions. Ils sont associés pour la plupart à une intelligence artificielle basée sur la récupération, mais ils peuvent aussi reposer sur un modèle d'apprentissage génératif.\\
@@ -82,7 +82,7 @@ Parmi les algorithmes d’apprentissage non supervisé nous citons K-means clust
 \paragraph{{\large 3.2.2.1 Clustering}\\\\}
 Il s'agit essentiellement d'un type de méthode d'apprentissage non supervisé. Clustering est la tâche de diviser la population ou les points de données en un certain nombre de groupes de sorte que les points de données des mêmes groupes soient plus similaires aux autres points de données du même groupe et différents des points de données des autres groupes. Il s'agit essentiellement d'une collection d'objets sur la base de la similitude et de la dissemblance entre eux.\\
 
-\noindent Le clustering est très important car il détermine le groupement intrinsèque des données non marquées. Il n'y a aucun critère pour un bon clustering. Cela dépend de l'utilisateur, quels sont les critères qu'il peut utiliser pour satisfaire ses besoins. Par exemple, nous pourrions être intéressés à trouver des représentants pour des groupes homogènes (réduction des données), à trouver des groupements utiles et appropriés (“useful” data classes) ou à trouver des objets de données inhabituels (outlier détection). L'algorithme du clustering doit faire quelques hypothèses qui constituent la similitude des points et chaque hypothèse fait des clusters différents et également valides. 
+\noindent Le clustering est très important car il détermine le groupement intrinsèque des données non marquées. Il n'y a aucun critère pour un bon clustering. Cela dépend de l'utilisateur. Quels sont les critères qu'il peut utiliser pour satisfaire ses besoins? Par exemple, nous pourrions être intéressés à trouver des représentants pour des groupes homogènes (réduction des données), à trouver des groupements utiles et appropriés (“useful” data classes) ou à trouver des objets de données inhabituels (outlier détection). L'algorithme du clustering doit faire quelques hypothèses qui constituent la similitude des points et chaque hypothèse fait des clusters différents et également valides. 
 
 \paragraph{{\large 3.2.2.2 Méthodes de clustering}\\\\}
 Parmi les méthodes de Clustering, nous citons:\\
@@ -110,4 +110,4 @@ Après quelques itérations, l’algorithme trouve un découpage stable du jeu d
 \end{figure}
 
 \subsection{Conclusion}
-Dans ce chapitre nous avons discuté sur le Data-Minig, en commençant par définir c'est quoi cette discipline, pour passer par la suite au dataset en exposant les majeures propriétés à considérer lors du choix d'un dataset. L'apprentissage automatique était la dernière section de ce chapitre, où nous avons présenté les différentes méthodes et algorithmes d'apprentissage existants. 
+Dans ce chapitre nous avons discuté sur le Data-Minig, en commençant par définir ce qu'est cette discipline, pour passer par la suite au dataset en exposant les majeures propriétés à considérer lors du choix d'un dataset. L'apprentissage automatique était la dernière section de ce chapitre, où nous avons présenté les différentes méthodes et algorithmes d'apprentissage existants. 
