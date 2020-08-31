@@ -2,16 +2,16 @@
 \chapter{Implémentation, simulation et résultats}
 
 \label{Chapter5}
-Au cours de ce chapitre nous allons présenter l'implémentation et le test de notre système dans un réseau SDN simulé. On commence par voir l'environnement de travail, les outils de simulation utilisés, pour passer ainsi à la phase des tests, qui est divisée en deux: premièrement nous allons tester notre modèle de clustering sur un jeu de données pour calculer les différentes métriques de performances citées dans la section \ref{evaluation}. L'autre partie des tests concernera notre système de détection, où nous allons définir plusieurs scénarios d'attaque et de flux normaux, pour voir son comportement et est-ce qu'il est capable d'attribuer chaque flux au bon cluster. 
+Au cours de ce chapitre nous allons présenter l'implémentation et le test de notre système dans un réseau SDN simulé. Nous commençons par l'environnement de travail, les outils de simulation utilisés pour passer ainsi à la phase des tests qui est divisée en deux: premièrement nous allons tester notre modèle de clustering sur un jeu de données pour calculer les différentes métriques de performances citées dans la section \ref{evaluation}. L'autre partie des tests concernera notre système de détection, où nous allons définir plusieurs scénarios d'attaque et de flux normaux pour voir son comportement et s'il est capable d'attribuer chaque flux au bon cluster. 
 
 
 \section{Environnement de travail}
 Cette partie décrit l'environnement dans lequel notre solution sera déployée en présentant le contrôleur SDN choisi et l'outil de simulation du réseau utilisé.
 
 \subsection{Contrôleur SDN}
-Parmi les différents contrôleurs SDN qui existent nous avons opté pour travailler avec \textbf{Ryu}[\cite{4}] vu la simplicité d'utilisation qui offre, en plus il est basé sur \textit{Python} et supporte la majorité des versions d’OpenFlow.\\
+Parmi les différents contrôleurs SDN qui existent nous avons opté pour travailler avec \textbf{Ryu}[\cite{4}] vu la simplicité d'utilisation qu'il offre. De plus, il est basé sur \textit{Python} et supporte la majorité des versions d’OpenFlow.\\
 
-\noindent Ryu est un contrôleur de réseau défini par logiciel (SDN) conçu pour augmenter l’agilité du réseau en le rendant facile à gérer et adapte la façon dont le trafic est traité. Il fournit des composants logiciels, avec des interfaces de programme d'applications (API) bien définies, qui rendent facile pour les développeurs de créer de nouvelles applications de gestion et de contrôle du réseau. Cette approche par composants aide les organisations à personnaliser leur déploiement pour répondre à leurs besoins spécifiques; les développeurs peuvent rapidement et facilement modifier les composants existants ou mettre en œuvre leurs propres pour s’assurer que le réseau sous-jacent peut répondre aux demandes changeantes de leurs applications.\\
+\noindent Ryu est un contrôleur de réseau défini par logiciel (SDN) conçu pour augmenter l’agilité du réseau en le rendant facile à gérer et adapte la façon dont le trafic est traité. Il fournit des composants logiciels avec des interfaces de programme d'applications (API) bien définies qui rendent facile pour les développeurs de créer de nouvelles applications de gestion et de contrôle du réseau. Cette approche par composants aide les organisations à personnaliser leur déploiement pour répondre à leurs besoins spécifiques; les développeurs peuvent rapidement et facilement modifier les composants existants ou mettre en œuvre leurs propres composants pour s’assurer que le réseau sous-jacent peut répondre aux demandes changeantes de leurs applications.\\
 
 \noindent Pour télécharger et installer Ryu sur une machine UBUNTU:
 \begin{verbatim}
@@ -22,17 +22,17 @@ Parmi les différents contrôleurs SDN qui existent nous avons opté pour travai
 
 
 \subsection{Simulation du réseau SDN}
-Afin de pouvoir déployer notre système, nous devon simuler un réseau SDN réel avec tous ces équipements, contrôleurs SDN, commutateurs, hôtes, liens physiques. Ceci est possible à l'aide d'un émulateur réseau. Il en existe beaucoup d'émulateurs réseau, celui qui nous convient dans notre travail est \textit{Mininet}[\cite{28}].
+Afin de pouvoir déployer notre système, nous devons simuler un réseau SDN réel avec tous ses équipements, contrôleurs SDN, commutateurs, hôtes, liens physiques. Ceci est possible à l'aide d'un émulateur réseau. Il existe beaucoup d'émulateurs réseau, celui qui nous convient dans notre travail est \textit{Mininet}[\cite{28}].
 
 \subsubsection{Mininet}
-Mininet est un émulateur de réseau qui crée un réseau d’hôtes virtuel, de commutateurs, de contrôleurs et de liens. Les hôtes Mininet exécutent le système \textit{Linux} standard, ce qui donne la possibilité d'exécuter des programmes \textit{python} au niveau des hôtes. Les commutateurs Mininet prennent en charge Openflow pour un routage personnalisé hautement flexible.
+Mininet est un émulateur qui crée un réseau d’hôtes virtuel, de commutateurs, de contrôleurs et de liens. Les hôtes Mininet exécutent le système \textit{Linux} standard, ce qui donne la possibilité d'exécuter des programmes \textit{python} au niveau des hôtes. Les commutateurs Mininet prennent en charge Openflow pour un routage personnalisé hautement flexible.
 
 \noindent Mininet est vaguement recommandé car:\\
 \begin{itemize}
-\item[-] Est rapide, démarrer un réseau simple ne prend que quelques secondes.\\
-\item[-] Vous pouvez créer des topologies personnalisées : un commutateur unique, de plus grandes topologies du type Internet, un centre de données, ou toute autre chose.\\
-\item[-] Vous pouvez personnaliser le transfert de paquets : les commutateurs de Mininet sont programmables à l’aide du protocole Openflow.\\
-\item[-] Comprend une interface de lines de commande \textbf{CLI} pour le débogage ou l’exécution de tests sur réseau.\\
+\item[-] Il est rapide: démarrer un réseau simple ne prend que quelques secondes.\\
+\item[-] Vous pouvez créer des topologies personnalisées: un commutateur unique, de plus grandes topologies du type Internet, un centre de données, ou toute autre chose.\\
+\item[-] Vous pouvez personnaliser le transfert de paquets: les commutateurs de Mininet sont programmables à l’aide du protocole Openflow.\\
+\item[-] Il comprend une interface de lignes de commande \textbf{CLI} pour le débogage ou l’exécution de tests sur réseau.\\
 \end{itemize}
 
 \noindent Pour installer mininet sur une machine UBUNTU:
@@ -86,7 +86,7 @@ mininet>
 \section{Langage et Librairies utilisées}
 
 \subsection{Python}
-Python est un langage de programmation très puissant et adaptable à tout type d’utilisation grâce à ces bibliothèques spécialisées, utilisé particulièrement comme un langage de script. Il est trop utilisé dans la programmation réseau et spécialement dans les réseaux SDN.
+Python est un langage de programmation très puissant et adaptable à tout type d’utilisation grâce à ses bibliothèques spécialisées. Il est utilisé particulièrement comme un langage de script. Il est trop utilisé dans la programmation réseau et spécialement dans les réseaux SDN.
 
 \subsection{Scikit-learn}
 Scikit-learn est une bibliothèque libre Python destinée à l'apprentissage automatique. Elle est développée par de nombreux contributeurs2 notamment dans le monde académique par des instituts français d'enseignement supérieur et de recherche comme Inria3. Elle comprend notamment des fonctions pour estimer des forêts aléatoires, des régressions logistiques, des algorithmes de classification, et les machines à vecteurs de support. Elle est conçue pour s'harmoniser avec d'autres bibliothèques libres Python, notamment NumPy et SciPy.[\cite{29}] 
@@ -95,10 +95,10 @@ Scikit-learn est une bibliothèque libre Python destinée à l'apprentissage aut
 Pandas est une bibliothèque écrite pour le langage de programmation Python permettant la manipulation et l'analyse des données. Elle propose en particulier des structures de données et des opérations de manipulation de tableaux numériques et de séries temporelles. Les principales structures de données sont les séries (pour stocker des données selon une dimension - grandeur en fonction d'un index), les DataFrames (pour stocker des données selon 2 dimensions - lignes et colonnes), les Panels (pour représenter des données selon 3 dimensions, les Panels4D ou les DataFrames avec des index hiérarchiques aussi nommés MultiIndex (pour représenter des données selon plus de 3 dimensions). [\cite{30}]
 
 \subsection{Argus}
-Argus[\cite{31}] est le premier système de flux réseau, développé par Carter Bullard au début des années 1980 à Georgia Tech. La technologie de flux réseau est devenue un élément essentiel de la cybersécurité moderne et Argus est utilisé dans certains des réseaux les plus importants du monde. Le système Argus tente de résoudre un grand nombre de problèmes liés aux données de flux réseau : échelle, performance, applicabilité, confidentialité et utilité.\\
+Argus[\cite{31}] est le premier système de flux réseau, développé par Carter Bullard au début des années 1980 à Georgia Tech. La technologie de flux réseau est devenue un élément essentiel de la cybersécurité moderne et Argus est utilisé dans certains des réseaux les plus importants du monde. Le système Argus tente de résoudre un grand nombre de problèmes liés aux données de flux réseau: échelle, performance, applicabilité, confidentialité et utilité.\\
 
 \section{Réalisation du module F-Clustering}
-Rappellons que ce module est composé d'un modèle intelligent qui utilise une approche de clustering pout la détection des attaques. Dans la section \ref{F-Clustering}, nous avons décrit les étapes à suivre pour construire notre modèle de clustering qui sont accomplies à l'aide des deux scripts pythons, "Preprocessor.py" et "Cluster.Py".
+Rappellons que ce module est composé d'un modèle intelligent qui utilise une approche de clustering pout la détection des attaques. Dans la section \ref{F-Clustering}, nous avons décrit les étapes à suivre pour construire notre modèle de clustering qui sont accomplies à l'aide des deux scripts pythons: "Preprocessor.py" et "Cluster.Py".
 \begin{algorithm}[H]
 \begin{verbatim}
 
@@ -241,7 +241,7 @@ La simulation sera faite à l'aide de Mininet(2.2) qui est installé à coté de
 \subsection{Création de la topologie}
 Sur mininet nous allons créer la topologie de notre réseau constitué d'un contrôleur SDN, un switch OpenFlow, et 6 hôtes qui jouent les rôles illustrés dans le tableau \ref{table:nodes};\\
 
-\noindent Commande de création :
+\noindent Commande de création:
 \begin{verbatim}
 % sudo mn --controller remote --topo single,6 --switch ovs --mac
 \end{verbatim}
@@ -301,7 +301,7 @@ Sur l'hôte \textbf{h6}, nous allons installer notre système de détection. Rap
 \begin{verbatim}
 % sudo argus -d -i h6-eth0 -P 561 -w /captured/today.argus
 \end{verbatim}
-L'option \textbf{-i} : permet de spécifier l'interface d'écoute, qui est, dans notre cas, l'interface Ethernet 0 de h6.\\
+L'option \textbf{-i}: permet de spécifier l'interface d'écoute, qui est, dans notre cas, l'interface Ethernet 0 de h6.\\
 
 \noindent Nous lançons ensuite script "IDS.py" qui va installer le client argus, ainsi que le modèle de clustering \textbf{F-Clustering}.
 \begin{figure}[h]
@@ -433,11 +433,11 @@ Le serveur retente plusieurs fois l'envoie du fichier à l'hôte \textbf{h3}, co
 \end{figure}
 
 \subsubsection{B- Simulation de UDP-Flooding}
-À partir de \textbf{h2}, nous lançons une attaque du type UDP-Flooding contre \textbf{h3} (hôte victime, @10.0.0.3) à l'aide de la commande suivante :
+À partir de \textbf{h2}, nous lançons une attaque du type UDP-Flooding contre \textbf{h3} (hôte victime, @10.0.0.3) à l'aide de la commande suivante:
 \begin{verbatim}
 % hping3 --udp --flood 10.0.0.3 -c 10 -d 400
 \end{verbatim}
-L'option :
+L'option:
 \begin{itemize}
 \item[\textbf{-c}]: permet de spécifier le nombre de flux.
 \item[\textbf{-d}]: permet de définir la taille des données.
