@@ -2,7 +2,7 @@
 \chapter{Conception}
 
 \label{Chapter4} 
-le Software-Defined Networking a rapidement émergé comme une technologie prometteuse pour les réseaux futurs et a gagné beaucoup d'attention. Cependant, la nature centralisée du SDN rend le système vulnérable aux attaques par déni de service (DoS), une fois le contrôleur compris, tout le réseau cessera de fonctionner. Mais cette centralisation a un avantage : la gestion centralisée des équipements réseau; elle permet d'avoir une vue globale des flux de trafic, ce qui offre un meilleur système de défense contre les attaques DoS.\\
+le Software-Defined Networking a rapidement émergé comme une technologie prometteuse pour les réseaux futurs et a gagné beaucoup d'attention. Cependant, la nature centralisée du SDN rend le système vulnérable aux attaques par déni de service (DoS), une fois le contrôleur compris, tout le réseau cessera de fonctionner. Mais cette centralisation a un avantage: la gestion centralisée des équipements réseau; elle permet d'avoir une vue globale des flux de trafic, ce qui offre un meilleur système de défense contre les attaques DoS.\\
 
 Comme mentionné dans la section \ref{rDoS}, nous nous intéressons dans notre travail à une attaque DoS spécifique, connue sous le nom de \textbf{Reflective-DoS} (RDoS). Cette attaque est un peu spéciale et diffère carrément des autres types d'attaques DoS dans le principe de fonctionnement et les dommages causés. Nous parlerons plus de cette attaque dans la section suivante. \\
 
@@ -24,7 +24,7 @@ RDoS n’attaque pas directement la cible mais envoie plutôt plusieurs requête
 À ce niveau, nous pouvons clairement voir que l'impact de ce type d'attaque est en double; en premier lieu, la consommation de la bande passante des liens réseau à cause du nombre excessif des messages requêtes et réponses échangés. En deuxième lieu, la surcharge des serveurs tiers avec des messages requêtes, qui vont les traiter évidemment, car pour eux ils paraissent légitimes. 
 
 \section{Motivation du travail}
-Un article[\cite{24}] sur les travaux connexes a montré que la défense contre les attaques RDoS peut être divisée en 3 principales tâches : (1) surveillance (\textit{monitoring}) et la collecte de données du trafic réseau, (2) l’interprétation de ces données et la détection d’une attaque en cours, et (3) la mitigation de l’attaque. Selon leurs tâches principales, les solutions existantes varient considérablement dans leurs hypothèses et leurs exigences.\\
+Un article[\cite{24}] sur les travaux connexes a montré que la défense contre les attaques RDoS peut être divisée en 3 principales tâches: (1) surveillance (\textit{monitoring}) et la collecte de données du trafic réseau, (2) l’interprétation de ces données et la détection d’une attaque en cours, et (3) la mitigation de l’attaque. Selon leurs tâches principales, les solutions existantes varient considérablement dans leurs hypothèses et leurs exigences.\\
 Dans la littérature on trouve que la surveillance du trafic, qui représente la première phase du processus de détection, se fait sur les trois couches suivantes:\\
 \begin{itemize}
 \item[•] La couche réseau.
@@ -232,15 +232,15 @@ La mise à l'échelle des caractéristiques est une méthode utilisée pour norm
 \noindent Étant donné que la plage de valeurs des données brutes varie considérablement dans certains algorithmes d'apprentissage automatique, les fonctions objectives ne fonctionneront pas correctement sans normalisation. Par exemple, de nombreux classificateurs calculent la distance entre deux points par la distance euclidienne. Si l'une des entités a une large plage de valeurs, la distance sera régie par cette caractéristique particulière. Par conséquent, la portée de toutes les entités doit être normalisée afin que chaque entité contribue approximativement proportionnellement à la distance finale.
 
 \paragraph{Min-Max Scaler: \\\\}
-Également appelée min-max normalisation, c'est la méthode la plus simple et consiste à redimensionner la plage de caractéristiques pour mettre à l'échelle la plage en [0, 1] ou [-1, 1]. La sélection de la plage cible dépend de la nature des données. La formule générale pour un min-max de [0, 1] est donnée comme suit :
+Également appelée min-max normalisation, c'est la méthode la plus simple et consiste à redimensionner la plage de caractéristiques pour mettre à l'échelle la plage en [0, 1] ou [-1, 1]. La sélection de la plage cible dépend de la nature des données. La formule générale pour un min-max de [0, 1] est donnée comme suit:
 \begin{center}
 {\large $ X_{scaled} = \frac{X - X_{min}}{X_{max} - X_{min}} $}
 \end{center}
-Où :\\
+Où:\\
 
-\indent X : valeur à mettre à l'échelle de la caractéristique C.\\
-\indent $X_{min}$ : plus petite valeur observée de la caractéristique C.\\
-\indent $X_{max}$ : plus grande valeur observée de la caractéristique C.\\
+\indent X: valeur à mettre à l'échelle de la caractéristique C.\\
+\indent $X_{min}$: plus petite valeur observée de la caractéristique C.\\
+\indent $X_{max}$: plus grande valeur observée de la caractéristique C.\\
 
 Le dataset TFTP n'est pas balancé, il contient beaucoup plus de flux d'attaque que de flux bénins. Si nous l'utilisons sans le balancer, notre modèle va toujours pencher sur le cluster des attaques. L'idée du balancement est de générer de nouveaux échantillons de la classe minoritaire à l'aide de fonctions mathématiques existantes.
 
@@ -257,7 +257,7 @@ Deuxième étape du processus KDD. Nous avons opté pour un modèle de Clusterin
 \subsubsection{A- Fonctionnement de K-Means} 
 \begin{algorithm}[H]
 \begin{verbatim}
-Donnée : k le nombre maximum de classes désiré.
+Donnée: k le nombre maximum de classes désiré.
 
 Début 
 1- Choisir k individus au hasard (comme centre des classes initiales)
@@ -273,7 +273,7 @@ Fin
 \subsubsection{B- La distance de dissimilarité:}
 Pour pouvoir regrouper un jeu de données en K clusters distincts, l’algorithme K-Means a besoin d’un moyen de comparer le degré de similarité entre les différentes observations. Ainsi, deux données qui se ressemblent, auront une distance de dissimilarité réduite alors que deux objets différents auront une distance de séparation plus grande.\\
 
-\noindent Dans notre cas nous avons choisi la distance Euclidienne: c’est la distance géométrique (aussi appelée la distance à vol d’oiseau). Soit une matrice $X$ à $n$ variables quantitatives dans l’espace vectoriel $E^{n}$. La distance euclidienne $d$ entre deux observations $x_{1}$ et $x_{2}$ se calcule comme suit :
+\noindent Dans notre cas nous avons choisi la distance Euclidienne: c’est la distance géométrique (aussi appelée la distance à vol d’oiseau). Soit une matrice $X$ à $n$ variables quantitatives dans l’espace vectoriel $E^{n}$. La distance euclidienne $d$ entre deux observations $x_{1}$ et $x_{2}$ se calcule comme suit:
 
 \begin{large}
 		\begin{center}
