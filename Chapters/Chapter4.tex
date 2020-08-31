@@ -2,16 +2,16 @@
 \chapter{Conception}
 
 \label{Chapter4} 
-le Software-Defined Networking a rapidement émergé comme une technologie prometteuse pour les réseaux futurs et a gagné beaucoup d'attention. Cependant, la nature centralisée du SDN rend le système vulnérable aux attaques par déni de service (Dos), une fois le contrôleur compris, tout le réseau cessera de fonctionner. Mais cette centralisation a un avantage, la gestion centralisée des équipements réseau, elle permet d'avoir une vue globale des flux de trafic, ce qui offre un meilleur système de défense contre les attaques DoS.\\
+le Software-Defined Networking a rapidement émergé comme une technologie prometteuse pour les réseaux futurs et a gagné beaucoup d'attention. Cependant, la nature centralisée du SDN rend le système vulnérable aux attaques par déni de service (DoS), une fois le contrôleur compris, tout le réseau cessera de fonctionner. Mais cette centralisation a un avantage : la gestion centralisée des équipements réseau; elle permet d'avoir une vue globale des flux de trafic, ce qui offre un meilleur système de défense contre les attaques DoS.\\
 
-Comme mentionné dans la section \ref{rDoS}, nous nous intéressons dans notre travail à une attaque DOS spécifique, connue sous le nom de \textbf{Reflective-DoS} (RDos). Cette attaque est un peu spéciale et diffère carrément des autres types d'attaques Dos dans le principe de fonctionnement et les dommages causés. nous parlerons plus sur cette attaque dans la section suivante. \\
+Comme mentionné dans la section \ref{rDoS}, nous nous intéressons dans notre travail à une attaque DoS spécifique, connue sous le nom de \textbf{Reflective-DoS} (RDoS). Cette attaque est un peu spéciale et diffère carrément des autres types d'attaques DoS dans le principe de fonctionnement et les dommages causés. Nous parlerons plus de cette attaque dans la section suivante. \\
 
-Nous proposons dans ce chapitre une modélisation de notre solution. Nous commençons par présenter son architecture générale et les différents modules qui le composent. Dans la suite de ce chapitre, nous nous concentrons sur la conception de ces modules et le développement du système en appliquant les notions que nous avons apprises sur les réseaux SDN, les IDS et l’apprentissage automatique.
+Nous proposons dans ce chapitre une modélisation de notre solution. Nous commençons par présenter son architecture générale et les différents modules qui la composent. Dans la suite, nous nous concentrons sur la conception de ces modules et le développement du système en appliquant les notions que nous avons apprises sur les réseaux SDN, les IDS et l’apprentissage automatique.
 
 \section{Problématique}
 Mars 2018, un nouveau record a été marqué avec 1.7 Tbps de trafic généré par une attaque DoS réflective. La compagnie \textbf{Arbor Networks} a affirmé que son système d'analyse de trafic, ATLAS, a enregistré 1.7 Tbps d'une attaque reflective contre un site web d'un client[\cite{22}].\\
 
-RDoS n’attaque pas directement la cible mais envoie plutôt plusieurs requêtes vers un service tiers exploitable (c. -à-d. le réflecteur, généralement c'est un serveur) avec une adresse IP d’expéditeur usurpée, ce qui rend l'attaquant anonymat. Les réponses du serveur tiers sont ensuite envoyées à la cible d’attaque réelle et causer une surcharge. Les protocoles avec des messages de réponse qui sont beaucoup plus grands que les messages de demande sont particulièrement bien adapté à ces attaques en raison des effets d’amplification. La nature de ces attaques nécessite des services qui fonctionnent sans connexion établie entre le client et le serveur. Une étude récente[\cite{23}] a trouvé que $ 99.72\% $ des attauqes RDoS utilisent des protocols basé UDP, comme DNS, NTP, ..etc. Les messages reçus dans une attaque RDoS sont difficiles à différencier du trafic bénin, car ils sont conformes aux spécifications du protocole. Les réflecteurs gèrent correctement toutes les demandes comme légitimes, mais l’absence de réponse est une caractéristique des attaques réflectives qui ne peut être masquée.
+RDoS n’attaque pas directement la cible mais envoie plutôt plusieurs requêtes vers un service tiers exploitable (c. -à-d. le réflecteur, généralement c'est un serveur) avec une adresse IP d’expéditeur usurpée, ce qui rend l'attaquant anonyme. Les réponses du serveur tiers sont ensuite envoyées à la cible d’attaque réelle et causent une surcharge. Les protocoles avec des messages de réponse qui sont beaucoup plus grands que les messages de demande sont particulièrement bien adaptés à ces attaques en raison des effets d’amplification. La nature de ces attaques nécessite des services qui fonctionnent sans connexion établie entre le client et le serveur. Une étude récente[\cite{23}] a trouvé que $ 99.72\% $ des attauqes RDoS utilisent des protocoles basés UDP, comme DNS, NTP, ..etc. Les messages reçus dans une attaque RDoS sont difficiles à différencier du trafic bénin, car ils sont conformes aux spécifications du protocole. Les réflecteurs gèrent correctement toutes les demandes comme légitimes, mais l’absence de réponse est une caractéristique des attaques réflectives qui ne peut être masquée.
 
 \begin{figure}[h]
 \centering
@@ -21,11 +21,11 @@ RDoS n’attaque pas directement la cible mais envoie plutôt plusieurs requête
 \label{fig:rDoS}
 \end{figure} 
 
-À ce niveau, nous pouvons clairement voir que l'impact de ce type d'attaque est en double; en premier lieu, la consommation de la bande passante des liens réseau à cause du nombre excessif des messages requêtes et réponses échangés. En deuxième lieu, la surcharge des serveurs tiers avec des messages requêtes, qui vont les traiter évidemment, car pour eux ils paraissent des requêtes légitimes. 
+À ce niveau, nous pouvons clairement voir que l'impact de ce type d'attaque est en double; en premier lieu, la consommation de la bande passante des liens réseau à cause du nombre excessif des messages requêtes et réponses échangés. En deuxième lieu, la surcharge des serveurs tiers avec des messages requêtes, qui vont les traiter évidemment, car pour eux ils paraissent légitimes. 
 
 \section{Motivation du travail}
 Un article[\cite{24}] sur les travaux connexes a montré que la défense contre les attaques RDoS peut être divisée en 3 principales tâches : (1) surveillance (\textit{monitoring}) et la collecte de données du trafic réseau, (2) l’interprétation de ces données et la détection d’une attaque en cours, et (3) la mitigation de l’attaque. Selon leurs tâches principales, les solutions existantes varient considérablement dans leurs hypothèses et leurs exigences.\\
-Dans la littérature on trouve que la surveillance du trafic, qui représente la première phase du processus de détection, se fait sur ces trois couches:\\
+Dans la littérature on trouve que la surveillance du trafic, qui représente la première phase du processus de détection, se fait sur les trois couches suivantes:\\
 \begin{itemize}
 \item[•] La couche réseau.
 \item[•] La couche de transport.
@@ -34,12 +34,12 @@ Dans la littérature on trouve que la surveillance du trafic, qui représente la
 \newpage
 Par exemple \textit{PacketScore}, par Kim et al [\cite{25}], utilise les statistiques de paquets collectés pour comparer chaque paquet reçu au trafic bénin et d’attaque pour ensuite lui attribuer une note. Les paquets qui sont similaires au trafic d’attaque sont éliminés. Cette approche nécessite une surveillance active de la couche réseau. Plusieurs autres travaux [\cite{26}, \cite{27}] s'intéressent à la couche de transport pour la détection des anomalies en analysant les paquets de transport, ICMP, TCP et UDP.\\
 
-Pour cette fin, nous proposons une solution, basée sur une approche de clustering, pour la détection des ttaques Dos réflectives dans un réseau SDN. Cette solution prend en charge aussi les attaques DoS du type UDP-Flooding (voir section \ref{rDoS}). La mitigation de l'attaque ne fait pas par partie de notre travail, nous ferons juste la détection. La première tâche, surveillance te collecte de données, va être lancée sur la couche de transport, où on surveillera spécialement le protocole de transport UDP, vu qu'il est le plus utilisé dans les attaques RDoS. Pour la deuxième phase, qui est la détection, nous utiliserons notre modèle d'apprentissage pour analyser les données collectées dans la phase précédente et décider si c'est une attaque ou non.
+Pour cette fin, nous proposons une solution, basée sur une approche de clustering, pour la détection des ttaques DoS réflectives dans un réseau SDN. Cette solution prend en charge aussi les attaques DoS du type UDP-Flooding (voir section \ref{rDoS}). La mitigation de l'attaque ne fait pas partie de notre travail; nous ferons juste la détection. La première tâche, surveillance et collecte de données, va être lancée sur la couche de transport, où on surveillera spécialement le protocole de transport UDP, vu qu'il est le plus utilisé dans les attaques RDoS. Pour la deuxième phase, qui est la détection, nous utiliserons notre modèle d'apprentissage pour analyser les données collectées dans la phase précédente et décider si c'est une attaque ou non.
 
 \section{Présentation de la Solution}
 Les caractéristiques inhérentes des attaques de RDoS représentent un défi pour leur détection. Une surveillance et analyse continues du trafic réseau sont nécessaires pour la détection des flux malins. La solution qu'on propose, pour ce fait, est un système de détection, appelé \textbf{F-DoS}, qui sera déployée dans le réseau cible pour assurer la surveillance du trafic au but de détecter les attaques DoS (RDoS et UDP-Flooding).\\
 
-Ces deux fonctions de surveillance et de détection sont assuré par deux modules intégrés dans notre système. Le premier est le module d'extraction d'informations, qu'on référencera par l'acronyme \textbf{MEI}. Une copie de chaque flux circulant dans le réseau est envoyée à ce module afin d'extraire ses caractéristiques. Les caractéristiques extraites sont ensuite envoyées au deuxième module de notre système, appelé \textbf{F-Clustering}, qui est un modèle intelligent, sa fonction est de grouper les flux en clusters, cluster des flux normaux et cluster des flux malins.\\
+Ces deux fonctions de surveillance et de détection sont assurées par deux modules intégrés dans notre système. Le premier est le module d'extraction d'informations qu'on référencera par l'acronyme \textbf{MEI}. Une copie de chaque flux circulant dans le réseau est envoyée à ce module afin d'extraire ses caractéristiques. Les caractéristiques extraites sont ensuite envoyées au deuxième module de notre système, appelé \textbf{F-Clustering}, qui est un modèle intelligent. Sa fonction est de grouper les flux en clusters: cluster des flux normaux et cluster des flux malins.\\
 
 L'architecture et le principe de fonctionnement de notre système sont illustrés dans la figure suivante: \\
 
@@ -59,18 +59,18 @@ L'architecture et le principe de fonctionnement de notre système sont illustré
 
 \newpage
 \subsection{Module MEI}
-Le rôle principal de ce module est l'extraction des informations des flux de données. Mais pour ce faire, ce module doit assurer trois fonctions: l'écoute, l'analyse et l'extraction. Ce module à un port dédié à l'écoute, qui est toujours active pour recevoir une copie de chaque paquet à l'aide de la technique de mise en miroir \textit{Port Miroring}. L'ensemble des paquets capturés est envoyé par la suite à l'analyseur. L'analyse des paquets n'est pas une fonction simple, elle doit être effectuée soigneusement, si on analyse mal les paquets nous risquons de fausser le résultat de détection. Cette fonction est compliquée a raison que, l'analyseur reçoit tous les paquets qui circulent dans le réseau, et nous avons dit précédemment que nous nous intéressons aux informations des flux de données, un flux est un ensemble de paquets qui partage le même \textit{Paquet Header}(c-a-d même adresse source, adresse destination, port, ... etc). Donc l'analyseur doit calculer les flux en regroupant les paquets communs, identifier les flux de données susceptibles et éliminer tout autre flux no intéressant, comme le flux des messages de contrôle, le flux des messages de sollicitation,...etc. Les flux de données formés vont ainsi être passés à la dernière fonction de ce module pour extraction de caractéristiques de chaque flux.
+Le rôle principal de ce module est l'extraction des informations des flux de données. Mais pour ce faire, il doit assurer trois fonctions: l'écoute, l'analyse et l'extraction. Ce module à un port dédié à l'écoute qui est toujours active pour recevoir une copie de chaque paquet à l'aide de la technique de mise en miroir \textit{Port Miroring}. L'ensemble des paquets capturés est envoyé par la suite à l'analyseur. L'analyse des paquets n'est pas une fonction simple, elle doit être effectuée soigneusement. Si nous analysons mal les paquets, nous risquons de fausser le résultat de détection. Cette fonction est compliquée car, l'analyseur reçoit tous les paquets qui circulent dans le réseau et nous avons dit précédemment que nous nous intéressons aux informations des flux de données. Un flux est un ensemble de paquets qui partagent le même \textit{Paquet Header}(c-à-d même adresse source, adresse destination, port, ... etc). Donc l'analyseur doit calculer les flux en regroupant les paquets communs, identifier les flux de données susceptibles et éliminer tout autre flux non intéressant, comme le flux des messages de contrôle, le flux des messages de sollicitation,...etc. Les flux de données formés vont ainsi être passés à la dernière fonction de ce module pour l'extraction des caractéristiques de chaque flux.
 
 \newpage
 \subsection{Module F-Clustering}
-L'objet de notre travail est de proposer une approche de Clustering pour la détection des attaques Dos. Nous nous sommes penchés vers le K-Means, nous l'avons amélioré et adapté à notre utilisation pour construire notre modèle intelligent qui est le coeur de ce module. Ce module prend en entrée le vecteur de caractéristiques construit par le module MEI, et d'après ses préconnaissances, et attribue le flux reçu a un des clusters préexistants. Si le flux est groupé dans le cluster des flux malin on dit qu'une attaque DoS (RDoS ou UDP-Flooding), nous pouvons ainsi lancer une alerte et c'est à l'administrateur réseau de prendre ses dipositions.
+L'objet de notre travail est de proposer une approche de Clustering, pour la détection des attaques DoS. Nous nous sommes penchés sur le K-Means, nous l'avons amélioré et adapté à notre utilisation pour construire notre modèle intelligent qui est le coeur de ce module. Ce module prend en entrée le vecteur de caractéristiques construit par le module MEI,  et il l'attribue a un des clusters préexistants. Si c'était un flux malin, nous pouvons lancer une alerte et c'est à l'administrateur réseau de prendre ses dipositions.
 
 \section{Conception du module MEI}
 Pour concevoir ce module, nous étions dans l’obligation de choisir un outil d’analyse et de calcul des caractéristiques des flux. Parmi les différents analyseurs existants, nous avons choisi ARGUS[\cite{31}] pour plusieurs raisons:\\
 \begin{itemize}
 \item[-] Son architecture client/serveur, est simple et personnalisable.
-\item[-] Assure les trois fonctions de notre module MEI.
-\item[-] Fonctionne en temps réel ce qui permet, par la suite, une détection d'attaques en temps réel.\\
+\item[-] Il assure les trois fonctions de notre module MEI.
+\item[-] Il fonctionne en temps réel ce qui permet, par la suite, une détection d'attaques en temps réel.\\
 \end{itemize} 
 Pour mettre en oeuvre ce module nous avons procédé comme suit:\\
 \begin{itemize}
@@ -96,8 +96,8 @@ L'architecture interne du module MEI est illustrée dans la figure \ref{fig:MEI}
 \label{F-Clustering}
 Pour concevoir ce module nous avons suivi les étapes du processus KDD décrites dans la section \ref{KDD}:\\
 \begin{itemize}
-\item[-] Préparation des données: premières étapes du processus, où nous parlerons de notre source donnée et les différentes opérations effectuées sur ces données pour les préparer à la deuxième phase du processus. \\
-\item[-] Recherche du modèle: le modèle adopté est un modèle d'apprentissage non supervisé, utilisant une approche de Clustering, qui va être trainé sur les données collectées dans la phase précédente.\\
+\item[-] Préparation des données: premières étapes du processus où nous parlerons de notre source donnée et les différentes opérations effectuées sur ces données pour les préparer à la deuxième phase du processus. \\
+\item[-] Recherche du modèle: le modèle adopté est un modèle d'apprentissage non supervisé utilisant une approche de Clustering qui va être trainé sur les données collectées dans la phase précédente.\\
 \item[-] Évaluation du modèle: nous ferons l'évaluation du modèle dans le chapitre \ref{Chapter5}.
 \end{itemize}
 
@@ -105,7 +105,7 @@ Pour concevoir ce module nous avons suivi les étapes du processus KDD décrites
 \subsubsection{A) Choix du dataset }
 Comme source de données, nous avons exploité le dataset \textbf{ CICDDoS 2019}[\cite{21}]. CICDDoS2019 contient des flux bénins et des attaques Ddos les plus courantes, qui ressemblent aux vraies données du monde réel. Ce dataset contient différentes attaques DoS modernes réflectives telles que Portmap, Netbios, LDAP, UDP, TFTP, NTP. La période de capture a commencé le 12 janvier à 10 h 30 et s’est terminée à 17 h 15. Des attaques ont par la suite été exécutées au cours de cette période.
 \newpage
-CICDDoS2019 est formé de plusieurs fichiers, chacun propre à une attaque. Vu la taille énorme de ces fichiers, et pour raison de simplifier le travail et pouvoir simuler l'architecture générale de notre réseau, nous nous sommes mis d’accord sur le choix d'un seul fichier pour travailler sur. Le fichier que nous avons choisi est propre à l'attaque TFTP, qui est lui-même un dataset contenant 20 millions de lignes et 88 colonnes (aussi référées par caractéristiques ou attributs).
+CICDDoS2019 est formé de plusieurs fichiers, chacun propre à une attaque. Vu la taille énorme de ces fichiers, et pour raison de simplifier le travail et pouvoir simuler l'architecture générale de notre réseau, nous nous sommes mis d’accord sur le choix d'un seul fichier pour travailler. Le fichier que nous avons choisi est propre à l'attaque TFTP qui est lui-même un dataset contenant 20 millions de lignes et 88 colonnes (aussi référées par caractéristiques ou attributs).
 
 \begin{longtable}{ | m{5cm} | m{11cm} | }
 \hline
@@ -133,7 +133,7 @@ Fwd/Bwd IAT Tot/Mean/ Std/Max/Min & Temps de déviation total/moyen/standard/max
 \hline
 Fwd/Bwd PSH/URG & Nombre de fois l'indice PSH/URG a été envoyé/reçu\\
 \hline
-Fwd/Bwd Header length & Nombre d'octects contenus dans l'ne tête du paquet envoyé/reçu\\
+Fwd/Bwd Header length & Nombre d'octects contenus dans l'en-tête du paquet envoyé/reçu\\
 \hline
 Fwd/Bwd packets/s & Nombre de paquets envoyés/reçus par seconde\\
 \hline
@@ -141,7 +141,7 @@ Packet Length Max/Min/Mean/Std & Taille maximale/minimale/moyenne/standard d'un 
 \hline
 Packet Length Variance & Variance de la taille d'un paquet\\
 \hline
-FIN/SYN/RST/ PSH/ACK/URG/ CWE/ECE Flag Count & Nombre de paquet contenat FIN/SYN/RST/PSH/ACK/ URG/CWE/ECE\\
+FIN/SYN/RST/ PSH/ACK/URG/ CWE/ECE Flag Count & Nombre de paquet contenant FIN/SYN/RST/PSH/ACK/ URG/CWE/ECE\\
 \hline
 Down/Up ratio & Ratio de téléchargement/chargement\\
 \hline 
@@ -149,7 +149,7 @@ Average Packet Size & Taille moyenne d'un paquet\\
 \hline
 act\_data\_pkt\_fwd & Nombre de paquets avec au moins 1 octet de données TCP envoyées\\
 \hline
-min\_seg\_size\_forward & Taille minimale observée d'un segement envoyé\\
+min\_seg\_size\_forward & Taille minimale observée d'un segment envoyé\\
 \hline
 Active Mean/Std/Max/Min & Temps moyen/standard/maximal/minimal durant lequel un flux était actif avant de devenir inactif\\
 \hline 
@@ -174,25 +174,25 @@ Label & Étiquette\\
 \end{longtable}
 
 \subsubsection{B) Prétraitement des données }
-Le dataset TFTP n'est pas propre, il contient des données avec des ordres de grandeur différents, des valeurs erronées, des duplicats, il n'est pas balancé et contient des attributs que nous n'avons pas besoin dans notre travail. Un prétraitement est nécessaire pour préparer le dataset en vue de l'utiliser dans l'étape de création du modèle d'apprentissage. Ce processus de prétraitement est sur trois étapes; la première est le nettoyage du dataset, connue dans la littérature sous le nom de \textbf{Data Laundry}. Deuxième étape, sélection des attributs. Troisième étape, mise à l'échelle et balancement du dataset.
+Le dataset TFTP n'est pas propre, il contient des données avec des ordres de grandeur différents, des valeurs erronées, des duplicats. Il n'est pas balancé et contient des attributs dont nous n'avons pas besoin dans notre travail. Un prétraitement est nécessaire pour préparer le dataset en vue de l'utiliser dans l'étape de création du modèle d'apprentissage. Ce processus de prétraitement se fait sur trois étapes: la première est le nettoyage du dataset connue dans la littérature sous le nom de \textbf{Data Laundry}. La deuxième étape est la sélection des attributs et la troisième est la mise à l'échelle et le balancement du dataset.
 
 \subsubsection{B-1) Data Laundry}
 Cette étape consiste à nettoyer le dataset:\\
 \begin{itemize}
-\item[-] Les lignes contenants des valeurs \textit{"Infinit"} ou \textit{"NaN"} seront supprimées.
+\item[-] Les lignes contenant des valeurs \textit{"Infinit"} ou \textit{"NaN"} seront supprimées.
 \item[-] Suppression des duplicates.
 \item[-] Les données vont être formatées en un \textit{datatype} standard.
 \end{itemize}
 
 \subsubsection{B-2) Sélection des attributs}
 \label{attributs}
-La qualité des données de l’ensemble d’apprentissages et des attributs qui les caractérisent forment le succès de la technique de clustering utilisée. La présence de variables redondantes, bruitées et peu corrélées avec le cluster d’un exemple rend le processus d’apprentissage plus difficile.\\
+La qualité des données de l’ensemble d’apprentissages et des attributs qui les caractérisent forment le succès de la technique de clustering utilisée. La présence de variables redondantes bruitées et peu corrélées avec le cluster d’un exemple rend le processus d’apprentissage plus difficile.\\
 
-\noindent La détection d’intrusion est le genre d’application pour laquelle la sélection d’attributs peut être bénéfique car elle permet tout au moins d’aboutir aux mêmes performances de reconnaissance à partir d’un nombre de caractéristique moindres.\\
+\noindent La détection d’intrusion est le genre d’application pour laquelle la sélection d’attributs peut être bénéfique car elle permet tout au moins d’aboutir aux mêmes performances de reconnaissance à partir d’un nombre de caractéristique moindre.\\
 
-\noindent Nous avons choisi les attributs en analysant les propriétés intrinsèques des données, nous avons éliminé la plupart des attributs de base telles que  les hôtes source et destination, les ports, les flags, ...etc. Nous avons éliminé aussi les attributs de contenu qui sont construit à partir de la charge utile (data) des paquets de trafic tels que le nombre d’échec de connexion.  Car, ce sont des valeurs statiques et n’ont aucun impact sur la détection des attaques.\\
+\noindent Nous avons choisi les attributs en analysant les propriétés intrinsèques des données. Nous avons éliminé la plupart des attributs de base tels que  les hôtes source et destination, les ports, les flags, ...etc. Nous avons éliminé aussi les attributs de contenu qui sont construits à partir de la charge utile (data) des paquets de trafic tels que le nombre d’échecs de connexion.  Car, ce sont des valeurs statiques et n’ont aucun impact sur la détection des attaques.\\
 
-\noindent Le choix final des attributs était: le protocole pour filtrer le trafic et étudier le cas du protocole UDP uniquement, la durée du flux, la taille et le nombre de paquets envoyées et reçus, ainsi que les débits de transfert. Le tableau suivant décrit chacun de ces attributs.
+\noindent Le choix final des attributs était: le protocole pour filtrer le trafic et étudier le cas du protocole UDP uniquement, la durée du flux, la taille et le nombre de paquets envoyés et reçus, ainsi que les débits de transfert. Le tableau suivant décrit chacun de ces attributs.
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{ | m{4cm} | m{10cm} | }
@@ -200,15 +200,15 @@ La qualité des données de l’ensemble d’apprentissages et des attributs qui
 \rowcolor[rgb]{0.85,0.85,0.85}
 \textbf{Attribut} & \textbf{Déscription}\\
 \hline
-Protocol & Protocol de transport\\
+Protocol & Protocole de transport\\
 \hline
 Flow Duration & Durée du flux\\
 \hline
-Total Fwd Packets & Nombre de paquets envoyées \\
+Total Fwd Packets & Nombre de paquets envoyés \\
 \hline
 Total Backward Packets &  Nombre de paquets reçus \\
 \hline
-Total Length of Fwd Packets & Taille totale des paquets envoyées \\
+Total Length of Fwd Packets & Taille totale des paquets envoyés \\
 \hline
 Total Length of Bwd Packets & Taille totale des paquets reçus \\
 \hline
@@ -216,7 +216,7 @@ Flow Bytes/s &  Nombre de Byte par seconde\\
 \hline
 Flow Packets/s &  Nombre de paquets par seconde\\
 \hline
-Fwd Packets/s & Nombre de paquets envoyées par seconde \\
+Fwd Packets/s & Nombre de paquets envoyés par seconde \\
 \hline
 Bwd Packets/s & Nombre de paquets reçus par seconde \\
 \hline
@@ -229,7 +229,7 @@ Bwd Packets/s & Nombre de paquets reçus par seconde \\
 \subsubsection{B-3) Mise à l'échelle et balancement}
 La mise à l'échelle des caractéristiques est une méthode utilisée pour normaliser la plage des variables indépendantes ou des caractéristiques des données. Dans le traitement des données, elle est également connue sous le nom de normalisation des données et est généralement effectuée lors de l'étape de prétraitement des données.\\
 
-\noindent Étant donné que la plage de valeurs des données brutes varie considérablement, dans certains algorithmes d'apprentissage automatique, les fonctions objectives ne fonctionneront pas correctement sans normalisation. Par exemple, de nombreux classificateurs calculent la distance entre deux points par la distance euclidienne. Si l'une des entités a une large plage de valeurs, la distance sera régie par cette caractéristique particulière. Par conséquent, la portée de toutes les entités doit être normalisée afin que chaque entité contribue approximativement proportionnellement à la distance finale.
+\noindent Étant donné que la plage de valeurs des données brutes varie considérablement dans certains algorithmes d'apprentissage automatique, les fonctions objectives ne fonctionneront pas correctement sans normalisation. Par exemple, de nombreux classificateurs calculent la distance entre deux points par la distance euclidienne. Si l'une des entités a une large plage de valeurs, la distance sera régie par cette caractéristique particulière. Par conséquent, la portée de toutes les entités doit être normalisée afin que chaque entité contribue approximativement proportionnellement à la distance finale.
 
 \paragraph{Min-Max Scaler: \\\\}
 Également appelée min-max normalisation, c'est la méthode la plus simple et consiste à redimensionner la plage de caractéristiques pour mettre à l'échelle la plage en [0, 1] ou [-1, 1]. La sélection de la plage cible dépend de la nature des données. La formule générale pour un min-max de [0, 1] est donnée comme suit :
@@ -242,10 +242,10 @@ Où :\\
 \indent $X_{min}$ : plus petite valeur observée de la caractéristique C.\\
 \indent $X_{max}$ : plus grande valeur observée de la caractéristique C.\\
 
-Le dataset TFTP n'est pas balancé, il contient beaucoup plus de flux attaqué que de flux bénin. Si nous l'utilisons sans le balancer, notre modèle va toujours pencher vers le cluster des attaques. L'idée du balancement est de générer de nouveaux échantillons de la classe minoritaire à l'aide de fonctions mathématiques existantes.
+Le dataset TFTP n'est pas balancé, il contient beaucoup plus de flux d'attaque que de flux bénins. Si nous l'utilisons sans le balancer, notre modèle va toujours pencher sur le cluster des attaques. L'idée du balancement est de générer de nouveaux échantillons de la classe minoritaire à l'aide de fonctions mathématiques existantes.
 
 \subsection{Recherche du modèle}
-Deuxième étape du processus KDD. Nous avons opté pour un modèle de Clustering, où a fait l'implémentation de l'algorithme K-Means avec des modifications pour l'adapter à notre utilisation. Le modèle prend en entrée le dataset construit dans l'étape de prétraitement, applique l'algorithme de clustering pour construire les deux clusters, attaque et bénin. En sortie, nous aurons aura un objet, qui groupe un flux donné dans un des clusters existants. Cet objet n'est rien d'autre que le module \textbf{F-Clustering} de notre système.
+Deuxième étape du processus KDD. Nous avons opté pour un modèle de Clustering, nous avons implémenter l'algorithme K-Means avec des modifications pour l'adapter à notre utilisation. Le modèle prend en entrée le dataset construit dans l'étape de prétraitement, applique l'algorithme de clustering pour construire les deux clusters, attaque et bénin. En sortie, nous aurons un objet, qui groupe un flux donné dans un des clusters construits. Cet objet est le module \textbf{F-Clustering} de notre système.
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Diagramme2}
@@ -257,7 +257,7 @@ Deuxième étape du processus KDD. Nous avons opté pour un modèle de Clusterin
 \subsubsection{A- Fonctionnement de K-Means} 
 \begin{algorithm}[H]
 \begin{verbatim}
-Donnée : k le nombre maximum de classe désiré.
+Donnée : k le nombre maximum de classes désiré.
 
 Début 
 1- Choisir k individus au hasard (comme centre des classes initiales)
@@ -271,7 +271,7 @@ Fin
 \end{algorithm}
 
 \subsubsection{B- La distance de dissimilarité:}
-Pour pouvoir regrouper un jeu de données en K clusters distincts, l’algorithme K-Means a besoin d’un moyen de comparer le degré de similarité entre les différentes observations. Ainsi, deux données qui se ressemblent, auront une distance de dissimilarité réduite, alors que deux objets différents auront une distance de séparation plus grande.\\
+Pour pouvoir regrouper un jeu de données en K clusters distincts, l’algorithme K-Means a besoin d’un moyen de comparer le degré de similarité entre les différentes observations. Ainsi, deux données qui se ressemblent, auront une distance de dissimilarité réduite alors que deux objets différents auront une distance de séparation plus grande.\\
 
 \noindent Dans notre cas nous avons choisi la distance Euclidienne: c’est la distance géométrique (aussi appelée la distance à vol d’oiseau). Soit une matrice $X$ à $n$ variables quantitatives dans l’espace vectoriel $E^{n}$. La distance euclidienne $d$ entre deux observations $x_{1}$ et $x_{2}$ se calcule comme suit :
 
@@ -282,12 +282,12 @@ Pour pouvoir regrouper un jeu de données en K clusters distincts, l’algorithm
 	\end{large}
 
 \subsubsection{C- Le choix des centres}
-La principale limite de cette méthode de clustering est la dépendance des résultats des valeurs de départ (centres initiaux). À chaque initialisation correspond une solution différente (optimum local) qui peut dans certains cas être très loin de la solution optimale (optimum global). Notre solution à ce problème consiste à lancer l'algorithme une fois avec les attaques uniquement et une autrefois avec les données bénignes uniquement pour calculer leurs centres des clusters souhaités.
+La principale limite de cette méthode de clustering est la dépendance des résultats des valeurs de départ (centres initiaux). À chaque initialisation correspond une solution différente (optimum local) qui peut dans certains cas être très loin de la solution optimale (optimum global). Notre solution à ce problème consiste à lancer l'algorithme une fois avec les attaques uniquement et une autre fois avec les données bénignes uniquement pour calculer leurs centres des clusters souhaités.
 
 \section{Module d'archivage}
-Nous avons pensé à rajouter, comme fonctionnalité additionnelle à notre système, un module d’archivages qui sauvegarde des logs datés et classés par ordres chronologiques sur les caractéristiques et les informations collectées sur les flux de données.  Une étiquette, qui porte la valeur \textit{"ATTACK"} ou \textit{"BENIGN"}, sera ajoutée à chaque flux, par le modèle de Clustering, pour l'identifier. 57 caractéristiques seront calculées et sauvegardées dans ce module, par exemple : la durée du flux, les adresses source et destination, Timestamp (heure de capture), protocole, ports source et destination, et bien d'autres. Ce module peut servir à plusieurs besoins, par exemple l'analyse périodique du système, il peut servir comme un source de données (dataset) pour d'autres projets qui nécessitent des données fiables et capturées dans un réseau réel. 
+Nous avons pensé à rajouter, comme fonctionnalité additionnelle à notre système, un module d’archivages qui sauvegarde des logs datés et classés par ordres chronologiques sur les caractéristiques et les informations collectées sur les flux de données.  Une étiquette, qui porte la valeur \textit{"ATTACK"} ou \textit{"BENIGN"}, sera ajoutée à chaque flux par le modèle de Clustering pour l'identifier. 57 caractéristiques seront calculées et sauvegardées dans ce module, par exemple: la durée du flux, les adresses source et destination, Timestamp (heure de capture), protocole, ports source et destination, et bien d'autres. Ce module peut servir à plusieurs besoins, par exemple, l'analyse périodique du système. Il peut servir comme une source de données (dataset) pour d'autres projets qui nécessitent des données fiables et capturées dans un réseau réel. 
 
 \section{Conclusion}
-Ce chapitre a porté entièrement sur la conception de notre solution, nous avons commencé par définir la problématique des attaques de déni de service réflectives et décrire la motivation de notre travail. Notre contribution dans ce domaine était un système de détection d'attaques DoS, nous avons vu son architecture générale et détaillé le rôle de chacun des modules qui le composent. Nous avons décrit son fonctionnement et présenté les différentes étapes de conception.\\
+Ce chapitre a porté entièrement sur la conception de notre solution, nous avons commencé par définir la problématique des attaques de déni de service réflectives et décrire la motivation de notre travail. Notre contribution dans ce domaine est un système de détection d'attaques DoS. Nous avons présenté son architecture générale et détaillé le rôle de chacun des modules qui le composent. Nous avons décrit son fonctionnement et présenté les différentes étapes de conception.\\
 
 \noindent Dans le prochain chapitre, nous allons entamer la partie d'implémentation de notre système et son déploiement dans un réseau SDN simulé. Des tests expérimentaux seront aussi faits pour des raisons d'évaluation du système.
