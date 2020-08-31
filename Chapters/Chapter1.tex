@@ -9,16 +9,16 @@ Ce chapitre donne un aperçu sur l’environnement SDN et montre comment il est 
 %----------------------------------------------------------------------------------------
 
 \section{Limites des réseaux traditionnels}
-Avant de passer au Software-Defined Networking, rappelons deux limites majeures des réseaux traditionnels cités par l'ONF (Open Networking Foundation) [\cite{1}] :\\
+Avant de passer au Software-Defined Networking, rappelons deux limites majeures des réseaux traditionnels cités par l'ONF (Open Networking Foundation) [\cite{1}]:\\
 \begin{itemize}
-\item[•] \textbf{Architecture statique et complexe} : pour répondre aux différents niveaux de qualité de service, le volume de trafic élevé et les exigences en matière de sécurité; la technologie réseau est devenue plus complexe et difficile à gérer. Cela a donné lieu à un certain nombre de protocoles définis de façon indépendante dont chacun répond à une partie des besoins de réseautage. Un exemple de la difficulté que cela présente est lorsque les appareils sont ajoutés ou déplacés. Le personnel de gestion du réseau doit utiliser des outils de gestion au niveau de l’appareil pour modifications des paramètres de configuration dans plusieurs commutateurs, routeurs, pare-feu,...etc. Les opérations de mise à jour sont fastidieuses et coûteuses en matière de temps et donnent place aux erreurs de configuration qui peuvent engendrer des problèmes au niveau du réseau.\\
-\item[•] \textbf{Scalabilité limitée} : la demande sur les réseaux augmente rapidement tant en volume qu’en variétés. Ajouter plus de commutateurs ou augmenter la capacité de transmission est difficile en raison de la complexité et la nature statique du réseau.
+\item[•] \textbf{Architecture statique et complexe}: pour répondre aux différents niveaux de qualité de service, le volume de trafic élevé et les exigences en matière de sécurité; la technologie réseau est devenue plus complexe et difficile à gérer. Cela a donné lieu à un certain nombre de protocoles définis de façon indépendante dont chacun répond à une partie des besoins de réseautage. Un exemple de la difficulté que cela présente est lorsque les appareils sont ajoutés ou déplacés. Le personnel de gestion du réseau doit utiliser des outils de gestion au niveau de l’appareil pour modifications des paramètres de configuration dans plusieurs commutateurs, routeurs, pare-feu,...etc. Les opérations de mise à jour sont fastidieuses et coûteuses en matière de temps et donnent place aux erreurs de configuration qui peuvent engendrer des problèmes au niveau du réseau.\\
+\item[•] \textbf{Scalabilité limitée}: la demande sur les réseaux augmente rapidement tant en volume qu’en variétés. Ajouter plus de commutateurs ou augmenter la capacité de transmission est difficile en raison de la complexité et la nature statique du réseau.
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
 \newpage
 \section{Une approche réseau moderne}
-Une approche réseau moderne doit satisfaire les exigences citées par L’Open Data Center Alliance (ODCA)  [\cite{2}], notamment :\\
+Une approche réseau moderne doit satisfaire les exigences citées par L’Open Data Center Alliance (ODCA)  [\cite{2}], notamment:\\
 \begin{itemize}
 \item[•] \textbf{Adaptabilité}: les réseaux doivent s’adapter dynamiquement, en fonction des besoins des applications, des activités, la politique et les conditions du réseau.\\
 \item[•] \textbf{Automatisation}: les changements de politique doivent être propagés automatiquement afin de réduire le travail manuel et les erreurs.\\
@@ -61,7 +61,7 @@ Dans l’architecture traditionnelle le plan de données et le plan de contrôle
 \label{fig:SDN_Plans}
 \end{figure}
 
-L’architecture SDN définit trois couches comme indiqué dans la figure \ref{fig:SDN_Plans}. Chacune représente un plan : plan de données, plan de contrôle ou plan d’application. Chaque couche ne peut communiquer qu’avec ses couches voisines. 
+L’architecture SDN définit trois couches comme indiqué dans la figure \ref{fig:SDN_Plans}. Chacune représente un plan: plan de données, plan de contrôle ou plan d’application. Chaque couche ne peut communiquer qu’avec ses couches voisines. 
 
 \subsection{Plan de Données}
 Le plan de données se compose de commutateurs physiques et de commutateurs virtuels, qui sont responsables de la transmission des paquets. Cependant chaque commutateur doit implémenter un modèle de transfert de paquet, ce modèle est défini à travers une API (Application programming interface) qui réside entre le plan de contrôle et le plan de données permettant la communication entre le contrôleur et les commutateurs du plan de données. Parmi ces API, le OpenFlow, qui nous allons détailler par la suite.\\
@@ -87,7 +87,7 @@ Le plan d’application contient des applications et des services qui définisse
 %----------------------------------------------------------------------------------------
 
 \section{Caractéristiques des SDN}
-Après avoir vu la nouvelle architecture réseau, le software-defined Networking, en opposition avec l'architecture traditionnelle,nous trouvons que les principales caractéristiques des SDN sont les suivantes :\\
+Après avoir vu la nouvelle architecture réseau, le software-defined Networking, en opposition avec l'architecture traditionnelle,nous trouvons que les principales caractéristiques des SDN sont les suivantes:\\
 \begin{itemize}
 \item[-]\textbf{Séparation des plans}: le plan de contrôle est séparé du plan de données. Les périphériques de plan de données deviennent de simples dispositifs de transfert de paquets. Le plan de contrôle est installé dans un contrôleur ou ensemble de contrôleurs centralisés et coordonnés.\\
 \item[-]\textbf{Programmabilité}: le réseau est programmable par des applications qui s’exécutent au-dessus du contrôleur SDN. Les contrôleurs présentent une vue abstraite des ressources du réseau aux applications.\\
@@ -98,7 +98,7 @@ Après avoir vu la nouvelle architecture réseau, le software-defined Networking
 \section{OpenFlow et SDN}
 \label{S_OpenFlow}
 Pour implémenter le concept SDN en pratique, un protocole standardisé et sécurisé est essentiel  pour établir la connexion entre le contrôleur et les ressources réseau. L’architecture Openflow se compose de trois éléments principaux: un commutateur Openflow, un contrôleur externe et le protocole Openflow. Le plan de données et le plan de contrôle communiquent sur un canal sécurisé via ce protocole. Le commutateur Openflow dispose de tables de flux et d’une couche d’abstraction qui communique en toute sécurité avec un contrôleur via le protocole Openflow. La table de flux contient des entrées de flux qui déterminent comment les paquets appartenant à un flux seront traités et transmis. 
-Les entrées de flux consistent en :\\
+Les entrées de flux consistent en:\\
 
 \begin{itemize}
 \item[•] Matching rules – pour apparier les paquets entrants.
