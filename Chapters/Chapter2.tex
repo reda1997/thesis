@@ -32,12 +32,12 @@ Une attaque est une action qui compromet la sécurité des informations. Les att
 \begin{itemize}
 \item[•]\textbf{Pare-feu}: un élément (logiciel ou matériel) du réseau informatique contrôlant les communications qui le traversent. Il a pour fonction de faire respecter la politique de sécurité du réseau, celle-ci définissant les communications autorisées ou interdites. Il n'empêche pas un attaquant d'utiliser une connexion autorisée pour attaquer le système. Il ne protège pas contre une attaque venant du réseau intérieur (qui ne le traverse pas).\\
 \item[•]\textbf{Antivirus}: logiciel sensé protéger l'ordinateur contre les logiciels (ou fichiers potentiellement exécutables) néfastes. Il ne protège pas contre un intrus qui emploie un logiciel légitime, ou contre un utilisateur légitime qui accède à une ressource alors qu'il n'est pas autorisé à le faire.\\
-\item[•]\textbf{Détection d'intrusion}: repère les activités anormales ou suspectes sur le réseau surveillé, ne détecte pas les accès incorrects mais autorisés par un utilisateur légitime. Mauvaise détection : taux de faux positifs, faux négatifs.\\
+\item[•]\textbf{Détection d'intrusion}: repère les activités anormales ou suspectes sur le réseau surveillé, ne détecte pas les accès incorrects mais autorisés par un utilisateur légitime. Mauvaise détection: taux de faux positifs, faux négatifs.\\
 \item[•]\textbf{Contrôle d’accès}: vérifie les droits d’accès d'un acteur aux données, n'empêche pas l'exploitation d'une vulnérabilité.
 \end{itemize}
 
 \section{La sécurité dans les réseaux SDN}
-Le but des SDN est de rendre les réseaux informatiques plus sécurisés et robustes. La gestion centralisée des SDN simplifie la façon dont les mécanismes de sécurité sont introduits dans le réseau. Cependant cette solution ouvre les porte à d'autres types d'attaque : attaques initiées à partir des applications de gestion malicieuses, attaques sur le contrôleur, infecter les switches.\\\\
+Le but des SDN est de rendre les réseaux informatiques plus sécurisés et robustes. La gestion centralisée des SDN simplifie la façon dont les mécanismes de sécurité sont introduits dans le réseau. Cependant cette solution ouvre les porte à d'autres types d'attaque: attaques initiées à partir des applications de gestion malicieuses, attaques sur le contrôleur, infecter les switches.\\\\
 Selon Kreutz et al[\cite{7}], les vecteurs d'attaques identifiés dans les SDN sont décrits dans le tableau \ref{table:Threat_Vectors}.
 \newpage
 \begin{table}[h]
@@ -105,7 +105,7 @@ L’attaque DoS se fait à partir d’une seule machine. Dans ce type d’attaqu
 
 \subsection{Classification d'une attaque DoS}
 Les attaques DoS prennent de multiples formes et utilisent de nombreuses méthodes différentes pour mettre hors-service le réseau.
-Pour rendre le réseau hors service, il existe 3 stratégies :\\
+Pour rendre le réseau hors service, il existe 3 stratégies:\\
 \begin{itemize}
 \item[•]Saturer la bande passante.
 \item[•]Epuiser les ressources système.
@@ -127,7 +127,7 @@ Le principe est de saturer la bande passante d’un réseau, ce qui empêche d'a
 Reflection Denial of Service Amplification Attacks sont des types spécifiques des attaques DoS où l'attaquant utilise des appareils intermédiaires pour refléter son trafic. Geva, e al [\cite{8}] on fait la différence entre les attaques d'amplification et les attaques de réflexion, ils déclarent que les attaques par amplification sont plus simples alors que les attaques par réflexion pourraient amener un émetteur ou un récepteur à retransmettre des paquets plusieurs fois, ce qui les rend plus complexes. On pense que cette distinction pourrait prêter à confusion en raison du fait que la plupart des publications examinées ne les désignent pas comme des types d'attaques distincts. Par conséquent, pour éviter toute confusion, ce travail considérera les attaques d'amplification et de réflexion comme synonymes. Les appareils utilisés pour multiplier le trafic transmis sont appelés amplificateurs ou réflecteurs [\cite{9}]. Ces appareils sont généralement des hôtes légitimes qui ne savent pas qu'ils sont un réflecteur. Par rapport aux botnets, les réflecteurs ne sont généralement ni infectés ni contrôlés; cependant, l'attaquant utilise les failles des protocoles et d'autres vulnérabilités afin de faire multiplier le trafic par ces appareils. Dans les attaques de réflexion, la relation requête-réponse est un principe clé [\cite{10}]. Lorsque l'attaquant envoie une requête au réflecteur il lui répondra par un message réponse. L'attaquant envoie des paquets aux amplificateurs avec l'adresse IP usurpée de la victime. Les amplificateurs augmentent ensuite la quantité de paquets et / ou la taille des paquets et envoient la réponse à l'adresse IP usurpée. En raison d'une adresse IP falsifiée, tout ce trafic amplifié est dirigé vers la cible, ce qui pourrait entraîner un déni de service. Cela apporte plusieurs difficultés aux contre-mesures traditionnelles. Premièrement, l'origine de l'attaque est très difficile à retracer, en raison du fait que ce sont essentiellement les amplificateurs qui exécutent involontairement l'attaque. Par conséquent, la plupart des méthodes traditionnelles pourraient indiquer que les amplificateurs sont la source de l'attaque, ce qui n'est pas correct. De plus, les attaquants disposant d'une faible bande passante pourraient effectivement multiplier leur trafic d'origine plusieurs fois. Les attaques d'amplification sont généralement utilisées dans deux scénarios possibles. Soit l'attaquant utilise son propre ordinateur pour multiplier son trafic, soit l'intrus utilise un botnet pour amplifier le trafic de toutes les machines botnet et le diriger vers la cible. Ce dernier pourrait conduire à des flux de trafic très importants.
 
 \subsection{Impacts des attaques par déni de service sur un réseau SDN}
-Due à la centralisation du contrôle dans l’architecture SDN, les attaques de DoS peuvent avoir de graves répercussions sur les performances du réseau conduisant à des cas où tout le réseau devient incapable à répondre aux besoins des utilisateurs. Ces attaques affectent la performance des trois éléments principaux dans le réseau SDN : le contrôleur SDN, la liaison entre le contrôleur et les commutateurs et le plan de transmission (les commutateurs et les liens du réseau).
+Due à la centralisation du contrôle dans l’architecture SDN, les attaques de DoS peuvent avoir de graves répercussions sur les performances du réseau conduisant à des cas où tout le réseau devient incapable à répondre aux besoins des utilisateurs. Ces attaques affectent la performance des trois éléments principaux dans le réseau SDN: le contrôleur SDN, la liaison entre le contrôleur et les commutateurs et le plan de transmission (les commutateurs et les liens du réseau).
 
 \subsubsection{Impact sur le plan de contrôle:}
 En cas d’une attaque de DoS, l’attaquant va envoyer une grande quantité de flux à travers le réseau SDN. Lorsque les commutateurs dans la couche infrastructure reçoivent ces nouveaux flux entrants, ils envoient des demandes au contrôleur pour obtenir des règles de commutation afin de les envoyer à la destination demandée. Par conséquent, le contrôleur SDN sera surchargé à cause de la quantité énorme de demandes provenant du plan de données du réseau menant à des cas où le contrôleur devient totalement paralysé et ne peut prendre aucune décision du routage.
@@ -156,7 +156,7 @@ Un IDS (Intrusion Detection System) est un outil ou un ensemble d’outils dont 
 
 \subsection{Les approches}
 \label{approchesIDS}
-Il existe deux approches d’IDS :\\
+Il existe deux approches d’IDS:\\
 \begin{itemize}
 \item[-]\textbf{Le NIDS} (Network Based IDS) assure la sécurité au niveau réseau. Il va donc écouter tout le trafic du réseau et générer des alertes en cas de comportement anormal.\\
 \item[-]\textbf{Le HIDS} (Host Based IDS) réside sur une machine en particulier. Il surveille et analyse le trafic de la machine hôte pour déceler des intrusions ou des attaques (DoS par exemple). \\
@@ -166,9 +166,9 @@ Ces deux approches peuvent être fusionnées afin d’améliorer la précision d
 \subsection{Les méthodes de détection d’intrusions} 
 Il existe trois méthodes principales de détection d’intrusions:\\
 \begin{itemize}
-\item[•]\textbf{Détection par scénario} (Misuse Detection) : pour détecter les attaques, elle utilise une grande base de données qui contient les attaques connues et les associe aux caractéristiques des événements qui se produisent lors d’une attaque similaire. Cette technique est aussi appelée la détection basée sur la signature (Signature-Based Detection) ou la détection basée sur la connaissance (Knowledge-Based Detection).\\
-\item[•]\textbf{Détection basée sur l’anomalie} (Anomaly-Based Detection) : utilise un profil qui représente les activités qui ne présentent aucune menace d’une éventuelle attaque ou une préparation d’attaque. Les événements sont par la suite comparés à ce profil d’activités.\\
-\item[•]\textbf{Analyse de protocole avec état} (SPA) : commence par définir un ensemble de contraintes qui représente le comportement autorisé d’un programme ou un protocole donné. Le système surveille les opérations exécutées par le programme ou le protocole et vérifie s’ils respectent les contraintes définies par le système. 
+\item[•]\textbf{Détection par scénario} (Misuse Detection): pour détecter les attaques, elle utilise une grande base de données qui contient les attaques connues et les associe aux caractéristiques des événements qui se produisent lors d’une attaque similaire. Cette technique est aussi appelée la détection basée sur la signature (Signature-Based Detection) ou la détection basée sur la connaissance (Knowledge-Based Detection).\\
+\item[•]\textbf{Détection basée sur l’anomalie} (Anomaly-Based Detection): utilise un profil qui représente les activités qui ne présentent aucune menace d’une éventuelle attaque ou une préparation d’attaque. Les événements sont par la suite comparés à ce profil d’activités.\\
+\item[•]\textbf{Analyse de protocole avec état} (SPA): commence par définir un ensemble de contraintes qui représente le comportement autorisé d’un programme ou un protocole donné. Le système surveille les opérations exécutées par le programme ou le protocole et vérifie s’ils respectent les contraintes définies par le système. 
 \end{itemize} 
 
 \subsection{Les méthodes de collection d'informations sur les flux}
@@ -205,13 +205,13 @@ L'efficacité du NIDS est évaluée par plusieurs paramètres. Une matrice de co
 \end{table}
 
 \begin{itemize}
-	\item[• VP] : Le nombre d’enregistrements anomalies correctement classés.\\
-	\item[• VN] : Le nombre d’enregistrements normaux correctement classés.\\
-	\item[• FP] : Le nombre d’enregistrements normaux mal classés.\\
-	\item[• FN] : Le nombre d’enregistrements anomalies mal classés.\\ 
+	\item[• VP]: Le nombre d’enregistrements anomalies correctement classés.\\
+	\item[• VN]: Le nombre d’enregistrements normaux correctement classés.\\
+	\item[• FP]: Le nombre d’enregistrements normaux mal classés.\\
+	\item[• FN]: Le nombre d’enregistrements anomalies mal classés.\\ 
 \end{itemize}
 
-Afin d'évaluer le NIDS, les métriques suivantes sont calculées :\\
+Afin d'évaluer le NIDS, les métriques suivantes sont calculées:\\
 \begin{itemize}
 	\item[•] \textbf{Exactitude (E)}: Indique le pourcentage de prédictions correctes sur la totalité des prédictions:
 	\begin{large}
@@ -258,7 +258,7 @@ Afin d'évaluer le NIDS, les métriques suivantes sont calculées :\\
 \end{itemize}
 
 \section{Travaux existants}
-Récemment, diverses solutions ont été proposées pour régler les problèmes de sécurité au sein des réseaux SDN. Les techniques d’apprentissage automatique sont largement appliquées pour améliorer l’efficacité de détection, y compris les réseaux neurone, les arbres de décision, les SVM (Support Vector Machine) et les réseaux bayésiens. L'intégration d'un système de détection d'intrusions dans l'architecture SDN reste la meilleure solution pour sécuriser l'environnement SDN. Comme mentionné dans la section \ref{approchesIDS}, deux approches existent pour concevoir un IDS : l'une est basée machine (HIDS) et l'autre est basée réseau (NIDS), autrement appelé basé flux. Dans notre travail nous nous focaliserons sur les systèmes de détection basés flux, donc nous allons présenter dans ce qui suit quelques IDS déjà existants afin de pouvoir faire une étude comparative; technique d'apprentissage adoptée, les caractéristiques utilisées, le dataset, résultat de prédiction.\\
+Récemment, diverses solutions ont été proposées pour régler les problèmes de sécurité au sein des réseaux SDN. Les techniques d’apprentissage automatique sont largement appliquées pour améliorer l’efficacité de détection, y compris les réseaux neurone, les arbres de décision, les SVM (Support Vector Machine) et les réseaux bayésiens. L'intégration d'un système de détection d'intrusions dans l'architecture SDN reste la meilleure solution pour sécuriser l'environnement SDN. Comme mentionné dans la section \ref{approchesIDS}, deux approches existent pour concevoir un IDS: l'une est basée machine (HIDS) et l'autre est basée réseau (NIDS), autrement appelé basé flux. Dans notre travail nous nous focaliserons sur les systèmes de détection basés flux, donc nous allons présenter dans ce qui suit quelques IDS déjà existants afin de pouvoir faire une étude comparative; technique d'apprentissage adoptée, les caractéristiques utilisées, le dataset, résultat de prédiction.\\
 
 \newpage
 \subsection{Flow based Intrusion Detection System [\cite{11}]:}
@@ -278,7 +278,7 @@ Les commutateurs OF envoient souvent des messages \textit{Packet-In} au contrôl
 Les échantillons extraits de la phase d’agrégation sont utilisés dans un modèle de classification supervisé. Par conséquent, le classifieur formé attribuera des classes à chaque échantillon chaque seconde. Puisque chaque flux peut avoir plus d’une instance au cours de sa durée de vie, son comportement sera classé plusieurs fois. Le classifieur \textit{Bagged-Trees} [\cite{12}] a été utilisé pour construire le modèle.
 \newpage
 \subsection{Machine based Intrusion Detection System [\cite{13}]:}
-Dans ce travail un modèle de réseaux de neurones a été intégré dans le système pour détecter les anomalies dans le trafic. Le système fonctionne comme suit : les commutateurs OF envoient périodiquement les statistiques de flux au contrôleur, ces statistiques vont être récupérées et traitées par le module responsable pour détecter le comportement d’anomalie dans le flux. Pattern recognition (la reconnaissance de motifs) est implémentée dans ce modèle pour classer les entrées dans un ensemble de catégories cibles. L’architecture de cet IDS se compose de trois couches : une couche d’entrée (Input Layer), une couche cachée (Hidden Layer) et une couche de sortie (Output Layer). L’algorithme "\textbf{Backpropagation}" est utilisé pour entraîner le modèle.\\
+Dans ce travail un modèle de réseaux de neurones a été intégré dans le système pour détecter les anomalies dans le trafic. Le système fonctionne comme suit: les commutateurs OF envoient périodiquement les statistiques de flux au contrôleur, ces statistiques vont être récupérées et traitées par le module responsable pour détecter le comportement d’anomalie dans le flux. Pattern recognition (la reconnaissance de motifs) est implémentée dans ce modèle pour classer les entrées dans un ensemble de catégories cibles. L’architecture de cet IDS se compose de trois couches: une couche d’entrée (Input Layer), une couche cachée (Hidden Layer) et une couche de sortie (Output Layer). L’algorithme "\textbf{Backpropagation}" est utilisé pour entraîner le modèle.\\
 
 \begin{table}[h]
 \begin{center}
